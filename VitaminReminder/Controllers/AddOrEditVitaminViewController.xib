@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="proximanova-bold.otf">
+            <string>ProximaNova-Bold</string>
+        </array>
+        <array key="proximanova-light.otf">
+            <string>ProximaNova-Light</string>
+        </array>
+        <array key="proximanova-medium.otf">
+            <string>ProximaNova-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddOrEditVitaminViewController">
+            <connections>
+                <outlet property="dosageContainerView" destination="czF-d1-zh9" id="nh2-Kd-HbH"/>
+                <outlet property="headerView" destination="XDo-53-NVD" id="Mpf-Ua-6XA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vitaminNameTextField" destination="vx1-Jd-RUc" id="yBe-AI-APu"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gth-xS-Bij">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                    <color key="backgroundColor" red="0.40000000000000002" green="0.17254901960784313" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDo-53-NVD">
+                    <rect key="frame" x="0.0" y="20" width="375" height="120"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD VITAMIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Z7-dS-jtt">
+                            <rect key="frame" x="117" y="72" width="141" height="22"/>
+                            <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDM-3P-Zhk">
+                            <rect key="frame" x="16" y="68.5" width="53" height="29"/>
+                            <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="17"/>
+                            <state key="normal" title="Cancel">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="onCancelButtonClicked:" destination="-1" eventType="touchUpInside" id="ybF-Ue-GIp"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43g-NL-hst">
+                            <rect key="frame" x="321" y="68.5" width="38" height="29"/>
+                            <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="17"/>
+                            <state key="normal" title="Save">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="onSaveButtonClicked:" destination="-1" eventType="touchUpInside" id="V9p-zO-YFM"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.40000000000000002" green="0.17254901960784313" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="43g-NL-hst" secondAttribute="trailing" constant="16" id="2oG-89-T2D"/>
+                        <constraint firstAttribute="height" constant="120" id="Azu-2C-rN9"/>
+                        <constraint firstItem="3Z7-dS-jtt" firstAttribute="centerX" secondItem="XDo-53-NVD" secondAttribute="centerX" id="RQx-cz-Cu2"/>
+                        <constraint firstAttribute="bottom" secondItem="3Z7-dS-jtt" secondAttribute="bottom" constant="26" id="lT9-yR-juk"/>
+                        <constraint firstItem="NDM-3P-Zhk" firstAttribute="leading" secondItem="XDo-53-NVD" secondAttribute="leading" constant="16" id="sEn-D3-rK5"/>
+                        <constraint firstItem="43g-NL-hst" firstAttribute="centerY" secondItem="3Z7-dS-jtt" secondAttribute="centerY" id="yNf-CA-L2F"/>
+                        <constraint firstItem="NDM-3P-Zhk" firstAttribute="centerY" secondItem="3Z7-dS-jtt" secondAttribute="centerY" id="zna-ck-ElS"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Upf-6O-Tf1">
+                    <rect key="frame" x="16" y="175" width="343" height="51"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UL-2a-RjU">
+                            <rect key="frame" x="0.0" y="0.0" width="43" height="15"/>
+                            <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="15"/>
+                            <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Vitamin name goes here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vx1-Jd-RUc">
+                            <rect key="frame" x="0.0" y="23" width="299.5" height="28"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="28"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eBQ-4l-2dZ">
+                    <rect key="frame" x="16" y="261" width="343" height="15"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOSAGE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxW-G1-URh">
+                            <rect key="frame" x="0.0" y="0.0" width="60.5" height="15"/>
+                            <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="15"/>
+                            <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czF-d1-zh9">
+                    <rect key="frame" x="16" y="292" width="343" height="95"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="95" id="jTk-zS-zzq"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71c-SI-zgr">
+                    <rect key="frame" x="16" y="403" width="343" height="29"/>
+                    <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="17"/>
+                    <state key="normal" title="Add dosage"/>
+                    <connections>
+                        <action selector="addDosageButtonClicked:" destination="-1" eventType="touchUpInside" id="lSL-Pc-5aO"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="eBQ-4l-2dZ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="7cp-h3-uzz"/>
+                <constraint firstItem="Gth-xS-Bij" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="CSa-fA-MAp"/>
+                <constraint firstItem="Gth-xS-Bij" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="ENh-Ph-fN4"/>
+                <constraint firstItem="XDo-53-NVD" firstAttribute="bottom" secondItem="Gth-xS-Bij" secondAttribute="bottom" id="GgX-lK-FKE"/>
+                <constraint firstItem="czF-d1-zh9" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="Ivm-pp-a1k"/>
+                <constraint firstItem="XDo-53-NVD" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="Kyq-Kg-oQE"/>
+                <constraint firstItem="XDo-53-NVD" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Lnm-Ky-feF"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Upf-6O-Tf1" secondAttribute="trailing" constant="16" id="OLc-Lc-YHj"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="eBQ-4l-2dZ" secondAttribute="trailing" constant="16" id="QjW-Uq-Bdt"/>
+                <constraint firstItem="71c-SI-zgr" firstAttribute="top" secondItem="czF-d1-zh9" secondAttribute="bottom" constant="16" id="cA6-9x-pkW"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="71c-SI-zgr" secondAttribute="trailing" constant="16" id="iJP-R1-FeD"/>
+                <constraint firstItem="Upf-6O-Tf1" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="jAp-Hc-8ia"/>
+                <constraint firstItem="71c-SI-zgr" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="kRN-Qq-hv7"/>
+                <constraint firstItem="czF-d1-zh9" firstAttribute="top" secondItem="eBQ-4l-2dZ" secondAttribute="bottom" constant="16" id="lUA-78-uaF"/>
+                <constraint firstItem="eBQ-4l-2dZ" firstAttribute="top" secondItem="Upf-6O-Tf1" secondAttribute="bottom" constant="35" id="oEo-AQ-3zU"/>
+                <constraint firstItem="Gth-xS-Bij" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="oWv-Ud-w8W"/>
+                <constraint firstItem="Upf-6O-Tf1" firstAttribute="top" secondItem="Gth-xS-Bij" secondAttribute="bottom" constant="35" id="qHH-gq-Xqt"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="czF-d1-zh9" secondAttribute="trailing" constant="16" id="vjH-0K-TIw"/>
+                <constraint firstItem="XDo-53-NVD" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="wJs-Zn-hSo"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="128.80000000000001" y="57.121439280359823"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="proximanova-light.otf">
+            <string>ProximaNova-Light</string>
+        </array>
+        <array key="proximanova-medium.otf">
+            <string>ProximaNova-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DosageCollectionViewCellReuseIdentifier" id="gTV-IL-0wX" customClass="DosageCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="112" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="112" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PdM-Kt-Nws">
+                        <rect key="frame" x="0.0" y="10" width="96" height="80"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qwV-PH-f2V">
+                                <rect key="frame" x="31" y="24" width="34.5" height="32"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 pill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mjw-qJ-nRB">
+                                        <rect key="frame" x="1" y="0.0" width="32.5" height="17"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHN-65-oc3">
+                                        <rect key="frame" x="0.0" y="17" width="34.5" height="15"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000000000002" green="0.17254901959999999" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="qwV-PH-f2V" firstAttribute="centerX" secondItem="PdM-Kt-Nws" secondAttribute="centerX" id="YVj-Mw-S0k"/>
+                            <constraint firstItem="qwV-PH-f2V" firstAttribute="centerY" secondItem="PdM-Kt-Nws" secondAttribute="centerY" id="eKC-VW-GY0"/>
+                            <constraint firstAttribute="width" constant="96" id="hHl-oa-yrh"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="PdM-Kt-Nws" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="MQE-8e-0QX"/>
+                <constraint firstItem="PdM-Kt-Nws" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Mby-bf-r3h"/>
+                <constraint firstAttribute="bottom" secondItem="PdM-Kt-Nws" secondAttribute="bottom" constant="10" id="N8Z-bI-RyJ"/>
+                <constraint firstAttribute="trailing" secondItem="PdM-Kt-Nws" secondAttribute="trailing" constant="16" id="d7F-yY-eNf"/>
+                <constraint firstItem="PdM-Kt-Nws" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="fgZ-SU-tMl"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="112" height="100"/>
+            <connections>
+                <outlet property="dosageBackgroundView" destination="PdM-Kt-Nws" id="Uaf-Fw-MTl"/>
+                <outlet property="numberOfPillsLabel" destination="Mjw-qJ-nRB" id="TaH-NG-nGL"/>
+                <outlet property="timeLabel" destination="SHN-65-oc3" id="mne-yW-WCt"/>
+            </connections>
+            <point key="canvasLocation" x="187.19999999999999" y="152.02398800599701"/>
+        </collectionViewCell>
+    </objects>
+</document>
