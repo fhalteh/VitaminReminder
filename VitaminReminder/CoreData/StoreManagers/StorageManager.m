@@ -41,13 +41,24 @@
                                                                   inContext:context];
 }
 
-- (NSFetchedResultsController *)loadDosageFetchedResultsController:(id <NSFetchedResultsControllerDelegate>)delegate
-                                                     forDay:(Weekday)weekday {
-    NSManagedObjectContext *context = self.persistentContainer.viewContext;
-    return [self.dosageStorageManager loadDosageFetchedResultsController:delegate
-                                                           forDay:weekday
-                                                        inContext:context];
+- (NSArray <Dosage *> *)getDosagesForDay:(Weekday)weekday {
+    return [self.dosageStorageManager getDosagesForDay:weekday
+                                             inContext:self.persistentContainer.viewContext];
 }
+
+- (NSArray *)getIntakesForDate:(NSDate *)date {
+    return [self.userVitaminIntakeStorageManager getIntakesForDate:date
+                                                         inContext:self.persistentContainer.viewContext];
+}
+
+
+//- (NSFetchedResultsController *)loadDosageFetchedResultsController:(id <NSFetchedResultsControllerDelegate>)delegate
+//                                                     forDay:(Weekday)weekday {
+//    NSManagedObjectContext *context = self.persistentContainer.viewContext;
+//    return [self.dosageStorageManager loadDosageFetchedResultsController:delegate
+//                                                           forDay:weekday
+//                                                        inContext:context];
+//}
 
 // TODO: check if called
 - (void)addVitaminDataModel:(VitaminDataModel *)vitaminDataModel {

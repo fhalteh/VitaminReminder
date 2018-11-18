@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/VitaminIntakeTableVC.m"
-            timestampString = "564268417.131018"
+            timestampString = "564272219.085152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "-loadVitamins"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Helpers/VitaminListGenerator.m"
-            timestampString = "564268417.131559"
+            timestampString = "564272219.085248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "+createVitaminsListFromContext:date:"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "+vitaminIntakes:containsDosage:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/VitaminIntakeTableVC.m"
-            timestampString = "564268417.132127"
+            timestampString = "564272219.085335"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "-initWithDelegate:context:"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-initWithDelegate:storageManager:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -345,7 +345,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Extensions/NSDate+Utils.m"
-            timestampString = "564268417.1329761"
+            timestampString = "564269609.809299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
@@ -405,15 +405,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/VitaminIntakeTableVC.m"
-            timestampString = "564268417.134074"
+            timestampString = "564272219.085574"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "-loadVitamins"
             landmarkType = "7">
          </BreakpointContent>
@@ -777,7 +777,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CoreData/StoreManagers/DosageStorageManager.m"
-            timestampString = "564268417.136184"
+            timestampString = "564272219.085972"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -809,12 +809,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CoreData/StoreManagers/StorageManager.m"
-            timestampString = "564268417.136463"
+            timestampString = "564272219.0860341"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "-save"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "-remove:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -825,28 +825,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CoreData/StoreManagers/StorageManager.m"
-            timestampString = "564268417.1366661"
+            timestampString = "564272219.086079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "-remove:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VitaminReminder/CoreData/StoreManagers/UserVitaminIntakeStorageManager.m"
-            timestampString = "564268417.136722"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "-addDataModel:inContext:"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-backgroundContext"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -857,7 +841,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CoreData/StoreManagers/VitaminStorageManager.m"
-            timestampString = "564268417.136914"
+            timestampString = "564272011.864223"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
@@ -873,7 +857,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CoreData/StoreManagers/VitaminStorageManager.m"
-            timestampString = "564268417.137103"
+            timestampString = "564272011.86432"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "130"
@@ -905,7 +889,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CoreData/StoreManagers/DaysStorageManager.m"
-            timestampString = "564268417.137231"
+            timestampString = "564270877.8834209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -928,83 +912,6 @@
             endingLineNumber = "75"
             landmarkName = "-assertCorrectDaysWithWeekDays:days:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[DaysTests assertCorrectDaysWithWeekDays:days:]"
-                  moduleName = "VitaminReminderTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/faha/Documents/Development%20projects/VitaminReminder/VitaminReminderTests/DaysTests.m"
-                  timestampString = "564263381.919802"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "73">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[DaysTests assertCorrectDaysWithWeekDays:days:]"
-                  moduleName = "VitaminReminderTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/faha/Documents/Development%20projects/VitaminReminder/VitaminReminderTests/DaysTests.m"
-                  timestampString = "564263381.922114"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "303">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[DaysTests assertCorrectDaysWithWeekDays:days:]"
-                  moduleName = "VitaminReminderTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/faha/Documents/Development%20projects/VitaminReminder/VitaminReminderTests/DaysTests.m"
-                  timestampString = "564263381.924366"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "1000">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[DaysTests assertCorrectDaysWithWeekDays:days:]"
-                  moduleName = "VitaminReminderTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/faha/Documents/Development%20projects/VitaminReminder/VitaminReminderTests/DaysTests.m"
-                  timestampString = "564263381.92689"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "1961">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[DaysTests assertCorrectDaysWithWeekDays:days:]"
-                  moduleName = "VitaminReminderTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/faha/Documents/Development%20projects/VitaminReminder/VitaminReminderTests/DaysTests.m"
-                  timestampString = "564263381.9293031"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "2070">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

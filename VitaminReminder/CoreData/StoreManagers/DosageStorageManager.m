@@ -35,11 +35,11 @@
     return dosage;
 }
 
-// TODO: is this being used, should be removed if not?
 - (NSArray <Dosage *> *)getDosagesForDay:(Weekday)weekday
                                inContext:(NSManagedObjectContext *)context {
     NSFetchRequest *fetchRequest = Dosage.fetchRequest;
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"vitamin.days.%@ == true", [Days weekdayAttribute:weekday]];
+    NSString *weekdayAttribute = [Days weekdayAttribute:weekday];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"vitamin.days.%@ == true", weekdayAttribute];
     NSError *error;
     NSArray *results = [context executeFetchRequest:fetchRequest error:&error];
     if (error) {
@@ -48,27 +48,28 @@
     return results ? results : @[];
 }
 
-- (NSFetchedResultsController *)loadDosageFetchedResultsController:(id <NSFetchedResultsControllerDelegate>)delegate
-                                                     forDay:(Weekday)weekday
-                                                  inContext:(NSManagedObjectContext *)context {
-    NSFetchRequest *request = [Dosage fetchRequest];
-    request.predicate = [NSPredicate predicateWithFormat:@"vitamin.days.%@ == true",
-                         [Days weekdayAttribute:weekday]];
-    request.sortDescriptors = @[Dosage.defaultSortDescriptor];
-    NSFetchedResultsController *resultsController =
-    [[NSFetchedResultsController alloc]
-     initWithFetchRequest:request
-     managedObjectContext:context
-     sectionNameKeyPath:nil
-     cacheName:nil];
-    resultsController.delegate = delegate;
-    NSError *error;
-    [resultsController performFetch:&error];
-    if (error) {
-        NSLog(@"Could not load the dosages using the fetched results controller.");
-    }
-    return resultsController;
-}
+// TODO: is this being used, should be removed if not?
+//- (NSFetchedResultsController *)loadDosageFetchedResultsController:(id <NSFetchedResultsControllerDelegate>)delegate
+//                                                     forDay:(Weekday)weekday
+//                                                  inContext:(NSManagedObjectContext *)context {
+//    NSFetchRequest *request = [Dosage fetchRequest];
+//    request.predicate = [NSPredicate predicateWithFormat:@"vitamin.days.%@ == true",
+//                         [Days weekdayAttribute:weekday]];
+//    request.sortDescriptors = @[Dosage.defaultSortDescriptor];
+//    NSFetchedResultsController *resultsController =
+//    [[NSFetchedResultsController alloc]
+//     initWithFetchRequest:request
+//     managedObjectContext:context
+//     sectionNameKeyPath:nil
+//     cacheName:nil];
+//    resultsController.delegate = delegate;
+//    NSError *error;
+//    [resultsController performFetch:&error];
+//    if (error) {
+//        NSLog(@"Could not load the dosages using the fetched results controller.");
+//    }
+//    return resultsController;
+//}
 
 - (void)updateFetchedResultsController:(NSFetchedResultsController *)resultsController
                            withWeekday:(Weekday)weekday {

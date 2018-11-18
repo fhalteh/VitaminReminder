@@ -10,10 +10,13 @@
 #import "VitaminIntakeTableVC.h"
 #import "CustomNavigationBar.h"
 
+@class StorageManager;
+
 @interface MainViewController : UIViewController <VitaminIntakeTableVCDelegate, CustomNavigationBarDelegate>
 
 // TODO: instead of the managed object context, use the store?
-@property NSManagedObjectContext *managedObjectContext;
+//@property NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) StorageManager *storageManager;
 
 + (NSString *)identifier;
 

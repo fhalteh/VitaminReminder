@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "StorageManagerDataSource.h"
 
+@class UserVitaminIntake;
+
 @interface UserVitaminIntakeStorageManager : NSObject <StorageManagerDataSource>
+
+- (NSArray <UserVitaminIntake *> *)getIntakesForDate:(NSDate *)date
+                                           inContext:(NSManagedObjectContext *)context;
 
 @end

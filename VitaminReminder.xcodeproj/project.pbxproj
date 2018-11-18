@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1966E63F21A21E4400B862E6 /* VitaminIntakePagingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1966E63D21A21E4400B862E6 /* VitaminIntakePagingViewController.m */; };
+		1966E64021A21E4400B862E6 /* VitaminIntakePagingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1966E63E21A21E4400B862E6 /* VitaminIntakePagingViewController.xib */; };
 		19C98B2D2192043400E8A36F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C98B2C2192043400E8A36F /* AppDelegate.m */; };
 		19C98B302192043400E8A36F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C98B2F2192043400E8A36F /* MainViewController.m */; };
 		19C98B332192043400E8A36F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C98B312192043400E8A36F /* Main.storyboard */; };
@@ -84,6 +86,7 @@
 		19F3694521A1DD7D0008FF3E /* ObjectDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F3694421A1DD7D0008FF3E /* ObjectDataModel.m */; };
 		19F3694721A1E7D40008FF3E /* UserVitaminIntakeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F3694621A1E7D40008FF3E /* UserVitaminIntakeTests.m */; };
 		19F3694921A1F40D0008FF3E /* DaysTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F3694821A1F40D0008FF3E /* DaysTests.m */; };
+		19F7365A21A21F2A00E48937 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F7365821A21F2A00E48937 /* MainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +107,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1966E63C21A21E4400B862E6 /* VitaminIntakePagingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VitaminIntakePagingViewController.h; sourceTree = "<group>"; };
+		1966E63D21A21E4400B862E6 /* VitaminIntakePagingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VitaminIntakePagingViewController.m; sourceTree = "<group>"; };
+		1966E63E21A21E4400B862E6 /* VitaminIntakePagingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VitaminIntakePagingViewController.xib; sourceTree = "<group>"; };
 		19C98B282192043400E8A36F /* VitaminReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VitaminReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C98B2B2192043400E8A36F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		19C98B2C2192043400E8A36F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -239,6 +245,7 @@
 		19F3694421A1DD7D0008FF3E /* ObjectDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectDataModel.m; sourceTree = "<group>"; };
 		19F3694621A1E7D40008FF3E /* UserVitaminIntakeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserVitaminIntakeTests.m; sourceTree = "<group>"; };
 		19F3694821A1F40D0008FF3E /* DaysTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaysTests.m; sourceTree = "<group>"; };
+		19F7365821A21F2A00E48937 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,6 +364,7 @@
 			children = (
 				19C98B2E2192043400E8A36F /* MainViewController.h */,
 				19C98B2F2192043400E8A36F /* MainViewController.m */,
+				19F7365821A21F2A00E48937 /* MainViewController.xib */,
 				19C98B73219217CE00E8A36F /* VitaminIntakeTableVC.h */,
 				19C98B74219217CE00E8A36F /* VitaminIntakeTableVC.m */,
 				19C98BA92192566E00E8A36F /* AllVitaminsTableVC.h */,
@@ -382,6 +390,9 @@
 				19F3692321A1A00D0008FF3E /* WelcomeViewController.h */,
 				19F3692421A1A00D0008FF3E /* WelcomeViewController.m */,
 				19F3692521A1A00D0008FF3E /* WelcomeViewController.xib */,
+				1966E63C21A21E4400B862E6 /* VitaminIntakePagingViewController.h */,
+				1966E63D21A21E4400B862E6 /* VitaminIntakePagingViewController.m */,
+				1966E63E21A21E4400B862E6 /* VitaminIntakePagingViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -639,6 +650,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19C98BCA2193915D00E8A36F /* DosageCollectionViewController.xib in Resources */,
+				19F7365A21A21F2A00E48937 /* MainViewController.xib in Resources */,
 				19C98B3B2192043500E8A36F /* LaunchScreen.storyboard in Resources */,
 				19C98B65219206D700E8A36F /* proximanova-bold.otf in Resources */,
 				19C98BCF219414AF00E8A36F /* DosageViewController.xib in Resources */,
@@ -656,6 +668,7 @@
 				19C98BBA219379A000E8A36F /* AddOrEditVitaminViewController.xib in Resources */,
 				19C98B6A2192088200E8A36F /* VitaminIntakeTableViewCell.xib in Resources */,
 				19F3691621A1741E0008FF3E /* HomeViewController.xib in Resources */,
+				1966E64021A21E4400B862E6 /* VitaminIntakePagingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,6 +716,7 @@
 				19F368BF21A09EE70008FF3E /* Vitamin.m in Sources */,
 				19F3693221A1C6DB0008FF3E /* VitaminStorageManager.m in Sources */,
 				19C98B3E2192043500E8A36F /* main.m in Sources */,
+				1966E63F21A21E4400B862E6 /* VitaminIntakePagingViewController.m in Sources */,
 				19F368F021A0C33E0008FF3E /* VitaminDataModel.m in Sources */,
 				19F368F621A0C4190008FF3E /* DosageDataModel.m in Sources */,
 				19C98BBD2193841100E8A36F /* UIColor+Utils.m in Sources */,

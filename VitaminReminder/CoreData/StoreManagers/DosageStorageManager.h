@@ -14,9 +14,9 @@
 
 @interface DosageStorageManager : NSObject <StorageManagerDataSource>
 
-- (NSFetchedResultsController *)loadDosageFetchedResultsController:(id <NSFetchedResultsControllerDelegate>)delegate
-                                                     forDay:(Weekday)weekday
-                                                  inContext:(NSManagedObjectContext *)context;
+//- (NSFetchedResultsController *)loadDosageFetchedResultsController:(id <NSFetchedResultsControllerDelegate>)delegate
+//                                                     forDay:(Weekday)weekday
+//                                                  inContext:(NSManagedObjectContext *)context;
 
 - (NSArray <Dosage *> *)getDosagesForDay:(Weekday)weekday
                                inContext:(NSManagedObjectContext *)context;

@@ -15,6 +15,7 @@
 #import "Color.h"
 #import "DaysDataModel.h"
 #import "DosageDataModel.h"
+#import "NSDate+Utils.h"
 
 @interface VitaminTests : XCTestCase
 
@@ -93,6 +94,55 @@
     XCTAssertEqual(allObjects.count, 6);
 }
 
+- (void)testHasVitaminDosagesForToday {
+    NSString *name = @"VITAMIN_D";
+    NSString *notes = @"NOTES";
+    AppearanceColor color = AppearanceColorGreen;
+    NSMutableArray *dosages = [NSMutableArray new];
+    NSInteger numberOfDosages = 5;
+    NSDate *date = NSDate.date;
+    for (int i = 0; i < numberOfDosages; i++) {
+        DosageDataModel *dosageDataModel = [self createDosageWithNumberOfPills:22 time:date];
+        [dosages addObject:dosageDataModel];
+    }
+    DaysDataModel *daysDataModel = [self createDaysDataModel:@[@(WeekdaySunday), @(WeekdayMonday), @(WeekdayTuesday), @(WeekdayWednesday), @(WeekdayThursday), @(WeekdayFriday), @(WeekdaySaturday),]];
+    [self insertVitaminWithName:name
+                          notes:notes
+                          color:color
+                           days:daysDataModel
+                        dosages:dosages];
+    [self.storageManager save];
+    NSArray *allObjects = [self.storageManager getDosagesForDay:WeekdaySaturday];
+//    NSFetchedResultsController *resultsController = [self.storageManager loadDosageFetchedResultsController:nil forDay:WeekdaySaturday];
+    XCTAssertEqual(allObjects.count, numberOfDosages);
+}
+
+- (void)testHasNoVitaminDosagesForToday {
+    NSString *name = @"VITAMIN_D";
+    NSString *notes = @"NOTES";
+    AppearanceColor color = AppearanceColorGreen;
+    NSMutableArray *dosages = [NSMutableArray new];
+    NSInteger numberOfDosages = 5;
+    NSDate *date = NSDate.date;
+    for (int i = 0; i < numberOfDosages; i++) {
+        DosageDataModel *dosageDataModel = [self createDosageWithNumberOfPills:22 time:date];
+        [dosages addObject:dosageDataModel];
+    }
+    DaysDataModel *daysDataModel = [self createDaysDataModel:@[@(WeekdayFriday)]];
+    [self insertVitaminWithName:name
+                          notes:notes
+                          color:color
+                           days:daysDataModel
+                        dosages:dosages];
+    [self.storageManager save];
+//    NSFetchedResultsController *resultsController = [self.storageManager loadDosageFetchedResultsController:nil forDay:WeekdaySaturday];
+    NSArray *allObjects = [self.storageManager getDosagesForDay:WeekdaySaturday];
+    //    NSFetchedResultsController *resultsController = [self.storageManager loadDosageFetchedResultsController:nil forDay:WeekdaySaturday];
+    XCTAssertEqual(allObjects.count, 0);
+
+//    XCTAssertEqual(resultsController.fetchedObjects.count, 0);
+}
+
 - (void)testRemoveVitamin {
     [self insertVitaminToDatabase];
     [self insertVitaminToDatabase];
@@ -150,9 +200,6 @@
 - (DaysDataModel *)createDaysDataModel:(NSArray *)days {
     return [DaysDataModel daysDataModelWithDays:days];
 }
-
-
-
 
 - (void)tearDown {
     [super tearDown];

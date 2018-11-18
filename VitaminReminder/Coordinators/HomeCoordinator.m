@@ -8,6 +8,7 @@
 
 #import "HomeCoordinator.h"
 #import "MainViewController.h"
+#import "VitaminIntakePagingViewController.h"
 
 @implementation HomeCoordinator
 
@@ -15,11 +16,15 @@
     // TODO: rename main view controller
 //    MainViewController *vc1 = [[MainViewController alloc] initWithNibName:MainViewController.identifier bundle:nil];
     UIStoryboard *storyBoard = self.navController.storyboard;
-    MainViewController *vc1 = [storyBoard instantiateViewControllerWithIdentifier:MainViewController.identifier];
+//    MainViewController *vc1 = [storyBoard instantiateViewControllerWithIdentifier:MainViewController.identifier];
+    VitaminIntakePagingViewController *vc = [[VitaminIntakePagingViewController alloc] init];
+    vc.storageManager = storageManager;
+//    MainViewController *vc1 = [[MainViewController alloc] init];
+//    vc1.storageManager = storageManager;
 //    vc1.title = @"HOME";
-    vc1.navigationItem.title = @"IS THIS";
+    vc.navigationItem.title = @"IS THIS";
     
-    return vc1;
+    return vc;
 }
 
 @synthesize navController, storageManager;

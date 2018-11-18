@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "DaysDataModel.h"
+
+@class Dosage, UserVitaminIntake;
 
 @interface StorageManager : NSObject
 
@@ -15,6 +18,12 @@
 
 - (instancetype)initWithContainer:(NSPersistentContainer *)container;
 - (NSFetchedResultsController *)loadVitaminsFetchedResultsController:(id <NSFetchedResultsControllerDelegate>)delegate;
+
+// TODO: should bve used
+- (NSArray <Dosage *> *)getDosagesForDay:(Weekday)weekday;
+- (NSArray <UserVitaminIntake *> *)getIntakesForDate:(NSDate *)date;
+//- (NSFetchedResultsController *)loadDosageFetchedResultsController:(id <NSFetchedResultsControllerDelegate>)delegate
+//                                                            forDay:(Weekday)weekday;
 - (void)remove:(NSManagedObjectID *)objectID;
 - (void)save;
 

@@ -8,9 +8,27 @@
 
 #import "UserVitaminIntakeStorageManager.h"
 #import "UserVitaminIntake.h"
-#import "USerVitaminIntakeDataModel.h"
+#import "UserVitaminIntakeDataModel.h"
+#import "Days.h"
+#import "NSDate+Utils.h"
 
 @implementation UserVitaminIntakeStorageManager
+
+// TODO: should be utilized
+- (NSArray <UserVitaminIntake *> *)getIntakesForDate:(NSDate *)date
+
+                                           inContext:(NSManagedObjectContext *)context {
+    NSFetchRequest *fetchRequest = UserVitaminIntake.fetchRequest;
+    NSDate *startOfDay = date.startOfDay;
+    NSDate *endOfDay = date.endOfDay;
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"intakeDate >= %@ && intakeDate <= %@", startOfDay, endOfDay];
+    NSError *error;
+    NSArray *results = [context executeFetchRequest:fetchRequest error:&error];
+    if (error) {
+        NSLog(@"An error occurred while fetching intakes for specific day.");
+    }
+    return results ? results : @[];
+}
 
 - (NSArray<ObjectDataModel *> *)fetchAllInContext:(NSManagedObjectContext *)context {
     NSFetchRequest *fetchRequest = UserVitaminIntake.fetchRequest;

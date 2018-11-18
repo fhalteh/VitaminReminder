@@ -12,6 +12,7 @@
 #import "VitaminsViewController.h"
 #import "NSDate+Utils.h"
 
+// TODO: change name t ohome?
 @interface MainViewController ()
 
 @property (strong, nonatomic) NSDate *currentDate;
@@ -44,7 +45,7 @@
 
 - (void)addVitaminIntakeTableVC {
     self.vitaminIntakeTableVC = [[VitaminIntakeTableVC alloc] initWithDelegate:self
-                                                                       context:self.managedObjectContext];;
+                                                                storageManager:self.storageManager];;
     [self addChildViewController:self.vitaminIntakeTableVC
                  toContainerView:self.tableViewContainer];
 }

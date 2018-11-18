@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "EmptyDataView.h"
 
+@class StorageManager;
+
 @protocol VitaminIntakeTableVCDelegate
 
 @end
@@ -17,8 +19,11 @@
 
 @property NSDate *currentDate;
 
-- (instancetype)initWithDelegate:(id <VitaminIntakeTableVCDelegate>)delegate
-                         context:(NSManagedObjectContext *)context;
+-(instancetype)initWithDelegate:(id<VitaminIntakeTableVCDelegate>)delegate
+                 storageManager:(StorageManager *)storageManager;
+
+//- (instancetype)initWithDelegate:(id <VitaminIntakeTableVCDelegate>)delegate
+//                         context:(NSManagedObjectContext *)context;
 
 @end
 

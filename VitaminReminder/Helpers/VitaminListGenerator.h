@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-// TODO: should remove?
+@class StorageManager, VitaminIntakeCellModel;
+
 @interface VitaminListGenerator : NSObject
 
-+ (NSArray *)createVitaminsListFromContext:(NSManagedObjectContext *)context
-                                      date:(NSDate *)date;
++ (NSArray <VitaminIntakeCellModel *> *)createVitaminsListFromContext:(StorageManager *)storageManager
+
+                                                                 date:(NSDate *)date;
 
 @end

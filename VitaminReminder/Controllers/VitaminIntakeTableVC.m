@@ -13,23 +13,25 @@
 #import "VitaminIntakeCellModel.h"
 #import "AddOrEditVitaminViewController.h"
 #import "VitaminIntake.h"
+#import "StorageManager.h"
 
 @interface VitaminIntakeTableVC ()
 
 @property (weak) id<VitaminIntakeTableVCDelegate> delegate;
 @property (strong) NSArray <VitaminIntakeCellModel *> *vitaminIntakes;
-@property NSManagedObjectContext *managedObjectContext;
+//@property NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) StorageManager *storageManager;
 
 @end
 
 @implementation VitaminIntakeTableVC
 
 -(instancetype)initWithDelegate:(id<VitaminIntakeTableVCDelegate>)delegate
-                        context:(NSManagedObjectContext *)context {
+                 storageManager:(StorageManager *)storageManager {
     self = [super init];
     if (self) {
         self.delegate = delegate;
-        self.managedObjectContext = context;
+        self.storageManager = storageManager;
         self.currentDate = [NSDate date];
     }
     return self;
@@ -43,8 +45,8 @@
 }
 
 - (void)loadVitamins {
-    self.vitaminIntakes =
-    [VitaminListGenerator createVitaminsListFromContext:self.managedObjectContext date:self.currentDate];
+    self.vitaminIntakes = [VitaminListGenerator createVitaminsListFromContext:self.storageManager
+                                                                         date:self.currentDate];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

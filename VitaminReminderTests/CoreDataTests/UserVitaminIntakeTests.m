@@ -12,6 +12,7 @@
 #import "UserVitaminIntakeStorageManager.h"
 #import "StorageManager.h"
 #import "UserVitaminIntake.h"
+#import "NSDate+Utils.h"
 
 @interface UserVitaminIntakeTests : XCTestCase
 
@@ -51,6 +52,31 @@
     NSArray *allObjects = [self.userVitaminIntakeStorageManager fetchAllInContext:self.persistentContainer.viewContext];
     XCTAssertNotNil(allObjects);
     XCTAssertEqual(allObjects.count, 5);
+}
+
+- (void)testFetchingIntakesToday {
+    [self insertUserVitaminIntakeWithDate:NSDate.date];
+    [self insertUserVitaminIntakeWithDate:NSDate.date];
+    [self insertUserVitaminIntakeWithDate:NSDate.date];
+    [self insertUserVitaminIntakeWithDate:NSDate.date];
+    [self insertUserVitaminIntakeWithDate:NSDate.date];
+    [self.storageManager save];
+    NSArray *allObjects = [self.userVitaminIntakeStorageManager getIntakesForDate:NSDate.date inContext:self.persistentContainer.viewContext];
+    XCTAssertNotNil(allObjects);
+    XCTAssertEqual(allObjects.count, 5);
+}
+
+- (void)testFetchingIntakesYesterday {
+    NSDate *date = NSDate.date.dateByRemovingOneDay;
+    [self insertUserVitaminIntakeWithDate:date];
+    [self insertUserVitaminIntakeWithDate:date];
+    [self insertUserVitaminIntakeWithDate:date];
+    [self insertUserVitaminIntakeWithDate:date];
+    [self insertUserVitaminIntakeWithDate:date.dateByAddingOneDay];
+    [self.storageManager save];
+    NSArray *allObjects = [self.userVitaminIntakeStorageManager getIntakesForDate:date inContext:self.persistentContainer.viewContext];
+    XCTAssertNotNil(allObjects);
+    XCTAssertEqual(allObjects.count, 4);
 }
 
 - (void)testRemoveUserVitaminIntake {

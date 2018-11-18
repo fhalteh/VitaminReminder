@@ -42,7 +42,7 @@
     XCTAssertNotNil(dosage);
     XCTAssertNotNil(dosage.managedObjectContext);
     XCTAssertEqual(dosage.numberOfPills, numberOfPills);
-    XCTAssertTrue([dosage.time isEqualToDate:time]);
+    XCTAssertEqual(dosage.time.timeIntervalSinceNow, time.timeIntervalSinceNow);
 }
 
 - (void)testFetchAllDosages {
@@ -54,14 +54,6 @@
     NSArray *allObjects = [self.dosageStorageManager fetchAllInContext:self.persistentContainer.viewContext];
     XCTAssertNotNil(allObjects);
     XCTAssertEqual(allObjects.count, 4);
-}
-
-- (void)testFetchingDosagesToday {
-    [self insertDosageWithNumberOfPills:12 time:NSDate.date];
-    [self insertDosageWithNumberOfPills:22 time:NSDate.date];
-    [self insertDosageWithNumberOfPills:55 time:NSDate.date];
-    [self insertDosageWithNumberOfPills:100 time:NSDate.date];
-    [self.storageManager save];
 }
 
 - (void)testRemoveDosage {
