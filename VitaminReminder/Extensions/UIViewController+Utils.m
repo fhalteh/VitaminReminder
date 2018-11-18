@@ -11,6 +11,7 @@
 
 @implementation UIViewController (Utils)
 
+// TODO: change method name to something better
 - (void)addChildViewController:(UIViewController *)viewController
                toContainerView:(UIView *)containerView {
     [self addChildViewController:viewController];

@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ObjectDataModel.h"
 
-@interface DosageDataModel : NSObject
+@interface DosageDataModel : ObjectDataModel
 
 @property (nonatomic) int numberOfPills;
 @property (nonatomic) NSDate *time;

@@ -13,6 +13,8 @@
 
 @interface AppDelegate ()
 
+@property (nonatomic, strong) AppCoordinator *appCoordinator;
+
 @end
 
 @implementation AppDelegate
@@ -23,8 +25,9 @@
         self.persistentContainer = container;
 //        UIStoryboard *storyBoard = self.window.rootViewController.storyboard;
         UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
-        AppCoordinator *coordinator = [[AppCoordinator alloc] initWithNavigationController:navController];
-        [coordinator start];
+        self.appCoordinator = [[AppCoordinator alloc] initWithNavigationController:navController
+                                                                         container:container];
+        [self.appCoordinator start];
 //        MainViewController *viewController = [storyBoard instantiateViewControllerWithIdentifier:MainViewController.identifier];
 //        viewController.managedObjectContext = container.viewContext;
 //        self.window.rootViewController = viewController;

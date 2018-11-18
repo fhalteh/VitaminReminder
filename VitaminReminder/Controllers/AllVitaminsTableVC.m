@@ -10,23 +10,35 @@
 #import "Vitamin.h"
 #import "VitaminTableViewCell.h"
 #import "Dosage.h"
+#import "StorageManager.h"
 
 @interface AllVitaminsTableVC ()
 
 @property (weak) id<AllVitaminsTableVCDelegate> delegate;
-@property NSManagedObjectContext *managedObjectContext;
+//@property NSManagedObjectContext *managedObjectContext;
+@property (nonatomic) StorageManager *storageManager;
 @property (strong) NSFetchedResultsController *resultsController;
 
 @end
 
 @implementation AllVitaminsTableVC
+//
+//- (instancetype)initWithDelegate:(id<AllVitaminsTableVCDelegate>)delegate
+//                         context:(NSManagedObjectContext *)context {
+//    self = [super init];
+//    if (self) {
+//        self.delegate = delegate;
+//        self.managedObjectContext = context;
+//    }
+//    return self;
+//}
 
 - (instancetype)initWithDelegate:(id<AllVitaminsTableVCDelegate>)delegate
-                        context:(NSManagedObjectContext *)context {
+                  storageManager:(StorageManager *)storageManager {
     self = [super init];
     if (self) {
         self.delegate = delegate;
-        self.managedObjectContext = context;
+        self.storageManager = storageManager;
     }
     return self;
 }
@@ -46,19 +58,33 @@
 }
 
 - (void)loadResultsController {
-    self.resultsController = [Vitamin fetchedResultsControllerWithDelegate:self
-                                                                   context:self.managedObjectContext];
-    NSError *error = nil;
-    [self.resultsController performFetch:&error];
-    if (error) {
-        NSLog(@"Could not load the vitamins using the fetched results controller.");
-    }
+    self.resultsController = [self.storageManager loadVitaminsFetchedResultsController:self];
+//    self.resultsController.delegate = self;
+//    self.resultsController = [Vitamin fetchedResultsControllerWithDelegate:self
+//                                                                   context:self.managedObjectContext];
+//    NSError *error = nil;
+//    [self.resultsController performFetch:&error];
+//    if (error) {
+//        NSLog(@"Could not load the vitamins using the fetched results controller.");
+//    }
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.resultsController.fetchedObjects.count;
+    NSInteger count = self.resultsController.fetchedObjects.count;
+    if (count == 0) {
+        EmptyDataView *view = [[EmptyDataView alloc] initWithFrame:self.tableView.frame
+                                                             title:@"🙉"
+                                                              text:@"Oh no! It seems like you haven't added any vitamins yet"
+                                                       buttonTitle:@"Add vitamin"];
+        view.delegate = self;
+        self.tableView.backgroundView = view;
+    } else {
+        self.tableView.backgroundView = nil;
+    }
+
+    return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -76,7 +102,6 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
-
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -157,5 +182,15 @@
     [self.tableView endUpdates];
 }
 
+#pragma mark - EmptyDataViewDelegate
+
+- (void)onEmptyDataViewButtonClicked {
+    NSLog(@"Add vitamins clicked");
+}
+//
+//- (void)onAddVitaminsButtonClicked {
+//    NSLog(@"add vitamins clicked");
+//    // TODO: show the add vitamins procedure?
+//}
 
 @end

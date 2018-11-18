@@ -65,10 +65,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSInteger count = self.vitaminIntakes.count;
     if (count == 0) {
-        NoVitaminsView *view = [[NoVitaminsView alloc] initWithFrame:self.tableView.frame];
+        EmptyDataView *view = [[EmptyDataView alloc] initWithFrame:self.tableView.frame
+                                                             title:@"🙌🏻"
+                                                              text:@"No vitamins today!"];
         view.delegate = self;
         self.tableView.backgroundView = view;
     } else {
+        NSLog(@"not nil");
         self.tableView.backgroundView = nil;
     }
     return count;
@@ -108,11 +111,18 @@
     [self.tableView reloadData];
 }
 
-#pragma mark - No vitamins view delegate
+//#pragma mark - No vitamins view delegate
+//
+//- (void)onAddVitaminsButtonClicked {
+//    AddOrEditVitaminViewController *viewController = [[AddOrEditVitaminViewController alloc] initWithContext:self.managedObjectContext];
+//    [self presentViewController:viewController animated:true completion:nil];
+//}
 
-- (void)onAddVitaminsButtonClicked {
-    AddOrEditVitaminViewController *viewController = [[AddOrEditVitaminViewController alloc] initWithContext:self.managedObjectContext];
-    [self presentViewController:viewController animated:true completion:nil];
+#pragma mark - EmptyDataViewDelegate
+
+- (void)onEmptyDataViewButtonClicked {
+    // TODO: add a new vitamin
+    NSLog(@"Add a new vitamin");
 }
 
 @end

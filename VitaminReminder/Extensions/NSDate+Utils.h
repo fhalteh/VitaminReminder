@@ -10,9 +10,17 @@
 
 @interface NSDate (Utils)
 
+- (NSDate *)dateByAddingOneDay;
+- (NSDate *)dateByRemovingOneDay;
+- (BOOL)isToday;
+- (BOOL)isYesterday;
+- (BOOL)isTomorrow;
 + (NSDate *)dateFromHours:(int)hours minutes:(int)minutes;
 - (NSString *)inHoursAndMinutes;
 - (NSDate *)startOfDay;
 - (NSDate *)endOfDay;
+- (NSString *)shortDateString;
+- (NSString *)getDateString;
+- (NSInteger)getWeekdayNumber;
 
 @end

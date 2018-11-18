@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "Managed.h"
 #import "ManagedObject.h"
+#import "DaysDataModel.h"
 
 @class Vitamin;
 
@@ -23,5 +24,8 @@
 @property (nonatomic) BOOL saturday;
 @property (nonatomic) BOOL sunday;
 @property (nullable, nonatomic, retain) Vitamin *vitamin;
+
++ (NSString *)weekdayAttribute:(Weekday)weekday;
++ (Weekday)weekdayFromDate:(NSDate *)date;
 
 @end

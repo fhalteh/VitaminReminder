@@ -46,9 +46,9 @@
 #pragma mark - Actions
 
 - (IBAction)onAddButtonClicked:(id)sender {
-    NSString *numberOfPillsText = self.numberOfPillsTextField.text;
-    NSString *hours = self.hoursTextField.text;
-    NSString *minutes = self.minutesTextField.text;
+//    NSString *numberOfPillsText = self.numberOfPillsTextField.text;
+//    NSString *hours = self.hoursTextField.text;
+//    NSString *minutes = self.minutesTextField.text;
     // TODO: fix
 //    Dosage *dosage = [Dosage new];
 //    dosage.numberOfPills = @(numberOfPillsText.intValue);
@@ -58,11 +58,5 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-#pragma mark - styles
-
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
 
 @end

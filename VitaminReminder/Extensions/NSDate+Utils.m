@@ -8,7 +8,55 @@
 
 #import "NSDate+Utils.h"
 
+static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekOfMonth |  NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitWeekday | NSCalendarUnitWeekdayOrdinal);
+
+
+// TODO: check if all methods are required?
 @implementation NSDate (Utils)
+
+- (NSDate *)dateByAddingOneDay {
+    return [self dateByAddingDays:1];
+}
+
+- (NSDate *)dateByRemovingOneDay {
+    return [self dateByAddingDays:-1];
+}
+
+- (NSDate *)dateByAddingDays:(NSInteger)days {
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    [dateComponents setDay:days];
+    NSCalendar *calendar = NSCalendar.currentCalendar;
+    NSDate *newDate = [calendar dateByAddingComponents:dateComponents toDate:self options:0];
+    return newDate;
+}
+
++ (NSDate *)dateYesterday {
+    return [NSDate.date dateByRemovingOneDay];
+}
+
++ (NSDate *)dateTomorrow {
+    return [NSDate.date dateByAddingOneDay];
+}
+
+- (BOOL)isToday {
+    return [self isEqualToDateIgnoringTime:[NSDate date]];
+}
+
+- (BOOL)isYesterday {
+    return [self isEqualToDateIgnoringTime:[NSDate dateYesterday]];
+}
+
+- (BOOL)isTomorrow {
+    return [self isEqualToDateIgnoringTime:[NSDate dateTomorrow]];
+}
+
+- (BOOL) isEqualToDateIgnoringTime: (NSDate *)date {
+    NSDateComponents *components1 = [NSCalendar.currentCalendar components:componentFlags fromDate:self];
+    NSDateComponents *components2 = [NSCalendar.currentCalendar components:componentFlags fromDate:date];
+    return ((components1.year == components2.year) &&
+            (components1.month == components2.month) &&
+            (components1.day == components2.day));
+}
 
 + (NSDate *)dateFromHours:(int)hours minutes:(int)minutes {
     NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -49,6 +97,46 @@
 
 - (NSDateComponents *)getDateComponentsFromCalendar:(NSCalendar *)calendar {
     return [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:self];
+}
+
+- (NSString *)shortDateString {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MMM d"];
+    return [dateFormatter stringFromDate:self];
+
+//    return [self stringWithDateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle];
+}
+
+- (NSString *)stringWithDateStyle: (NSDateFormatterStyle) dateStyle timeStyle: (NSDateFormatterStyle) timeStyle {
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    formatter.dateStyle = dateStyle;
+    formatter.timeStyle = timeStyle;
+    return [formatter stringFromDate:self];
+}
+
+- (NSString *)getDateString {
+    NSString *prefix = [self getPrefixDateString];
+    if (prefix) {
+        return [NSString stringWithFormat:@"%@, %@", prefix, self.shortDateString];
+    }
+    return [self shortDateString];
+}
+
+- (NSString *)getPrefixDateString {
+    if (self.isToday) {
+        return @"Today";
+    } else if (self.isYesterday) {
+        return @"Yesterday";
+    } else if (self.isTomorrow) {
+        return @"Tomorrow";
+    }
+    return nil;
+}
+
+- (NSInteger)getWeekdayNumber {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:NSCalendarUnitWeekday fromDate:self];
+    return [components weekday];
 }
 
 @end

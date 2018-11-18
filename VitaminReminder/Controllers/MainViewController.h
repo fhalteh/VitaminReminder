@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "VitaminIntakeTableVC.h"
+#import "CustomNavigationBar.h"
 
-@interface MainViewController : UIViewController <VitaminIntakeTableVCDelegate>
+@interface MainViewController : UIViewController <VitaminIntakeTableVCDelegate, CustomNavigationBarDelegate>
 
+// TODO: instead of the managed object context, use the store?
 @property NSManagedObjectContext *managedObjectContext;
 
 + (NSString *)identifier;

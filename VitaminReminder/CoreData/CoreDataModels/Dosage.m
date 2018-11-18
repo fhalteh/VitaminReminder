@@ -24,4 +24,8 @@
     return @"Dosage";
 }
 
++ (NSSortDescriptor *)defaultSortDescriptor {
+    return [NSSortDescriptor sortDescriptorWithKey:@"time" ascending:YES];
+}
+
 @end

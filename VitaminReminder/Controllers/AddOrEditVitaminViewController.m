@@ -95,10 +95,4 @@
     [self.dosageCollectionViewController.collectionView reloadData];
 }
 
-#pragma mark - Style
-
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
-
 @end

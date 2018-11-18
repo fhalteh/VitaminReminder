@@ -8,14 +8,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="proximanova-bold.otf">
-            <string>ProximaNova-Bold</string>
-        </array>
-        <array key="proximanova-medium.otf">
-            <string>ProximaNova-Medium</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VitaminsViewController">
             <connections>
@@ -30,101 +22,32 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OxT-fQ-cwh">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                     <color key="backgroundColor" red="0.090196078430000007" green="0.63921568630000003" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQb-Qa-JQx">
-                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                    <color key="backgroundColor" red="0.7803921568627451" green="0.42745098039215684" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMf-Hj-eZ9">
-                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRD-Y4-SEA">
-                            <rect key="frame" x="329" y="10" width="30" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="3NJ-7h-r01"/>
-                                <constraint firstAttribute="width" constant="30" id="lgd-Hg-0jA"/>
-                            </constraints>
-                            <state key="normal" image="add">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </state>
-                            <connections>
-                                <action selector="onAddButtonClicked:" destination="-1" eventType="touchUpInside" id="b17-gi-Tw5"/>
-                            </connections>
-                        </button>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNL-UF-feG">
-                            <rect key="frame" x="149" y="10.5" width="77" height="29"/>
-                            <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="17"/>
-                            <state key="normal" title="0 vitamins">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </state>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.7803921568627451" green="0.42745098039215684" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="yRD-Y4-SEA" firstAttribute="centerY" secondItem="CNL-UF-feG" secondAttribute="centerY" id="Ne8-dM-XCd"/>
-                        <constraint firstAttribute="height" constant="50" id="cP1-w9-LfY"/>
-                        <constraint firstItem="CNL-UF-feG" firstAttribute="centerX" secondItem="cMf-Hj-eZ9" secondAttribute="centerX" id="gT6-YW-fzt"/>
-                        <constraint firstItem="yRD-Y4-SEA" firstAttribute="centerY" secondItem="cMf-Hj-eZ9" secondAttribute="centerY" id="tOO-bc-u2m"/>
-                        <constraint firstAttribute="trailing" secondItem="yRD-Y4-SEA" secondAttribute="trailing" constant="16" id="ycZ-vy-D1b"/>
-                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="naV-0g-rQ0">
-                    <rect key="frame" x="0.0" y="140" width="375" height="477"/>
+                    <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                     <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVC-1i-O1M">
-                    <rect key="frame" x="0.0" y="20" width="375" height="120"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VITAMINS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74u-oR-vp4">
-                            <rect key="frame" x="136.5" y="72" width="102" height="22"/>
-                            <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="22"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqF-8s-B2a">
-                            <rect key="frame" x="327" y="8" width="40" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="4jI-As-2Rq"/>
-                                <constraint firstAttribute="width" constant="40" id="fxb-mA-ca1"/>
-                            </constraints>
-                            <state key="normal" image="close">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </state>
-                            <connections>
-                                <action selector="onExitButtonClicked:" destination="-1" eventType="touchUpInside" id="aX4-EA-fyf"/>
-                            </connections>
-                        </button>
-                    </subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVC-1i-O1M" customClass="CustomNavigationBar">
+                    <rect key="frame" x="0.0" y="20" width="375" height="100"/>
                     <color key="backgroundColor" red="0.090196078430000007" green="0.63921568630000003" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="120" id="Mrh-fZ-sZO"/>
-                        <constraint firstAttribute="trailing" secondItem="JqF-8s-B2a" secondAttribute="trailing" constant="8" id="N3e-Tq-DiR"/>
-                        <constraint firstAttribute="bottom" secondItem="74u-oR-vp4" secondAttribute="bottom" constant="26" id="aue-L5-QhJ"/>
-                        <constraint firstItem="74u-oR-vp4" firstAttribute="centerX" secondItem="vVC-1i-O1M" secondAttribute="centerX" id="e5T-OQ-mp7"/>
-                        <constraint firstItem="JqF-8s-B2a" firstAttribute="top" secondItem="vVC-1i-O1M" secondAttribute="top" constant="8" id="tBg-Az-b3m"/>
+                        <constraint firstAttribute="height" constant="100" id="Mrh-fZ-sZO"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="QQb-Qa-JQx" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="611-BF-pts"/>
-                <constraint firstItem="cMf-Hj-eZ9" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="C6N-32-VTQ"/>
                 <constraint firstItem="naV-0g-rQ0" firstAttribute="top" secondItem="OxT-fQ-cwh" secondAttribute="bottom" id="ESC-sK-JG6"/>
-                <constraint firstAttribute="bottom" secondItem="QQb-Qa-JQx" secondAttribute="bottom" id="JD2-ZR-0Xh"/>
-                <constraint firstItem="QQb-Qa-JQx" firstAttribute="top" secondItem="cMf-Hj-eZ9" secondAttribute="top" id="Jsb-YG-d6x"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="cMf-Hj-eZ9" secondAttribute="bottom" id="Nig-Xr-vZ7"/>
                 <constraint firstItem="OxT-fQ-cwh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Q7u-uZ-rX2"/>
                 <constraint firstItem="OxT-fQ-cwh" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="R8z-nu-2vQ"/>
-                <constraint firstItem="cMf-Hj-eZ9" firstAttribute="top" secondItem="naV-0g-rQ0" secondAttribute="bottom" id="Sbi-tn-19r"/>
                 <constraint firstItem="vVC-1i-O1M" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="XbN-Dj-7LL"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="naV-0g-rQ0" secondAttribute="bottom" id="cN6-IZ-zua"/>
                 <constraint firstItem="vVC-1i-O1M" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="d5V-uS-yNs"/>
-                <constraint firstItem="cMf-Hj-eZ9" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="h8S-4j-4Oa"/>
                 <constraint firstItem="OxT-fQ-cwh" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="hf9-wn-N1c"/>
                 <constraint firstItem="vVC-1i-O1M" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="n1n-Zn-bJc"/>
                 <constraint firstItem="naV-0g-rQ0" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="nHZ-pb-VQg"/>
-                <constraint firstItem="QQb-Qa-JQx" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="v5L-4a-1Fk"/>
                 <constraint firstItem="vVC-1i-O1M" firstAttribute="bottom" secondItem="OxT-fQ-cwh" secondAttribute="bottom" id="vJ7-4l-zaa"/>
                 <constraint firstItem="naV-0g-rQ0" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="yj2-5c-Q4L"/>
             </constraints>
@@ -132,8 +55,4 @@
             <point key="canvasLocation" x="53.600000000000001" y="57.121439280359823"/>
         </view>
     </objects>
-    <resources>
-        <image name="add" width="52.5" height="52.5"/>
-        <image name="close" width="45" height="45"/>
-    </resources>
 </document>

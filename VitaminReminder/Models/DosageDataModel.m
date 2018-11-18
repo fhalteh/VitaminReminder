@@ -17,4 +17,8 @@
     return dataModel;
 }
 
+- (ObjectDataModelType)getType {
+    return ObjectDataModelTypeDosage;
+}
+
 @end

@@ -8,14 +8,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="proximanova-bold.otf">
-            <string>ProximaNova-Bold</string>
-        </array>
-        <array key="proximanova-medium.otf">
-            <string>ProximaNova-Medium</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="lSo-Om-iNt">
@@ -24,7 +16,16 @@
                     <view key="view" contentMode="scaleToFill" id="OZb-Ti-OWR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="5YG-sN-BZL">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.090196078430000007" green="0.63921568630000003" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="5YG-sN-BZL" firstAttribute="centerY" secondItem="OZb-Ti-OWR" secondAttribute="centerY" id="0a5-QY-RVk"/>
+                            <constraint firstItem="5YG-sN-BZL" firstAttribute="centerX" secondItem="OZb-Ti-OWR" secondAttribute="centerX" id="jP5-du-iJ1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7yV-WJ-lao"/>
                     </view>
                 </viewController>
@@ -41,76 +42,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zMf-oA-k1P">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                 <color key="backgroundColor" red="0.090196078430000007" green="0.63921568630000003" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljO-5Q-afI">
-                                <rect key="frame" x="0.0" y="140" width="375" height="527"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucx-bq-AzH">
-                                <rect key="frame" x="0.0" y="20" width="375" height="120"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUB-1c-BeF">
-                                        <rect key="frame" x="151.5" y="72" width="72" height="22"/>
-                                        <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="22"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ItU-RX-kip">
-                                        <rect key="frame" x="329" y="68" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="rxx-h8-ybe"/>
-                                            <constraint firstAttribute="height" constant="30" id="w7e-ac-BPt"/>
-                                        </constraints>
-                                        <state key="normal" image="next"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlv-SW-Amz">
-                                        <rect key="frame" x="16" y="68" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="h4l-gf-YaT"/>
-                                            <constraint firstAttribute="width" constant="30" id="slM-kj-2nH"/>
-                                        </constraints>
-                                        <state key="normal" image="back"/>
-                                    </button>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucx-bq-AzH" customClass="CustomNavigationBar">
+                                <rect key="frame" x="0.0" y="20" width="375" height="100"/>
                                 <color key="backgroundColor" red="0.090196078431372548" green="0.63921568627450975" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="EUB-1c-BeF" firstAttribute="centerY" secondItem="xlv-SW-Amz" secondAttribute="centerY" id="4ja-Nc-tZM"/>
-                                    <constraint firstAttribute="trailing" secondItem="ItU-RX-kip" secondAttribute="trailing" constant="16" id="C1m-Ph-uWV"/>
-                                    <constraint firstAttribute="height" constant="120" id="Cxw-in-3dj"/>
-                                    <constraint firstItem="ItU-RX-kip" firstAttribute="centerY" secondItem="xlv-SW-Amz" secondAttribute="centerY" id="S8d-I4-j62"/>
-                                    <constraint firstAttribute="bottom" secondItem="EUB-1c-BeF" secondAttribute="bottom" constant="26" id="aiH-QC-5DV"/>
-                                    <constraint firstItem="xlv-SW-Amz" firstAttribute="leading" secondItem="ucx-bq-AzH" secondAttribute="leading" constant="16" id="nPN-hV-qb0"/>
-                                    <constraint firstItem="EUB-1c-BeF" firstAttribute="centerX" secondItem="ucx-bq-AzH" secondAttribute="centerX" id="sEG-NF-WQh"/>
+                                    <constraint firstAttribute="height" constant="100" id="Cxw-in-3dj"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R24-Xb-Tea">
-                                <rect key="frame" x="16" y="36" width="343" height="29"/>
-                                <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="17"/>
-                                <state key="normal" title="Edit vitamins">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="onEditVitaminsClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bm4-Wp-n9N"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ucx-bq-AzH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GYu-RD-eYL"/>
                             <constraint firstItem="ucx-bq-AzH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LTv-dj-zUa"/>
                             <constraint firstItem="ucx-bq-AzH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="M6D-Sw-rGg"/>
-                            <constraint firstItem="R24-Xb-Tea" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="QbI-Rg-4vc"/>
                             <constraint firstItem="ucx-bq-AzH" firstAttribute="bottom" secondItem="zMf-oA-k1P" secondAttribute="bottom" id="Uzy-VT-ZVR"/>
                             <constraint firstItem="zMf-oA-k1P" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VYA-mY-pe7"/>
                             <constraint firstItem="ljO-5Q-afI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zaw-Rw-3AD"/>
                             <constraint firstItem="ljO-5Q-afI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="dRO-0s-jiV"/>
                             <constraint firstItem="ljO-5Q-afI" firstAttribute="top" secondItem="ucx-bq-AzH" secondAttribute="bottom" id="diW-js-CSK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R24-Xb-Tea" secondAttribute="trailing" constant="16" id="rjJ-58-t0g"/>
                             <constraint firstItem="ljO-5Q-afI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uB1-gr-IJB"/>
                             <constraint firstItem="zMf-oA-k1P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vTh-hY-dOX"/>
                             <constraint firstItem="zMf-oA-k1P" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xpH-se-u4w"/>
-                            <constraint firstItem="R24-Xb-Tea" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="zjT-47-vDD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -123,23 +81,5 @@
             </objects>
             <point key="canvasLocation" x="152.80000000000001" y="205.54722638680661"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="ccx-vp-5fS">
-            <objects>
-                <tabBarController id="lnz-2v-97X" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bcb-4W-HuV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jua-RH-YjS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1222" y="268"/>
-        </scene>
     </scenes>
-    <resources>
-        <image name="back" width="45" height="45"/>
-        <image name="next" width="45" height="45"/>
-    </resources>
 </document>

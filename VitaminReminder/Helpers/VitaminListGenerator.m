@@ -15,7 +15,7 @@
 
 @implementation VitaminListGenerator
 
-// TODO:
+// TODO: should remove
 + (NSArray <VitaminIntakeCellModel *> *)createVitaminsListFromContext:(NSManagedObjectContext *)context
                                       date:(NSDate *)date {
     NSArray <Vitamin *> *vitamins = [Vitamin fetchVitaminsInManagedObjectContext:context];

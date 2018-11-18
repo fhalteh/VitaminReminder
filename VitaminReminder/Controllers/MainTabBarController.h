@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-
+// TODO: might have to delete this class
 @protocol MainTabBarControllerDelegate;
 
 @interface MainTabBarController : UITabBarController

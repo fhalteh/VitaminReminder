@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+// TODO: should remove?
 @interface VitaminListGenerator : NSObject
 
 + (NSArray *)createVitaminsListFromContext:(NSManagedObjectContext *)context

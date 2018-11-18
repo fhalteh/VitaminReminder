@@ -16,10 +16,11 @@
     return [[Vitamin alloc] initWithContext:context];
 }
 
+// TODO: is this being used?
 + (NSFetchedResultsController *)fetchedResultsControllerWithDelegate:(id <NSFetchedResultsControllerDelegate>)delegate
                                                              context:(NSManagedObjectContext *)context {
     NSFetchRequest *request = [self fetchRequest];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+    request.sortDescriptors = @[Vitamin.defaultSortDescriptor];
     NSFetchedResultsController *resultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
     resultsController.delegate = delegate;
     return resultsController;
@@ -36,7 +37,11 @@
 }
 
 + (NSFetchRequest<Vitamin *> *)fetchRequest {
-	return [NSFetchRequest fetchRequestWithEntityName:@"Vitamin"];
+	return [NSFetchRequest fetchRequestWithEntityName:Vitamin.entityName];
+}
+
++ (NSSortDescriptor *)defaultSortDescriptor {
+    return [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
 }
 
 @dynamic name;

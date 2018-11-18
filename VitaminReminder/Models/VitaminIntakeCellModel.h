@@ -11,7 +11,7 @@
 #import "VitaminIntake.h"
 #import "Dosage.h"
 
-@interface VitaminIntakeCellModel : NSObject
+@interface VitaminIntakeCellModel : NSObject 
 
 @property (strong) Vitamin *vitamin;
 @property (assign) BOOL taken;

@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NoVitaminsView.h"
+#import "EmptyDataView.h"
 
 @protocol VitaminIntakeTableVCDelegate
 
 @end
 
-@interface VitaminIntakeTableVC : UITableViewController <NoVitaminsViewDelegate>
+@interface VitaminIntakeTableVC : UITableViewController <EmptyDataViewDelegate>
 
 @property NSDate *currentDate;
 

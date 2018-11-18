@@ -11,6 +11,7 @@
 @protocol Managed
 
 + (NSString *)entityName;
++ (NSSortDescriptor *)defaultSortDescriptor;
 //@property (strong) NSString *entityName;
 //@property (strong) NSArray <NSSortDescriptor *> *defaultSortDescriptors;
 

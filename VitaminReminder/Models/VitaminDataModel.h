@@ -1,5 +1,5 @@
 //
-//  VitaminModel.h
+//  VitaminDataModel.h
 //  VitaminReminder
 //
 //  Created by Faris Halteh on 2018-11-17.
@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "Color.h"
+#import "ObjectDataModel.h"
 
 @class DaysDataModel, DosageDataModel;
 
-@interface VitaminModel : NSObject
+@interface VitaminDataModel : ObjectDataModel
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *notes;

@@ -7,8 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ObjectDataModel.h"
 
-@interface DaysDataModel : NSObject
+typedef enum : NSUInteger {
+    WeekdaySunday,
+    WeekdayMonday,
+    WeekdayTuesday,
+    WeekdayWednesday,
+    WeekdayThursday,
+    WeekdayFriday,
+    WeekdaySaturday,
+} Weekday;
+
+@interface DaysDataModel : ObjectDataModel
 
 @property (nonatomic) BOOL monday;
 @property (nonatomic) BOOL tuesday;
@@ -17,5 +28,7 @@
 @property (nonatomic) BOOL friday;
 @property (nonatomic) BOOL saturday;
 @property (nonatomic) BOOL sunday;
+
++ (DaysDataModel *)daysDataModelWithDays:(NSArray *)days;
 
 @end

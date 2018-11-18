@@ -24,7 +24,7 @@
 
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, copy) NSString *notes;
-@property (nonatomic) int color;
+@property (nonatomic, copy) NSNumber *color;
 @property (nullable, nonatomic, retain) Days *days;
 @property (nullable, nonatomic, retain) NSSet<Dosage *> *dosages;
 

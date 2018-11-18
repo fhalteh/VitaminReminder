@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "AllVitaminsTableVC.h"
 
+@class StorageManager;
+
 @interface VitaminsViewController : UIViewController <AllVitaminsTableVCDelegate>
 
-- (instancetype)initWithContext:(NSManagedObjectContext *)context;
+// init with store instead!
+//- (instancetype)initWithContext:(NSManagedObjectContext *)context;
+
+- (instancetype)initWithStorageManager:(StorageManager *)storageManager;
 
 @end

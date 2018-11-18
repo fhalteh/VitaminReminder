@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "EmptyDataView.h"
 
-@class Vitamin;
+@class Vitamin, StorageManager;
 
 @protocol AllVitaminsTableVCDelegate
 
@@ -17,9 +18,13 @@
 
 @end
 
-@interface AllVitaminsTableVC : UITableViewController <NSFetchedResultsControllerDelegate>
+// TODO: remkove one of the delegate - empty view
+@interface AllVitaminsTableVC : UITableViewController <NSFetchedResultsControllerDelegate, EmptyDataViewDelegate>
+
+//- (instancetype)initWithDelegate:(id<AllVitaminsTableVCDelegate>)delegate
+//                        context:(NSManagedObjectContext *)context;
 
 - (instancetype)initWithDelegate:(id<AllVitaminsTableVCDelegate>)delegate
-                        context:(NSManagedObjectContext *)context;
+                  storageManager:(StorageManager *)storageManager;
 
 @end

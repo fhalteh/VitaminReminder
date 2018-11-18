@@ -11,6 +11,7 @@
 #import "ManagedObject.h"
 #import "Managed.h"
 
+// delete me
 @protocol ManagedObjectDataSource
 
 - (NSArray <__kindof id <Managed>> *)getAllInContext:(NSManagedObjectContext *)context;
