@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="18B75" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Days" representedClassName="Days" syncable="YES">
+        <attribute name="friday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="monday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="saturday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="sunday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="thursday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tuesday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="wednesday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="vitamin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Vitamin" inverseName="days" inverseEntity="Vitamin" syncable="YES"/>
+    </entity>
+    <entity name="Dosage" representedClassName="Dosage" syncable="YES">
+        <attribute name="numberOfPills" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="intakes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserVitaminIntake" inverseName="dosage" inverseEntity="UserVitaminIntake" syncable="YES"/>
+        <relationship name="vitamin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Vitamin" inverseName="dosages" inverseEntity="Vitamin" syncable="YES"/>
+    </entity>
+    <entity name="UserVitaminIntake" representedClassName="UserVitaminIntake" syncable="YES">
+        <attribute name="intakeDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="dosage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Dosage" inverseName="intakes" inverseEntity="Dosage" syncable="YES"/>
+    </entity>
     <entity name="Vitamin" representedClassName="Vitamin" syncable="YES">
-        <attribute name="dosage" optional="YES" attributeType="Transformable" customClassName="NSArray" syncable="YES"/>
+        <attribute name="color" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="vitaminIntakes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VitaminIntake" inverseName="vitamin" inverseEntity="VitaminIntake" syncable="YES"/>
-    </entity>
-    <entity name="VitaminIntake" representedClassName="VitaminIntake" syncable="YES">
-        <attribute name="intakeDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="vitamin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Vitamin" inverseName="vitaminIntakes" inverseEntity="Vitamin" syncable="YES"/>
+        <relationship name="days" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Days" inverseName="vitamin" inverseEntity="Days" syncable="YES"/>
+        <relationship name="dosages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dosage" inverseName="vitamin" inverseEntity="Dosage" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Vitamin" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="VitaminIntake" positionX="-54" positionY="-9" width="128" height="75"/>
+        <element name="Vitamin" positionX="-399.8828125" positionY="-55.21875" width="128" height="118"/>
+        <element name="UserVitaminIntake" positionX="-48.921875" positionY="-27.05859375" width="128" height="73"/>
+        <element name="Dosage" positionX="-177.98828125" positionY="156.6484375" width="128" height="103"/>
+        <element name="Days" positionX="-397.21875" positionY="137.89453125" width="128" height="163"/>
     </elements>
 </model>

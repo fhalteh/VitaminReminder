@@ -2,21 +2,18 @@
 //  Vitamin.m
 //  VitaminReminder
 //
-//  Created by Faris Halteh on 2018-11-06.
+//  Created by Faris Halteh on 2018-11-17.
 //  Copyright © 2018 Faris Halteh. All rights reserved.
+//
 //
 
 #import "Vitamin.h"
 
 @implementation Vitamin
 
+// TODO: remove methods that are no longer required
 + (Vitamin *)addVitaminInContext:(NSManagedObjectContext *)context {
-    Vitamin *vitamin = [NSEntityDescription insertNewObjectForEntityForName:Vitamin.entityName inManagedObjectContext:context];
-    return vitamin;
-}
-
-+ (NSFetchRequest<Vitamin *> *)fetchRequest {
-    return [NSFetchRequest fetchRequestWithEntityName:Vitamin.entityName];
+    return [[Vitamin alloc] initWithContext:context];
 }
 
 + (NSFetchedResultsController *)fetchedResultsControllerWithDelegate:(id <NSFetchedResultsControllerDelegate>)delegate
@@ -38,9 +35,14 @@
     return [[context executeFetchRequest:request error:&error] mutableCopy];
 }
 
++ (NSFetchRequest<Vitamin *> *)fetchRequest {
+	return [NSFetchRequest fetchRequestWithEntityName:@"Vitamin"];
+}
+
 @dynamic name;
-@dynamic dosage;
 @dynamic notes;
-@dynamic vitaminIntakes;
+@dynamic color;
+@dynamic days;
+@dynamic dosages;
 
 @end

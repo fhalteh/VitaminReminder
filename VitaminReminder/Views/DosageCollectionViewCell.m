@@ -12,10 +12,11 @@
 #import "UIView+Utils.h"
 
 @interface DosageCollectionViewCell()
+
 @property (weak, nonatomic) IBOutlet UIView *dosageBackgroundView;
 @property (weak, nonatomic) IBOutlet UILabel *numberOfPillsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-
+@property (weak, nonatomic) IBOutlet UIImageView *addIcon;
 
 @end
 
@@ -28,7 +29,15 @@
 
 - (void)configureCellWithDosage:(Dosage *)dosage {
     self.numberOfPillsLabel.text = [NSString stringWithFormat:@"%@", dosage.numberOfPills];
-    self.timeLabel.text = dosage.reminderTime.inHoursAndMinutes;
+    // TODO:
+//    self.timeLabel.text = dosage.reminderTime.inHoursAndMinutes;
+    self.addIcon.hidden = YES;
+}
+
+- (void)configureCellWithAddIcon {
+    self.numberOfPillsLabel.hidden = YES;
+    self.timeLabel.hidden = YES;
+    self.addIcon.hidden = NO;
 }
 
 + (NSString *)reuseIdentifier {

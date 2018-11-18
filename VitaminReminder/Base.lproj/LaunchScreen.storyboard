@@ -22,19 +22,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raV-Eo-bvr">
-                                <rect key="frame" x="132" y="311.5" width="111" height="44"/>
-                                <string key="text">VITAMIN 
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fpV-fM-ghW">
+                                <rect key="frame" x="137" y="287" width="101" height="93"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pill" translatesAutoresizingMaskIntoConstraints="NO" id="Ds6-7R-0xm">
+                                        <rect key="frame" x="34" y="0.0" width="33" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="nUr-A2-K61"/>
+                                            <constraint firstAttribute="width" constant="33" id="xJ9-RG-e2O"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raV-Eo-bvr">
+                                        <rect key="frame" x="0.0" y="53" width="101" height="40"/>
+                                        <string key="text">VITAMIN 
 REMINDER</string>
-                                <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="22"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.090196078430000007" green="0.63921568630000003" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="raV-Eo-bvr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="nBY-Y6-cKz"/>
-                            <constraint firstItem="raV-Eo-bvr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="y0R-K6-bOP"/>
+                            <constraint firstItem="fpV-fM-ghW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9wD-As-7zC"/>
+                            <constraint firstItem="fpV-fM-ghW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="t5Z-Yf-imw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -44,4 +56,7 @@ REMINDER</string>
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pill" width="49.5" height="49.5"/>
+    </resources>
 </document>

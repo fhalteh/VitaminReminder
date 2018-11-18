@@ -49,10 +49,12 @@
     NSString *numberOfPillsText = self.numberOfPillsTextField.text;
     NSString *hours = self.hoursTextField.text;
     NSString *minutes = self.minutesTextField.text;
-    Dosage *dosage = [Dosage new];
-    dosage.numberOfPills = @(numberOfPillsText.intValue);
-    dosage.reminderTime = [NSDate dateFromHours:hours.intValue minutes:minutes.intValue];
-    [self.delegate onAddDosageClickedWithDosage:dosage];
+    // TODO: fix
+//    Dosage *dosage = [Dosage new];
+//    dosage.numberOfPills = @(numberOfPillsText.intValue);
+//    dosage.reminderTime = [NSDate dateFromHours:hours.intValue minutes:minutes.intValue];
+    // TODO: inform the delegate
+//    [self.delegate onAddDosageClickedWithDosage:dosage];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

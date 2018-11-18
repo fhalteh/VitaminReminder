@@ -11,5 +11,6 @@
 @interface UIColor (Utils)
 
 + (UIColor *)textGrayColor;
++ (UIColor *)purpleThemeColor;
 
 @end

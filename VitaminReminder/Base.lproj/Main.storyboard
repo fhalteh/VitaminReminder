@@ -123,6 +123,20 @@
             </objects>
             <point key="canvasLocation" x="152.80000000000001" y="205.54722638680661"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ccx-vp-5fS">
+            <objects>
+                <tabBarController id="lnz-2v-97X" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bcb-4W-HuV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jua-RH-YjS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1222" y="268"/>
+        </scene>
     </scenes>
     <resources>
         <image name="back" width="45" height="45"/>

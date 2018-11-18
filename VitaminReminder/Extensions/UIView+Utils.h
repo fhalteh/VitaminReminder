@@ -13,5 +13,7 @@
 - (void)addCornerRadiusAndShadow;
 - (void)addShadow;
 - (void)addRoundedCornerRadiusAndShadow;
+- (void)addShadowWithoutOffset;
+- (void)addRoundedCornerRadius;
 
 @end

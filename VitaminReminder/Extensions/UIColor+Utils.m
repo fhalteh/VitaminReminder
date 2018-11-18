@@ -14,4 +14,8 @@
     return [UIColor colorWithRed:0.59 green:0.59 blue:0.59 alpha:1.0];
 }
 
++ (UIColor *)purpleThemeColor {
+    return [UIColor colorWithRed:0.40 green:0.17 blue:0.57 alpha:1.0];
+}
+
 @end

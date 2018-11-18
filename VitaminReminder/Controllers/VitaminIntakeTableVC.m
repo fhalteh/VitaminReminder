@@ -97,10 +97,10 @@
     // TODO: if the vitamin has been taken, then we should add a vitamin intake
     
     if (!model.taken) {
-        // Add a vitamin taken instance
-        VitaminIntake *vitaminIntake = [VitaminIntake addVitaminIntakeInContext:self.managedObjectContext];
-        vitaminIntake.vitamin = model.vitamin;
-        vitaminIntake.intakeDate = [NSDate date];
+        // TODO: Add a vitamin taken instance
+//        VitaminIntake *vitaminIntake = [VitaminIntake addVitaminIntakeInContext:self.managedObjectContext];
+//        vitaminIntake.vitamin = model.vitamin;
+//        vitaminIntake.intakeDate = [NSDate date];
     } else {
         // TODO: Remove the current vitamin intake instance
     }

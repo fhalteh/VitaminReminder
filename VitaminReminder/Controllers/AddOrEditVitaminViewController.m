@@ -45,7 +45,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dosages = self.vitamin ? self.vitamin.dosage : @[];
+    self.dosages = @[]; // TODO: load the vitamin
+//    self.dosages = self.vitamin ? self.vitamin.dosage : @[];
     self.dosageCollectionViewController = [[DosageCollectionViewController alloc] initWithDelegate:self dosages:self.dosages];
     [self addChildViewController:self.dosageCollectionViewController toContainerView:self.dosageContainerView];
 }
@@ -68,10 +69,11 @@
     if (!self.vitamin) {
         Vitamin *vitamin = [Vitamin addVitaminInContext:self.context];
         vitamin.name = self.vitaminNameTextField.text;
-        vitamin.dosage = self.dosages;
+        // TODO:
+//        vitamin.dosage = self.dosages;
     } else {
         self.vitamin.name = self.vitaminNameTextField.text;
-        self.vitamin.dosage = self.dosages;
+//        self.vitamin.dosage = self.dosages;
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }

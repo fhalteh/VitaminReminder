@@ -13,6 +13,8 @@
 @interface DosageCollectionViewCell : UICollectionViewCell
 
 - (void)configureCellWithDosage:(Dosage *)dosage;
+- (void)configureCellWithAddIcon;
+
 + (NSString *)reuseIdentifier;
 + (NSString *)nibName;
 

@@ -17,6 +17,7 @@
 
 @end
 
+// TODO: should be changed to use an MVVVM pattern
 @implementation DosageCollectionViewController
 
 - (instancetype)initWithDelegate:(id<DosageCollectionViewControllerDelegate>)delegate
@@ -37,7 +38,6 @@
 - (void)registerNib {
     UINib *nib = [UINib nibWithNibName:DosageCollectionViewCell.nibName bundle:nil] ;
     NSString *reuseIdentifier = DosageCollectionViewCell.reuseIdentifier;
-//    [self.collectionView registerClass:UICollectionViewCell.class forCellWithReuseIdentifier:DosageCollectionViewCell.reuseIdentifier];
     [self.collectionView registerNib:nib
           forCellWithReuseIdentifier:reuseIdentifier];
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *) self.collectionView.collectionViewLayout;
@@ -62,14 +62,20 @@
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.dosages.count;
+    return self.dosages.count + 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    // Check if the index path is on the last one?
+    // TODO: should do it in a smarter way
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DosageCollectionViewCell.reuseIdentifier forIndexPath:indexPath];
     DosageCollectionViewCell *dosageCell = (DosageCollectionViewCell *)cell;
-    Dosage *dosage = self.dosages[indexPath.row];
-    [dosageCell configureCellWithDosage:dosage];
+    if (indexPath.row == self.dosages.count) {
+        [dosageCell configureCellWithAddIcon];
+    } else {
+        Dosage *dosage = self.dosages[indexPath.row];
+        [dosageCell configureCellWithDosage:dosage];
+    }
     return dosageCell;
 }
 
@@ -79,8 +85,12 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     DosageCollectionViewCell *cell = [[NSBundle mainBundle] loadNibNamed:DosageCollectionViewCell.nibName owner:self options:nil].firstObject;
-    Dosage *dosage = self.dosages[indexPath.row];
-    [cell configureCellWithDosage:dosage];
+    if (indexPath.row < self.dosages.count) {
+        Dosage *dosage = self.dosages[indexPath.row];
+        [cell configureCellWithDosage:dosage];
+    } else {
+        [cell configureCellWithAddIcon];
+    }
     [cell setNeedsLayout];
     [cell layoutIfNeeded];
     CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];

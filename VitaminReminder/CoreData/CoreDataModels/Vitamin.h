@@ -2,26 +2,40 @@
 //  Vitamin.h
 //  VitaminReminder
 //
-//  Created by Faris Halteh on 2018-11-06.
+//  Created by Faris Halteh on 2018-11-17.
 //  Copyright © 2018 Faris Halteh. All rights reserved.
+//
 //
 
 #import <CoreData/CoreData.h>
 #import "Managed.h"
+#import "ManagedObject.h"
 
-@class VitaminIntake, Dosage;
+@class Days, Dosage;
 
-@interface Vitamin : NSManagedObject <Managed>
+@interface Vitamin: NSManagedObject <Managed>
 
-+ (NSFetchRequest<Vitamin *> *)fetchRequest;
 + (Vitamin *)addVitaminInContext:(NSManagedObjectContext *)context;
 + (NSFetchedResultsController *)fetchedResultsControllerWithDelegate:(id <NSFetchedResultsControllerDelegate>)delegate
                                                              context:(NSManagedObjectContext *)context;
 + (NSArray <Vitamin *> *)fetchVitaminsInManagedObjectContext:(NSManagedObjectContext *)context;
 
++ (NSFetchRequest<Vitamin *> *)fetchRequest;
+
 @property (nullable, nonatomic, copy) NSString *name;
-@property (nullable, nonatomic, retain) NSArray <Dosage *> *dosage;
 @property (nullable, nonatomic, copy) NSString *notes;
-@property (nullable, nonatomic, retain) NSSet<VitaminIntake *> *vitaminIntakes;
+@property (nonatomic) int color;
+@property (nullable, nonatomic, retain) Days *days;
+@property (nullable, nonatomic, retain) NSSet<Dosage *> *dosages;
 
 @end
+
+@interface Vitamin (CoreDataGeneratedAccessors)
+
+- (void)addDosagesObject:(Dosage *)value;
+- (void)removeDosagesObject:(Dosage *)value;
+- (void)addDosages:(NSSet<Dosage *> *)values;
+- (void)removeDosages:(NSSet<Dosage *> *)values;
+
+@end
+

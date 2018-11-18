@@ -40,15 +40,15 @@
         }
     }
     // TODO: if it's one dosage then we should show pill and not pills
-    for (Dosage *dosage in vitamin.dosage) {
-        UILabel *label = [UILabel new];
-        NSNumber *pills = dosage.numberOfPills;
-        NSString *time = dosage.reminderTime.inHoursAndMinutes;
-        label.text = [NSString stringWithFormat:@"%@ pills at %@", pills, time];
-        label.font = [UIFont fontWithName:@"Proxima Nova Light" size:17.0];
-        label.textColor = UIColor.textGrayColor;
-        [self.dosageStackView addArrangedSubview:label];
-    }
+//    for (Dosage *dosage in vitamin.dosage) {
+//        UILabel *label = [UILabel new];
+//        NSNumber *pills = dosage.numberOfPills;
+//        NSString *time = dosage.reminderTime.inHoursAndMinutes;
+//        label.text = [NSString stringWithFormat:@"%@ pills at %@", pills, time];
+//        label.font = [UIFont fontWithName:@"Proxima Nova Light" size:17.0];
+//        label.textColor = UIColor.textGrayColor;
+//        [self.dosageStackView addArrangedSubview:label];
+//    }
 }
 
 + (NSString *)reuseIdentifier {

@@ -29,6 +29,13 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PdM-Kt-Nws">
                         <rect key="frame" x="0.0" y="10" width="96" height="80"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="BKA-q3-iXb">
+                                <rect key="frame" x="31.5" y="23.5" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="33" id="9kX-vi-ySG"/>
+                                    <constraint firstAttribute="height" constant="33" id="aNa-od-hge"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qwV-PH-f2V">
                                 <rect key="frame" x="31" y="24" width="34.5" height="32"/>
                                 <subviews>
@@ -49,9 +56,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.40000000000000002" green="0.17254901959999999" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="BKA-q3-iXb" firstAttribute="centerY" secondItem="PdM-Kt-Nws" secondAttribute="centerY" id="5NP-ai-bgQ"/>
+                            <constraint firstItem="BKA-q3-iXb" firstAttribute="centerX" secondItem="PdM-Kt-Nws" secondAttribute="centerX" id="LXk-xm-pQS"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="96" id="UfS-6u-kUa"/>
                             <constraint firstItem="qwV-PH-f2V" firstAttribute="centerX" secondItem="PdM-Kt-Nws" secondAttribute="centerX" id="YVj-Mw-S0k"/>
                             <constraint firstItem="qwV-PH-f2V" firstAttribute="centerY" secondItem="PdM-Kt-Nws" secondAttribute="centerY" id="eKC-VW-GY0"/>
-                            <constraint firstAttribute="width" constant="96" id="hHl-oa-yrh"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -66,6 +75,7 @@
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="112" height="100"/>
             <connections>
+                <outlet property="addIcon" destination="BKA-q3-iXb" id="5w2-gq-2p2"/>
                 <outlet property="dosageBackgroundView" destination="PdM-Kt-Nws" id="Uaf-Fw-MTl"/>
                 <outlet property="numberOfPillsLabel" destination="Mjw-qJ-nRB" id="TaH-NG-nGL"/>
                 <outlet property="timeLabel" destination="SHN-65-oc3" id="mne-yW-WCt"/>
@@ -73,4 +83,7 @@
             <point key="canvasLocation" x="187.19999999999999" y="152.02398800599701"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="plus" width="49.5" height="49.5"/>
+    </resources>
 </document>

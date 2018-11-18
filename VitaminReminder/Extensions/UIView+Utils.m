@@ -25,6 +25,16 @@
     self.layer.shadowOpacity = 0.2;
 }
 
+- (void)addShadowWithoutOffset {
+    self.layer.shadowOffset = CGSizeMake(0, 0);
+    self.layer.shadowRadius = 2;
+    self.layer.shadowOpacity = 0.2;
+}
+
+- (void)addRoundedCornerRadius {
+    self.layer.cornerRadius = self.bounds.size.height / 2;
+}
+
 - (void)addRoundedCornerRadiusAndShadow {
     self.layer.cornerRadius = self.bounds.size.height/2;
     self.layer.shadowOffset = CGSizeMake(0, 3);

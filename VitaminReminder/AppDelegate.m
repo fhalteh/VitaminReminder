@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "CoreDataStack.h"
 #import "MainViewController.h"
+#import "AppCoordinator.h"
 
 @interface AppDelegate ()
 
@@ -20,10 +21,13 @@
     // Override point for customization after application launch.
     [CoreDataStack createVitaminContainer:^(NSPersistentContainer *container) {
         self.persistentContainer = container;
-        UIStoryboard *storyBoard = self.window.rootViewController.storyboard;
-        MainViewController *viewController = [storyBoard instantiateViewControllerWithIdentifier:MainViewController.identifier];
-        viewController.managedObjectContext = container.viewContext;
-        self.window.rootViewController = viewController;
+//        UIStoryboard *storyBoard = self.window.rootViewController.storyboard;
+        UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
+        AppCoordinator *coordinator = [[AppCoordinator alloc] initWithNavigationController:navController];
+        [coordinator start];
+//        MainViewController *viewController = [storyBoard instantiateViewControllerWithIdentifier:MainViewController.identifier];
+//        viewController.managedObjectContext = container.viewContext;
+//        self.window.rootViewController = viewController;
     }];
     return YES;
 }
