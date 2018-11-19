@@ -17,7 +17,7 @@
 
 @property (strong, nonatomic) NSDate *currentDate;
 @property (weak, nonatomic) IBOutlet UIView *tableViewContainer;
-@property VitaminIntakeTableVC *vitaminIntakeTableVC;
+@property (nonatomic, strong) VitaminIntakePagingViewController *pagingViewController;
 @property (weak, nonatomic) IBOutlet CustomNavigationBar *headerView;
 
 @end
@@ -38,48 +38,38 @@
     [self.headerView setLeftBarButtonType:NavigationButtonTypeLeftArrow];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-//    [self.headerView addShadow];
-}
-
 - (void)addVitaminIntakeTableVC {
-    self.vitaminIntakeTableVC = [[VitaminIntakeTableVC alloc] initWithDelegate:self
-                                                                storageManager:self.storageManager];;
-    [self addChildViewController:self.vitaminIntakeTableVC
+    self.pagingViewController = [[VitaminIntakePagingViewController alloc] initWithDelegate:self];
+    self.pagingViewController.storageManager = self.storageManager;
+    [self addChildViewController:self.pagingViewController
                  toContainerView:self.tableViewContainer];
 }
 
-+ (NSString *)identifier {
-    return @"MainViewController";
-}
-
 - (void)updateTitle {
-    // Check if it's today or yesterday or
-    [self.headerView updateTitle:self.currentDate.getDateString];
+    [self.headerView updateTitle:self.currentDate.dateString];
 }
 
-#pragma mark - Action buttons
-
-- (IBAction)onEditVitaminsClicked:(id)sender {
-    //TODO: remove me
-//    VitaminsViewController *viewController = [[VitaminsViewController alloc]
-//                                              initWithContext:self.managedObjectContext];
-//    [self presentViewController:viewController animated:true completion:nil];
+- (void)updateCurrentDateAndTitleWithDate:(NSDate *)date {
+    self.currentDate = date;
+    [self updateTitle];
 }
 
 #pragma mark - CustomNavigationBarDelegate
 
 - (void)onLeftBarButtonClicked {
-    self.currentDate = self.currentDate.dateByRemovingOneDay;
-    [self updateTitle];
-    NSLog(@"on left bar button clicked");
+    [self updateCurrentDateAndTitleWithDate:self.currentDate.dateByRemovingOneDay];
+    [self.pagingViewController updateViewControllerWithDayChange:DayChangePrevious];
 }
 
 - (void)onRightBarButtonClicked {
-    self.currentDate = self.currentDate.dateByAddingOneDay;
-    [self updateTitle];
-    NSLog(@"on right bar button clicked");
+    [self updateCurrentDateAndTitleWithDate:self.currentDate.dateByAddingOneDay];
+    [self.pagingViewController updateViewControllerWithDayChange:DayChangeNext];
+}
+
+#pragma mark - VitaminIntakePagingViewControllerDelegate
+
+- (void)onCurrentDateUpdated:(NSDate *)date {
+    [self updateCurrentDateAndTitleWithDate:date];
 }
 
 @end

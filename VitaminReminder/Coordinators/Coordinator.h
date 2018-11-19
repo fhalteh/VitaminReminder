@@ -11,7 +11,6 @@
 
 @class StorageManager;
 
-// TODO: could be a super class insted ?
 @protocol Coordinator <NSObject>
 
 @property (nonatomic, strong) UINavigationController *navController; // todo remove?
@@ -19,6 +18,6 @@
 @property (nonatomic, strong) StorageManager *storageManager;
 
 //- (instancetype)initWithNavigationController:(UINavigationController *)navController storageManager:(StorageManager *)storageManager;
-- (void)start;
+- (void)start; // remove start
 
 @end

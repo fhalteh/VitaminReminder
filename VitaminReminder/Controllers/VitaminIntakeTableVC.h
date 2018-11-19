@@ -17,8 +17,10 @@
 
 @interface VitaminIntakeTableVC : UITableViewController <EmptyDataViewDelegate>
 
-@property NSDate *currentDate;
+@property (nonatomic, strong) NSDate *currentDate;
+@property (nonatomic, strong) StorageManager *storageManager;
 
+// Check if we need this?
 -(instancetype)initWithDelegate:(id<VitaminIntakeTableVCDelegate>)delegate
                  storageManager:(StorageManager *)storageManager;
 

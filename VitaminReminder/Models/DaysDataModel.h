@@ -10,7 +10,7 @@
 #import "ObjectDataModel.h"
 
 typedef enum : NSUInteger {
-    WeekdaySunday,
+    WeekdaySunday = 1,
     WeekdayMonday,
     WeekdayTuesday,
     WeekdayWednesday,

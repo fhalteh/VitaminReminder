@@ -9,16 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "VitaminIntakeTableVC.h"
 #import "CustomNavigationBar.h"
+#import "VitaminIntakePagingViewController.h"
 
 @class StorageManager;
 
-@interface MainViewController : UIViewController <VitaminIntakeTableVCDelegate, CustomNavigationBarDelegate>
+@interface MainViewController : UIViewController <VitaminIntakeTableVCDelegate, CustomNavigationBarDelegate, VitaminIntakePagingViewControllerDelegate>
 
 // TODO: instead of the managed object context, use the store?
 //@property NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) StorageManager *storageManager;
-
-+ (NSString *)identifier;
 
 @end
 

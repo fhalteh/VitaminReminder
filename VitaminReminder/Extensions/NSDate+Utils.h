@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum : NSUInteger {
+    DayChangeNext,
+    DayChangePrevious,
+} DayChange;
+
 @interface NSDate (Utils)
 
 - (NSDate *)dateByAddingOneDay;
@@ -20,7 +25,8 @@
 - (NSDate *)startOfDay;
 - (NSDate *)endOfDay;
 - (NSString *)shortDateString;
-- (NSString *)getDateString;
-- (NSInteger)getWeekdayNumber;
+- (NSString *)dateString;
+- (NSInteger)weekdayNumber;
+- (NSDate *)dateAfterDayChange:(DayChange)dayChange;
 
 @end

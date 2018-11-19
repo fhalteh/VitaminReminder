@@ -39,7 +39,9 @@
                                inContext:(NSManagedObjectContext *)context {
     NSFetchRequest *fetchRequest = Dosage.fetchRequest;
     NSString *weekdayAttribute = [Days weekdayAttribute:weekday];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"vitamin.days.%@ == true", weekdayAttribute];
+    if (weekdayAttribute && weekdayAttribute.length > 0) {
+        fetchRequest.predicate = [NSPredicate predicateWithFormat:@"vitamin.days.%@ == true", weekdayAttribute];
+    }
     NSError *error;
     NSArray *results = [context executeFetchRequest:fetchRequest error:&error];
     if (error) {

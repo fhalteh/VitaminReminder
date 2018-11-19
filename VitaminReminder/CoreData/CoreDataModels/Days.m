@@ -37,7 +37,7 @@
 }
 
 + (Weekday)weekdayFromDate:(NSDate *)date {
-    NSInteger weekdayNumber = [date getWeekdayNumber];
+    NSInteger weekdayNumber = [date weekdayNumber];
     return (Weekday)weekdayNumber;
 }
 

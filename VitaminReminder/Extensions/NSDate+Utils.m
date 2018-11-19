@@ -103,8 +103,12 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MMM d"];
     return [dateFormatter stringFromDate:self];
+}
 
-//    return [self stringWithDateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle];
+- (NSString *)shortDateStringWithDay {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEE, MMM d"];
+    return [dateFormatter stringFromDate:self];
 }
 
 - (NSString *)stringWithDateStyle: (NSDateFormatterStyle) dateStyle timeStyle: (NSDateFormatterStyle) timeStyle {
@@ -114,12 +118,14 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     return [formatter stringFromDate:self];
 }
 
-- (NSString *)getDateString {
+- (NSString *)dateString {
     NSString *prefix = [self getPrefixDateString];
     if (prefix) {
         return [NSString stringWithFormat:@"%@, %@", prefix, self.shortDateString];
     }
-    return [self shortDateString];
+    // Return the day and then
+    
+    return [self shortDateStringWithDay];
 }
 
 - (NSString *)getPrefixDateString {
@@ -130,13 +136,22 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     } else if (self.isTomorrow) {
         return @"Tomorrow";
     }
+    // TODO: return the day?
+    
     return nil;
 }
 
-- (NSInteger)getWeekdayNumber {
+- (NSInteger)weekdayNumber {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:NSCalendarUnitWeekday fromDate:self];
     return [components weekday];
+}
+
+- (NSDate *)dateAfterDayChange:(DayChange)dayChange {
+    if (dayChange == DayChangeNext) {
+        return self.dateByAddingOneDay;
+    }
+    return self.dateByRemovingOneDay;
 }
 
 @end

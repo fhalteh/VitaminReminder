@@ -12,34 +12,24 @@
 
 @implementation HomeCoordinator
 
-- (UIViewController *)rootViewController {
-    // TODO: rename main view controller
-//    MainViewController *vc1 = [[MainViewController alloc] initWithNibName:MainViewController.identifier bundle:nil];
-    UIStoryboard *storyBoard = self.navController.storyboard;
-//    MainViewController *vc1 = [storyBoard instantiateViewControllerWithIdentifier:MainViewController.identifier];
-    VitaminIntakePagingViewController *vc = [[VitaminIntakePagingViewController alloc] init];
-    vc.storageManager = storageManager;
-//    MainViewController *vc1 = [[MainViewController alloc] init];
-//    vc1.storageManager = storageManager;
-//    vc1.title = @"HOME";
-    vc.navigationItem.title = @"IS THIS";
-    
-    return vc;
-}
+@synthesize navController, storageManager, rootViewController;
 
-@synthesize navController, storageManager;
+- (UIViewController *)rootViewController {
+    MainViewController *viewController = [[MainViewController alloc] init];
+    viewController.storageManager = storageManager;
+    return viewController;
+}
 
 - (instancetype)initWithNavigationController:(UINavigationController *)navigationController storageManager:(StorageManager *)storageManager{
     self = [super init];
     if (self) {
         self.navController = navigationController;
         self.storageManager = storageManager;
-//        self.navController.navigationItem.title = @"HEY";
-//        self.navController.title = @"hey";
     }
     return self;
 }
 
+// TODO: remove start
 - (void)start {
     
 }

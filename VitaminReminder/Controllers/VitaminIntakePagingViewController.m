@@ -11,54 +11,76 @@
 
 @interface VitaminIntakePagingViewController ()
 
+@property (nonatomic, weak) id <VitaminIntakePagingViewControllerDelegate> pagingDelegate;
+
 @end
 
 @implementation VitaminIntakePagingViewController
 
-//- (UIPageViewControllerTransitionStyle)transitionStyle {
-//    return UIPageViewControllerTransitionStyleScroll;
-//}
-
-- (instancetype)init {
+- (instancetype)initWithDelegate:(id <VitaminIntakePagingViewControllerDelegate>)delegate {
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     if (self) {
-        
+        self.pagingDelegate = delegate;
     }
     return self;
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dataSource = self;
     self.delegate = self;
-    MainViewController *mainViewController = [MainViewController new];
-    mainViewController.storageManager = self.storageManager;
-    [self setViewControllers:@[mainViewController] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-    
-    // Do any additional setup after loading the view from its nib.
+    UIViewController *viewController = [self createViewControllerWithDate:NSDate.date];
+    [self setViewControllers:@[viewController] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+}
+
+- (void)updateViewControllerWithDayChange:(DayChange)dayChange {
+    VitaminIntakeTableVC *viewController = self.viewControllers.firstObject;
+    NSDate *currentDate = viewController.currentDate;
+    NSDate *updatedDate = [currentDate dateAfterDayChange:dayChange];
+    UIViewController *newViewController = [self createViewControllerWithDate:updatedDate];
+    UIPageViewControllerNavigationDirection direction = [self getDirection:dayChange];
+    [self setViewControllers:@[newViewController] direction:direction animated:YES completion:nil];
+}
+
+- (UIPageViewControllerNavigationDirection)getDirection:(DayChange)dayChange {
+    if (dayChange == DayChangeNext) {
+        return UIPageViewControllerNavigationDirectionForward;
+    }
+    return UIPageViewControllerNavigationDirectionReverse;
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
-    MainViewController *mainViewController = [MainViewController new];
-    mainViewController.storageManager = self.storageManager;
-    return mainViewController;
+    NSDate *currentDate = ((VitaminIntakeTableVC *)viewController).currentDate;
+    NSDate *previousDate = [currentDate dateByRemovingOneDay];
+    return [self createViewControllerWithDate:previousDate];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    MainViewController *mainViewController = [MainViewController new];
-    mainViewController.storageManager = self.storageManager;
-    return mainViewController;
+    NSDate *currentDate = ((VitaminIntakeTableVC *)viewController).currentDate;
+    NSDate *nextDate = [currentDate dateByAddingOneDay];
+    return [self createViewControllerWithDate:nextDate];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Helper methods
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+
+- (UIViewController *)createViewControllerWithDate:(NSDate *)date {
+    VitaminIntakeTableVC *viewController = [[VitaminIntakeTableVC alloc] initWithDelegate:self
+                                                                           storageManager:self.storageManager];
+    viewController.currentDate = date;
+    return viewController;
 }
-*/
+
+#pragma mark - UIPageViewControllerDelegate
+
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
+    if (completed) {
+        NSDate *updatedDate = ((VitaminIntakeTableVC *)pageViewController.viewControllers.firstObject).currentDate;
+        NSLog(@"Updated date: %@", updatedDate);
+        NSLog(@"page view controllers: %@", pageViewController.viewControllers);
+        [self.pagingDelegate onCurrentDateUpdated:updatedDate];
+    }
+}
 
 @end

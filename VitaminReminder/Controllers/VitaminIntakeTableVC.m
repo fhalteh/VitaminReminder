@@ -20,19 +20,19 @@
 @property (weak) id<VitaminIntakeTableVCDelegate> delegate;
 @property (strong) NSArray <VitaminIntakeCellModel *> *vitaminIntakes;
 //@property NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, strong) StorageManager *storageManager;
+//@property (nonatomic, strong) StorageManager *storageManager;
 
 @end
 
 @implementation VitaminIntakeTableVC
 
+// TODO: should create one with the previous date + 1 or - 1
 -(instancetype)initWithDelegate:(id<VitaminIntakeTableVCDelegate>)delegate
                  storageManager:(StorageManager *)storageManager {
     self = [super init];
     if (self) {
         self.delegate = delegate;
         self.storageManager = storageManager;
-        self.currentDate = [NSDate date];
     }
     return self;
 }
