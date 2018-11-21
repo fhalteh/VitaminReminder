@@ -14,6 +14,7 @@
 #import "AddOrEditVitaminViewController.h"
 #import "VitaminIntake.h"
 #import "StorageManager.h"
+#import "UserVitaminIntakeDataModel.h"
 
 @interface VitaminIntakeTableVC ()
 
@@ -99,6 +100,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     VitaminIntakeCellModel *model = [self.vitaminIntakes objectAtIndex:indexPath.row];
+
     // TODO: if the vitamin has been taken, then we should add a vitamin intake
     
     if (!model.taken) {
@@ -106,11 +108,21 @@
 //        VitaminIntake *vitaminIntake = [VitaminIntake addVitaminIntakeInContext:self.managedObjectContext];
 //        vitaminIntake.vitamin = model.vitamin;
 //        vitaminIntake.intakeDate = [NSDate date];
+        UserVitaminIntakeDataModel *dataModel = [UserVitaminIntakeDataModel new];
+        dataModel.intakeDate = NSDate.date;
+        model.intakeDate = NSDate.date;
+        [self.storageManager addUserVitaminIntake:dataModel
+                                   dosageObjectID:model.dosageObjectID];
     } else {
         // TODO: Remove the current vitamin intake instance
+        // We need the date as well?
+        UserVitaminIntakeDataModel *dataModel = [UserVitaminIntakeDataModel new];
+        dataModel.intakeDate = model.intakeDate;
+        [self.storageManager removeUserVitaminIntake:dataModel dosageObjectID:model.dosageObjectID];
+        model.intakeDate = nil;
     }
-    // update the vitamin in the database, add a 
-    model.taken = !model.taken;
+    // update the vitamin in the database, add a
+//    model.taken = !model.taken;
     [self.tableView reloadData];
 }
 

@@ -13,7 +13,7 @@
     <entity name="Dosage" representedClassName="Dosage" syncable="YES">
         <attribute name="numberOfPills" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="intakes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserVitaminIntake" inverseName="dosage" inverseEntity="UserVitaminIntake" syncable="YES"/>
+        <relationship name="intakes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="UserVitaminIntake" inverseName="dosage" inverseEntity="UserVitaminIntake" syncable="YES"/>
         <relationship name="vitamin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Vitamin" inverseName="dosages" inverseEntity="Vitamin" syncable="YES"/>
     </entity>
     <entity name="UserVitaminIntake" representedClassName="UserVitaminIntake" syncable="YES">
@@ -29,7 +29,7 @@
     </entity>
     <elements>
         <element name="Days" positionX="-397.21875" positionY="137.89453125" width="128" height="163"/>
-        <element name="Dosage" positionX="-177.98828125" positionY="156.6484375" width="128" height="103"/>
+        <element name="Dosage" positionX="-177.98828125" positionY="156.6484375" width="128" height="105"/>
         <element name="UserVitaminIntake" positionX="-48.921875" positionY="-27.05859375" width="128" height="73"/>
         <element name="Vitamin" positionX="-399.8828125" positionY="-55.21875" width="128" height="120"/>
     </elements>

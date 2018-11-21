@@ -13,11 +13,15 @@
 #import "StorageManager.h"
 #import "UserVitaminIntake.h"
 #import "NSDate+Utils.h"
+#import "DosageDataModel.h"
+#import "Dosage.h"
+#import "DosageStorageManager.h"
 
 @interface UserVitaminIntakeTests : XCTestCase
 
 @property NSPersistentContainer *persistentContainer;
 @property UserVitaminIntakeStorageManager *userVitaminIntakeStorageManager;
+@property DosageStorageManager *dosageStorageManager;
 @property StorageManager *storageManager;
 
 @end
@@ -28,6 +32,7 @@
     self.persistentContainer = [MockPersistentContainerFactory createVitaminContainer];
     self.storageManager = [[StorageManager alloc] initWithContainer:self.persistentContainer];
     self.userVitaminIntakeStorageManager = [UserVitaminIntakeStorageManager new];
+    self.dosageStorageManager = [DosageStorageManager new];
 }
 
 - (void)testAddingUserVitaminIntake {
@@ -64,6 +69,32 @@
     NSArray *allObjects = [self.userVitaminIntakeStorageManager getIntakesForDate:NSDate.date inContext:self.persistentContainer.viewContext];
     XCTAssertNotNil(allObjects);
     XCTAssertEqual(allObjects.count, 5);
+}
+
+- (void)testFetchingAddedIntake {
+    NSDate *date = NSDate.date;
+    UserVitaminIntake *userVitaminIntake = [self insertUserVitaminIntakeWithDate:date];
+    Dosage *dosage = [self insertDosageWithNumberOfPills:0 time:NSDate.date];
+    userVitaminIntake.dosage = dosage;
+    [self.storageManager save];
+    
+    UserVitaminIntakeDataModel *dataModel = [UserVitaminIntakeDataModel new];
+    dataModel.intakeDate = date;
+    
+    userVitaminIntake = [self.userVitaminIntakeStorageManager getIntakeWithUserVitaminIntakeDataModel:dataModel dosageObjectID:dosage.objectID inContext:self.storageManager.backgroundContext];
+    XCTAssertNotNil(userVitaminIntake);
+
+    //    UserVitaminIntakeDataModel *dataModel = [UserVitaminIntakeDataModel new];
+//    dataModel.intakeDate = date;
+//    [self.storageManager save];
+//    self.storageManager removeUserVitaminIntake:dataModel dosageObjectID:<#(NSManagedObjectID *)#>
+}
+
+- (Dosage *)insertDosageWithNumberOfPills:(int)numberOfPills time:(NSDate *)time {
+    DosageDataModel *dataModel = [DosageDataModel dataModelWithNumberOfPills:numberOfPills time:time];
+    return (Dosage *)[self.dosageStorageManager addDataModel:dataModel
+                      
+                                                   inContext:self.storageManager.backgroundContext];
 }
 
 - (void)testFetchingIntakesYesterday {

@@ -20,7 +20,9 @@
 //@property (strong) Vitamin *vitamin;
 
 @property (nonatomic, strong) NSString *vitaminName;
-@property (assign) BOOL taken;
+//@property (assign) BOOL taken; // consider removing this and replace it with a takenTime
+@property (nonatomic, strong) NSDate *intakeDate;
 @property (nonatomic, strong) NSString *time;
 
+- (BOOL)taken;
 @end

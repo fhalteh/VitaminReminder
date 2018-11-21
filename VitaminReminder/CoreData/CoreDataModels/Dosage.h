@@ -20,7 +20,16 @@
 //@property (nonatomic) int numberOfPills;
 @property (nonatomic) int numberOfPills;
 @property (nullable, nonatomic, copy) NSDate *time;
-@property (nullable, nonatomic, retain) UserVitaminIntake *intakes;
+@property (nullable, nonatomic, retain) NSSet<UserVitaminIntake *> *intakes;
 @property (nullable, nonatomic, retain) Vitamin *vitamin;
+
+@end
+
+@interface Dosage (CoreDataGeneratedAccessors)
+
+- (void)addIntakesObject:(UserVitaminIntake *)value;
+- (void)removeIntakesObject:(UserVitaminIntake *)value;
+- (void)addIntakes:(NSSet<UserVitaminIntake *> *)values;
+- (void)removeIntakes:(NSSet<UserVitaminIntake *> *)values;
 
 @end

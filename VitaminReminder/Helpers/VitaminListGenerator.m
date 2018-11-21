@@ -28,6 +28,17 @@
     return NO;
 }
 
++ (NSDate *)intakeTimeFromUserVitaminIntakes:(NSArray <UserVitaminIntake *> *)intakes
+                              containsDosage:(Dosage *)dosage {
+    for (UserVitaminIntake *intake in intakes) {
+        if ([intake.dosage.vitamin.name isEqualToString:dosage.vitamin.name]) {
+            return intake.intakeDate;
+        }
+    }
+    return nil;
+}
+
+
 // TODO: should remove
 + (NSArray <VitaminIntakeCellModel *> *)createVitaminsListFromContext:(StorageManager *)storageManager
 
@@ -41,9 +52,14 @@
         model.vitaminName = dosage.vitamin.name;
         model.time = dosage.time.inHoursAndMinutes;
         model.dosageObjectID = dosage.objectID;
-        model.taken = [self vitaminIntakes:intakes containsDosage:dosage];
+//        model.taken = [self vitaminIntakes:intakes containsDosage:dosage]; // TODO: remove and replace with intake date
+        model.intakeDate = [self intakeTimeFromUserVitaminIntakes:intakes containsDosage:dosage];
+        // If it's taken -> we should store that somewhere
         [vitaminIntakeCellModels addObject:model];
     }
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"intakeDate" ascending:TRUE];
+    [vitaminIntakeCellModels sortUsingDescriptors:@[sortDescriptor]];
+    return vitaminIntakeCellModels;
 
 //    NSArray <Vitamin *> *vitamins = [Vitamin fetchVitaminsInManagedObjectContext:context];
 ////    NSArray <VitaminIntake *> *vitaminIntakes = [VitaminIntake fetchVitaminIntakesOnDate:date

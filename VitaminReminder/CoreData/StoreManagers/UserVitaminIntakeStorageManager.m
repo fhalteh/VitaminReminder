@@ -30,6 +30,20 @@
     return results ? results : @[];
 }
 
+- (UserVitaminIntake *)getIntakeWithUserVitaminIntakeDataModel:(UserVitaminIntakeDataModel *)dataModel dosageObjectID:(NSManagedObjectID *)dosageObjectID inContext:(NSManagedObjectContext *)context {
+    Dosage *dosage = [context objectWithID:dosageObjectID];
+    NSFetchRequest *fetchRequest = UserVitaminIntake.fetchRequest;
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"intakeDate == %@ && dosage = %@", dataModel.intakeDate, dosage];
+    NSError *error;
+    NSArray *results = [context executeFetchRequest:fetchRequest error:&error];
+    NSLog(@"Results: %@", results);
+    if (error) {
+        NSLog(@"An error occurred while fetching intakes for specific day.");
+    }
+    return results ? results.firstObject : nil;
+}
+
+
 - (NSArray<ObjectDataModel *> *)fetchAllInContext:(NSManagedObjectContext *)context {
     NSFetchRequest *fetchRequest = UserVitaminIntake.fetchRequest;
     NSError *error;

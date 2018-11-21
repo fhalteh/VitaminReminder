@@ -10,4 +10,8 @@
 
 @implementation VitaminIntakeCellModel
 
+- (BOOL)taken {
+    return self.intakeDate != nil;
+}
+
 @end

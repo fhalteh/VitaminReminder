@@ -82,14 +82,28 @@
         // Remove previous vitamin if it exists
         Dosage *dosage = [self.backgroundContext objectWithID:dosageObjectID];
         // Add a new user vitamin intake
-        UserVitaminIntake *userVitaminIntake = [self.userVitaminIntakeStorageManager addDataModel:userVitaminIntakeDataModel inContext:self.backgroundContext];
-//        [dosage ]
-        // TODO: add this user vitamin intake to this dosage! 
-        
+        UserVitaminIntake *userVitaminIntake = (UserVitaminIntake *)[self.userVitaminIntakeStorageManager addDataModel:userVitaminIntakeDataModel inContext:self.backgroundContext];
+        [dosage addIntakesObject:userVitaminIntake];
         [self save];
     }];
+}
 
-    
+// TODO: should be utilized
+- (void)removeUserVitaminIntake:(UserVitaminIntakeDataModel *)userVitaminIntakeDataModel dosageObjectID:(NSManagedObjectID *)dosageObjectID {
+    [self.backgroundContext performBlock:^{
+        
+        UserVitaminIntake *userVitaminIntake = [self.userVitaminIntakeStorageManager getIntakeWithUserVitaminIntakeDataModel:userVitaminIntakeDataModel dosageObjectID:dosageObjectID inContext:self.backgroundContext];
+        // get
+        if (userVitaminIntake) {
+            [self.backgroundContext deleteObject:userVitaminIntake];
+        }
+        // Remove previous vitamin if it exists
+//        Dosage *dosage = [self.backgroundContext objectWithID:dosageObjectID];
+//        // Add a new user vitamin intake
+//        UserVitaminIntake *userVitaminIntake = (UserVitaminIntake *)[self.userVitaminIntakeStorageManager addDataModel:userVitaminIntakeDataModel inContext:self.backgroundContext];
+//        [dosage addIntakesObject:userVitaminIntake];
+        [self save];
+    }];
 }
 
 - (NSManagedObjectContext *)backgroundContext {
