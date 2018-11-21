@@ -85,4 +85,10 @@
     [self.addOrEditVitaminCoordinator start];
 }
 
+- (void)didSelectVitamin:(VitaminDataModel *)vitaminDataModel {
+    self.addOrEditVitaminCoordinator = [[AddOrEditVitaminCoordinator alloc] initWithNavigationController:self.tabBarController storageManager:self.storageManager];
+    self.addOrEditVitaminCoordinator.vitaminDataModel = vitaminDataModel;
+    [self.addOrEditVitaminCoordinator start];
+}
+
 @end

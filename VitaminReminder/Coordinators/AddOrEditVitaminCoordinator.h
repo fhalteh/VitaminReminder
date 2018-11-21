@@ -14,6 +14,8 @@
 
 @interface AddOrEditVitaminCoordinator : NSObject <Coordinator, VitaminPropertiesViewControllerDelegate, VitaminSchedulerViewControllerDelegate, VitaminSaverViewControllerDelegate>
 
+@property (nonatomic, strong) VitaminDataModel *vitaminDataModel;
+
 - (instancetype)initWithNavigationController:(UINavigationController *)navigationController
                               storageManager:(StorageManager *)storageManager;
 

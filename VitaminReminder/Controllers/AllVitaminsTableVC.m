@@ -12,6 +12,7 @@
 #import "Dosage.h"
 #import "StorageManager.h"
 #import "UIView+Utils.h"
+#import "VitaminDataModel.h"
 
 // TODO: rename to MyVitaminsTableViewController
 @interface AllVitaminsTableVC ()
@@ -112,7 +113,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Vitamin *vitamin = [self.resultsController objectAtIndexPath:indexPath];
-    [self.delegate didSelectVitamin:vitamin];
+    VitaminDataModel *vitaminDataModel = [[VitaminDataModel alloc] initWithVitamin:vitamin];
+    // Create a managed object from this vitamin?
+    [self.delegate didSelectVitamin:vitaminDataModel];
 }
 
 // TODO: move this code away from here?

@@ -24,5 +24,6 @@
 - (NSString *)vitaminName;
 - (BOOL)validateVitaminProperties;
 - (VitaminDataModel *)updatedVitaminDataModel;
+- (BOOL)isEditingVitamin;
 
 @end

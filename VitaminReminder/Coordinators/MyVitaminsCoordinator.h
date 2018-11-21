@@ -14,10 +14,11 @@
 @protocol MyVitaminsCoordinatorDelegate
 
 - (void)onAddVitaminButtonClicked;
+- (void)didSelectVitamin:(VitaminDataModel *)vitaminDataModel;
 
 @end
 
-@interface MyVitaminsCoordinator : NSObject <Coordinator, MyVitaminsViewControllerDelegate>
+@interface MyVitaminsCoordinator : NSObject <Coordinator, MyVitaminsViewControllerDelegate, AllVitaminsTableViewControllerDelegate>
 
 // TODO: should rethink this through, maybe it should be moved to the coordinator protocol
 - (instancetype)initWithDelegate:(id <MyVitaminsCoordinatorDelegate>)delegate

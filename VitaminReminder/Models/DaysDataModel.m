@@ -7,6 +7,7 @@
 //
 
 #import "DaysDataModel.h"
+#import "Days.h"
 
 #define TOTAL_NUMBER_OF_DAYS    7
 
@@ -23,6 +24,39 @@
     return self;
 }
 
+- (instancetype)initWithDays:(Days *)days {
+    self = [super init];
+    if (self) {
+        self.selectedDays = [self selectedDaysFromDays:days];
+    }
+    return self;
+}
+
+- (NSMutableArray <NSNumber *> *)selectedDaysFromDays:(Days *)days {
+    NSMutableArray *selectedDays = [NSMutableArray new];
+    if (days.sunday) {
+        [selectedDays addObject:@(WeekdaySunday)];
+    }
+    if (days.monday) {
+        [selectedDays addObject:@(WeekdayMonday)];
+    }
+    if (days.tuesday) {
+        [selectedDays addObject:@(WeekdayTuesday)];
+    }
+    if (days.wednesday) {
+        [selectedDays addObject:@(WeekdayWednesday)];
+    }
+    if (days.thursday) {
+        [selectedDays addObject:@(WeekdayThursday)];
+    }
+    if (days.friday) {
+        [selectedDays addObject:@(WeekdayFriday)];
+    }
+    if (days.saturday) {
+        [selectedDays addObject:@(WeekdaySaturday)];
+    }
+    return selectedDays;
+}
 
 + (DaysDataModel *)daysDataModelWithDays:(NSArray *)days {
     

@@ -101,12 +101,17 @@
     return self.textEntryViewModel.value && self.textEntryViewModel.value.length > 3;
 }
 
+- (BOOL)isEditingVitamin {
+    return self.initialVitaminDataModel != nil;
+}
+
 - (VitaminDataModel *)updatedVitaminDataModel {
+
     // If an exisitng vitamin is being edited
     if (self.initialVitaminDataModel) {
         VitaminDataModel *updatedVitaminDataModel = self.initialVitaminDataModel;
         updatedVitaminDataModel.name = self.textEntryViewModel.value;
-        return self.updatedVitaminDataModel;
+        return updatedVitaminDataModel;
     } else {
         // If a new vitamin is being created
         VitaminDataModel *vitaminDataModel = [VitaminDataModel new];

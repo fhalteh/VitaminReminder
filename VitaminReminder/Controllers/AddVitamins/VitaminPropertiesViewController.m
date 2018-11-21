@@ -68,7 +68,7 @@
     // TODO add
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
 //    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
-    self.title = @"Add vitamin";
+    self.title = self.viewModel.isEditingVitamin ? @"Edit vitamin" : @"Add vitamin";
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -201,7 +201,7 @@
     if (!isValid) {
         [self showAlert];
     } else {
-        NSString *vitaminName = self.vitaminName;
+//        NSString *vitaminName = self.vitaminName;
         VitaminDataModel *vitaminDataModel = [self.viewModel updatedVitaminDataModel];
         [self.delegate onVitaminPropertiesNextClickedWithVitaminDataModel:vitaminDataModel];
     }

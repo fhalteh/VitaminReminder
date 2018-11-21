@@ -15,6 +15,7 @@
 
 @end
 
+// TODO: rename
 @interface VitaminIntakeTableVC : UITableViewController <EmptyDataViewDelegate>
 
 @property (nonatomic, strong) NSDate *currentDate;

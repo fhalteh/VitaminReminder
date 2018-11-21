@@ -49,6 +49,11 @@
 
 #pragma mark - MyVitaminsViewControllerDelegate
 
+- (void)didSelectVitamin:(VitaminDataModel *)vitaminDataModel {
+    // Did select the vitamin model, start the coordinator
+    [self.delegate didSelectVitamin:vitaminDataModel];
+}
+
 - (void)onAddVitaminButtonClicked {
     BOOL isFirstResponder = self.navController.isFirstResponder;
     [self.delegate onAddVitaminButtonClicked];

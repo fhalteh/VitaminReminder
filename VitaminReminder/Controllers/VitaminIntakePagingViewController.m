@@ -63,8 +63,6 @@
 
 #pragma mark - Helper methods
 
-
-
 - (UIViewController *)createViewControllerWithDate:(NSDate *)date {
     VitaminIntakeTableVC *viewController = [[VitaminIntakeTableVC alloc] initWithDelegate:self
                                                                            storageManager:self.storageManager];

@@ -25,7 +25,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="days" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Days" inverseName="vitamin" inverseEntity="Days" syncable="YES"/>
-        <relationship name="dosages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dosage" inverseName="vitamin" inverseEntity="Dosage" syncable="YES"/>
+        <relationship name="dosages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Dosage" inverseName="vitamin" inverseEntity="Dosage" syncable="YES"/>
     </entity>
     <elements>
         <element name="Days" positionX="-397.21875" positionY="137.89453125" width="128" height="163"/>

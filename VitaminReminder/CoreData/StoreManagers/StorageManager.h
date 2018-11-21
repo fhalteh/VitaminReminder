@@ -21,7 +21,10 @@
 
 // TODO: should bve used
 - (void)addVitaminDataModel:(VitaminDataModel *)vitaminDataModel;
-- (void)addVitaminDataModel:(VitaminDataModel *)vitaminDataModel;
+//- (void)
+
+- (void)addUserVitaminIntake:(UserVitaminIntake *)userVitaminIntake
+              dosageObjectID:(NSManagedObjectID *)dosageObjectID;
 - (NSArray <Dosage *> *)getDosagesForDay:(Weekday)weekday;
 - (NSArray <UserVitaminIntake *> *)getIntakesForDate:(NSDate *)date;
 //- (NSFetchedResultsController *)loadDosageFetchedResultsController:(id <NSFetchedResultsControllerDelegate>)delegate

@@ -27,8 +27,8 @@
 }
 
 - (void)configureCellWithModel:(VitaminIntakeCellModel *)model {
-    self.vitaminNameLabel.text = model.vitamin.name;
-    self.timeLabel.text = model.timeAsText;
+    self.vitaminNameLabel.text = model.vitaminName;
+    self.timeLabel.text = model.time;
     self.checkmarkImage.hidden = !model.taken;
 }
 

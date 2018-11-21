@@ -11,10 +11,16 @@
 #import "VitaminIntake.h"
 #import "Dosage.h"
 
-@interface VitaminIntakeCellModel : NSObject 
+@interface VitaminIntakeCellModel : NSObject
 
-@property (strong) Vitamin *vitamin;
+// todo store the id instead?
+
+// TODO: Use this dosage id
+@property (nonatomic, strong) NSManagedObjectID *dosageObjectID;
+//@property (strong) Vitamin *vitamin;
+
+@property (nonatomic, strong) NSString *vitaminName;
 @property (assign) BOOL taken;
-@property (strong) NSString *timeAsText;
+@property (nonatomic, strong) NSString *time;
 
 @end

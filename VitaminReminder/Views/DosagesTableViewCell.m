@@ -58,17 +58,17 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     NSLog(@"Number of items: %@", @(self.viewModel.numberOfCells));
     NSInteger count = self.viewModel.numberOfCells;
-    if (count == 0) {
-        EmptyDataView *view = [[EmptyDataView alloc] initWithFrame:self.collectionView.frame
-                                                             title:@"🙌🏻"
-                                                              text:@"No dosages added"];
-        self.collectionView.backgroundView = view;
-    } else {
-        self.collectionView.backgroundView = nil;
-    }
+//    if (count == 0) {
+//        EmptyDataView *view = [[EmptyDataView alloc] initWithFrame:self.collectionView.frame
+//                                                             title:@"🙌🏻"
+//                                                              text:@"No dosages added"];
+//        self.collectionView.backgroundView = view;
+//    } else {
+//        self.collectionView.backgroundView = nil;
+//    }
     // if it's 0 then add a view
     
-    return self.viewModel.numberOfCells;
+    return count;
 }
 
 

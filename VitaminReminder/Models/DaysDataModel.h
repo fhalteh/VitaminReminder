@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ObjectDataModel.h"
+#import <CoreData/CoreData.h>
 
 typedef enum : NSUInteger {
     WeekdaySunday = 1,
@@ -18,6 +19,8 @@ typedef enum : NSUInteger {
     WeekdayFriday,
     WeekdaySaturday,
 } Weekday;
+
+@class Days;
 
 @interface DaysDataModel : ObjectDataModel
 
@@ -31,6 +34,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, readonly) BOOL saturday;
 @property (nonatomic, readonly) BOOL sunday;
 
+- (instancetype)initWithDays:(Days *)days;
 - (BOOL)noneSelected;
 - (BOOL)isEverydaySelected;
 - (NSString *)daysString;

@@ -13,6 +13,8 @@
 #import "UserVitaminIntakeStorageManager.h"
 #import "Vitamin.h"
 #import "VitaminDataModel.h"
+#import "UserVitaminIntakeDataModel.h"
+#import "Dosage.h"
 
 @interface StorageManager()
 
@@ -62,22 +64,33 @@
 
 // TODO: check if called
 - (void)addVitaminDataModel:(VitaminDataModel *)vitaminDataModel {
-    // TODO:
-//    [self.vitaminStorageManager addDataModel:vitaminDataModel
-//                                   inContext:self.backgroundContext];
-//    [self save];
-//
     [self.backgroundContext performBlock:^{
+        // Remove previous vitamin if it exists
+        if (vitaminDataModel.managedObjectId) {
+            [self remove:vitaminDataModel.managedObjectId];
+        }
         [self.vitaminStorageManager addDataModel:vitaminDataModel
                                        inContext:self.backgroundContext];
-        [self saveAllContexts];
+        [self save];
     }];
 }
 
-//- (void)deleteVitaminWithName:(NSString *)vitaminName {
-//    // Get vitamin with nmae -> delete that vitamin!
-//
-//}
+- (void)addUserVitaminIntake:(UserVitaminIntakeDataModel *)userVitaminIntakeDataModel
+              dosageObjectID:(NSManagedObjectID *)dosageObjectID {
+    // Check the dosage, update ti
+    [self.backgroundContext performBlock:^{
+        // Remove previous vitamin if it exists
+        Dosage *dosage = [self.backgroundContext objectWithID:dosageObjectID];
+        // Add a new user vitamin intake
+        UserVitaminIntake *userVitaminIntake = [self.userVitaminIntakeStorageManager addDataModel:userVitaminIntakeDataModel inContext:self.backgroundContext];
+//        [dosage ]
+        // TODO: add this user vitamin intake to this dosage! 
+        
+        [self save];
+    }];
+
+    
+}
 
 - (NSManagedObjectContext *)backgroundContext {
     if (!_backgroundContext) {
@@ -91,21 +104,21 @@
     [self.backgroundContext performBlock:^{
         NSManagedObject *object = [self.backgroundContext objectWithID:objectID];
         [self.backgroundContext deleteObject:object];
-        [self saveAllContexts];
+        [self save];
     }];
 }
 
-- (void)saveAllContexts {
-    [self save];
-    [self.persistentContainer.viewContext performBlockAndWait:^{
-        NSError *error;
-        [self.persistentContainer.viewContext save:&error];
-        if (error) {
-            NSLog(@"An error occurred while saving. %@", error);
-        }
-    }];
-    
-}
+//- (void)saveAllContexts {
+//    [self save];
+//    [self.persistentContainer.viewContext performBlockAndWait:^{
+//        NSError *error;
+//        [self.persistentContainer.viewContext save:&error];
+//        if (error) {
+//            NSLog(@"An error occurred while saving. %@", error);
+//        }
+//    }];
+//
+//}
 
 - (void)save {
     if ([self.backgroundContext hasChanges]) {

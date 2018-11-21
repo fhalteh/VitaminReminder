@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/VitaminIntakeTableVC.m"
-            timestampString = "564440274.082226"
+            timestampString = "564530582.133284"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Helpers/VitaminListGenerator.m"
-            timestampString = "564343024.873762"
+            timestampString = "564530582.133617"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "+createVitaminsListFromContext:date:"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/VitaminIntakeTableVC.m"
-            timestampString = "564440274.08248"
+            timestampString = "564530582.134268"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/AppDelegate.m"
-            timestampString = "564440274.082619"
+            timestampString = "564530582.134405"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -153,7 +153,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/AppDelegate.m"
-            timestampString = "564440274.082706"
+            timestampString = "564530582.134594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -361,7 +361,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/DosageCollectionViewController.m"
-            timestampString = "564526137.777001"
+            timestampString = "564530582.1348701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -377,7 +377,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/DosageCollectionViewController.m"
-            timestampString = "564526137.77731"
+            timestampString = "564530582.135057"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -393,7 +393,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/DosageCollectionViewController.m"
-            timestampString = "564526137.777362"
+            timestampString = "564530582.135106"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
@@ -409,7 +409,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/VitaminIntakeTableVC.m"
-            timestampString = "564440274.0832601"
+            timestampString = "564530582.135152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -441,7 +441,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/DosageViewController.m"
-            timestampString = "564526137.777482"
+            timestampString = "564530582.135244"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
@@ -633,7 +633,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Coordinators/TabBarCoordinator.m"
-            timestampString = "564356506.511703"
+            timestampString = "564530582.135855"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -809,11 +809,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CoreData/StoreManagers/StorageManager.m"
-            timestampString = "564526137.778394"
+            timestampString = "564530582.136399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "-save"
             landmarkType = "7">
          </BreakpointContent>
@@ -825,11 +825,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CoreData/StoreManagers/StorageManager.m"
-            timestampString = "564526137.778921"
+            timestampString = "564530582.13694"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "-remove:"
             landmarkType = "7">
          </BreakpointContent>
@@ -841,7 +841,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CoreData/StoreManagers/VitaminStorageManager.m"
-            timestampString = "564526137.779163"
+            timestampString = "564530582.137288"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
@@ -857,7 +857,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CoreData/StoreManagers/VitaminStorageManager.m"
-            timestampString = "564526137.779331"
+            timestampString = "564530582.137556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
@@ -969,7 +969,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/MainViewController.m"
-            timestampString = "564440753.758723"
+            timestampString = "564530582.137958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
@@ -985,11 +985,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/AllVitaminsTableVC.m"
-            timestampString = "564526137.779617"
+            timestampString = "564530582.138236"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "-onEmptyDataViewButtonClicked"
             landmarkType = "7">
          </BreakpointContent>
@@ -1016,24 +1016,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VitaminReminder/Coordinators/AddOrEditVitaminCoordinator.m"
-            timestampString = "564526137.780118"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "-start"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Coordinators/TabBarCoordinator.m"
-            timestampString = "564356506.512171"
+            timestampString = "564530582.138552"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
@@ -1097,12 +1081,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Modules/VitaminProperties/VitaminPropertiesViewModel.m"
-            timestampString = "564526137.780442"
+            timestampString = "564530582.138719"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
             endingLineNumber = "47"
-            landmarkName = "-init"
+            landmarkName = "-registerNibForTableView:"
             landmarkType = "7">
             <Locations>
                <Location
@@ -1145,12 +1129,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Modules/VitaminProperties/VitaminPropertiesViewModel.m"
-            timestampString = "564526137.78067"
+            timestampString = "564530582.138904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
             endingLineNumber = "55"
-            landmarkName = "-initWithVitaminDataModel:"
+            landmarkName = "-createCellViewModelsWithVitaminName:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1177,12 +1161,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Modules/VitaminProperties/VitaminPropertiesViewModel.m"
-            timestampString = "564526137.780762"
+            timestampString = "564530582.139008"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
             endingLineNumber = "86"
-            landmarkName = "-numberOfSections"
+            landmarkName = "-dequeueAndConfigureCellInTableView:atIndexPath:delegate:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1193,12 +1177,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Modules/VitaminProperties/VitaminPropertiesViewModel.m"
-            timestampString = "564526137.7808141"
+            timestampString = "564530582.139093"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
             endingLineNumber = "89"
-            landmarkName = "-numberOfRowsInSection:"
+            landmarkName = "-dequeueAndConfigureCellInTableView:atIndexPath:delegate:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1257,7 +1241,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Modules/VitaminProperties/VitaminSchedulerViewModel.m"
-            timestampString = "564526137.780996"
+            timestampString = "564530582.1393909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -1273,7 +1257,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Modules/VitaminProperties/VitaminSchedulerViewModel.m"
-            timestampString = "564526137.781225"
+            timestampString = "564530582.1396641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -1289,12 +1273,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/AddVitamins/VitaminPropertiesViewController.m"
-            timestampString = "564526137.781324"
+            timestampString = "564530582.1398081"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
             endingLineNumber = "81"
-            landmarkName = "-setupNavigationBar"
+            landmarkName = "-setupTableView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1305,7 +1289,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Modules/VitaminProperties/VitaminSchedulerViewModel.m"
-            timestampString = "564526137.781503"
+            timestampString = "564530582.140083"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -1321,7 +1305,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Modules/VitaminProperties/VitaminSchedulerViewModel.m"
-            timestampString = "564526137.781594"
+            timestampString = "564530582.14018"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -1333,11 +1317,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Modules/VitaminProperties/VitaminSchedulerViewModel.m"
-            timestampString = "564526137.781682"
+            timestampString = "564530582.140276"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -1353,7 +1337,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Modules/VitaminProperties/VitaminSchedulerViewModel.m"
-            timestampString = "564526137.7817709"
+            timestampString = "564530582.140372"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -1369,7 +1353,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Modules/VitaminProperties/VitaminSchedulerViewModel.m"
-            timestampString = "564526137.781859"
+            timestampString = "564530582.140466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -1385,7 +1369,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Modules/VitaminProperties/VitaminSchedulerViewModel.m"
-            timestampString = "564526137.7819411"
+            timestampString = "564530582.140556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -1401,7 +1385,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Modules/VitaminProperties/VitaminSchedulerViewModel.m"
-            timestampString = "564526137.782025"
+            timestampString = "564530582.1406471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -1417,7 +1401,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Views/DosagesTableViewCell.m"
-            timestampString = "564526137.782114"
+            timestampString = "564530582.14074"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -1433,7 +1417,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Views/DosagesTableViewCell.m"
-            timestampString = "564526137.78232"
+            timestampString = "564530582.140994"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -1449,7 +1433,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CellViewModels/DosagesCellViewModel.m"
-            timestampString = "564526137.7824"
+            timestampString = "564530582.141082"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
@@ -1465,7 +1449,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Views/DosagesTableViewCell.m"
-            timestampString = "564526137.782608"
+            timestampString = "564530582.141315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -1481,7 +1465,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CellViewModels/DosagesCellViewModel.m"
-            timestampString = "564526137.782686"
+            timestampString = "564530582.14149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -1497,7 +1481,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CellViewModels/DosagesCellViewModel.m"
-            timestampString = "564526137.7827621"
+            timestampString = "564530582.1416759"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
@@ -1513,7 +1497,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CellViewModels/DosagesCellViewModel.m"
-            timestampString = "564526137.782838"
+            timestampString = "564530582.141784"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -1529,7 +1513,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CellViewModels/DosagesCellViewModel.m"
-            timestampString = "564526137.782912"
+            timestampString = "564530582.141988"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -1545,7 +1529,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CellViewModels/DosagesCellViewModel.m"
-            timestampString = "564526137.782984"
+            timestampString = "564530582.14212"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -1561,7 +1545,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/AddVitamins/FrequencyTableViewController.m"
-            timestampString = "564526137.783059"
+            timestampString = "564530582.142233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
@@ -1577,7 +1561,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/AddVitamins/VitaminSchedulerViewController.m"
-            timestampString = "564526137.783233"
+            timestampString = "564530582.142496"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "213"
@@ -1593,7 +1577,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Modules/VitaminProperties/VitaminSchedulerViewModel.m"
-            timestampString = "564526137.783438"
+            timestampString = "564530582.142809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -1609,7 +1593,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Views/DosagesTableViewCell.m"
-            timestampString = "564526137.783512"
+            timestampString = "564530582.142909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
@@ -1646,7 +1630,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CellViewModels/DosagesCellViewModel.m"
-            timestampString = "564526137.783574"
+            timestampString = "564530582.142988"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -1662,7 +1646,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/AddVitamins/VitaminSchedulerViewController.m"
-            timestampString = "564526137.783631"
+            timestampString = "564530582.14306"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "236"
@@ -1678,7 +1662,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Modules/VitaminProperties/VitaminSchedulerViewModel.m"
-            timestampString = "564526137.783702"
+            timestampString = "564530582.143139"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "165"
@@ -1694,7 +1678,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Views/DosagesTableViewCell.m"
-            timestampString = "564526137.783819"
+            timestampString = "564530582.143217"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -1710,7 +1694,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Modules/VitaminProperties/VitaminSchedulerViewModel.m"
-            timestampString = "564526137.78388"
+            timestampString = "564530582.1432821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
@@ -1726,7 +1710,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Modules/VitaminProperties/VitaminSchedulerViewModel.m"
-            timestampString = "564526137.783945"
+            timestampString = "564530582.143353"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "125"
@@ -1742,7 +1726,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/DosageViewController.m"
-            timestampString = "564526137.7840101"
+            timestampString = "564530582.143423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
@@ -1758,7 +1742,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/DosageViewController.m"
-            timestampString = "564526137.784063"
+            timestampString = "564530582.1434799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
@@ -1774,7 +1758,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/DosageViewController.m"
-            timestampString = "564526137.784108"
+            timestampString = "564530582.143541"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -1790,7 +1774,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/DosageViewController.m"
-            timestampString = "564526137.784147"
+            timestampString = "564530582.143594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
@@ -1806,7 +1790,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/AddVitamins/VitaminSchedulerViewController.m"
-            timestampString = "564526137.784188"
+            timestampString = "564530582.143646"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "222"
@@ -1822,7 +1806,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/AddVitamins/VitaminSchedulerViewController.m"
-            timestampString = "564526137.784232"
+            timestampString = "564530582.1437041"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "253"
@@ -1838,7 +1822,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Modules/VitaminProperties/VitaminSchedulerViewModel.m"
-            timestampString = "564526137.784276"
+            timestampString = "564530582.143762"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "175"
@@ -1854,7 +1838,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CellViewModels/DosagesCellViewModel.m"
-            timestampString = "564526137.784368"
+            timestampString = "564530582.143829"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
@@ -1870,7 +1854,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CellViewModels/DosagesCellViewModel.m"
-            timestampString = "564526137.78441"
+            timestampString = "564530582.143887"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -1886,7 +1870,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Views/DosageCollectionViewCell.m"
-            timestampString = "564526137.784457"
+            timestampString = "564530582.143947"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -1902,7 +1886,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Views/DosageCollectionViewCell.m"
-            timestampString = "564526137.784663"
+            timestampString = "564530582.1442159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -1918,7 +1902,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/AddVitamins/VitaminSchedulerViewController.m"
-            timestampString = "564526137.784721"
+            timestampString = "564530582.144277"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "164"
@@ -1934,13 +1918,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Coordinators/AddOrEditVitaminCoordinator.m"
-            timestampString = "564526137.784765"
+            timestampString = "564530582.144334"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "-onVitaminSchedulerNextClickedWithVitaminDataModel:"
-            landmarkType = "7">
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "AddOrEditVitaminCoordinator"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1950,11 +1934,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/AllVitaminsTableVC.m"
-            timestampString = "564526137.784816"
+            timestampString = "564530582.144574"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "-tableView:commitEditingStyle:forRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1966,11 +1950,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/CoreData/StoreManagers/StorageManager.m"
-            timestampString = "564526137.785089"
+            timestampString = "564530582.144637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "-remove:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1982,11 +1966,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/AllVitaminsTableVC.m"
-            timestampString = "564526137.785315"
+            timestampString = "564530582.144943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "-controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1998,7 +1982,71 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/AllVitaminsTableVC.m"
-            timestampString = "564526137.785537"
+            timestampString = "564530582.144997"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-tableView:numberOfRowsInSection:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VitaminReminder/CoreData/StoreManagers/StorageManager.m"
+            timestampString = "564530582.1450469"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "-remove:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VitaminReminder/Controllers/AllVitaminsTableVC.m"
+            timestampString = "564530582.145288"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VitaminReminder/Controllers/AllVitaminsTableVC.m"
+            timestampString = "564530582.145355"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "-tableView:numberOfRowsInSection:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VitaminReminder/Controllers/AllVitaminsTableVC.m"
+            timestampString = "564530582.145401"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
@@ -2013,76 +2061,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VitaminReminder/CoreData/StoreManagers/StorageManager.m"
-            timestampString = "564526137.78575"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "-remove:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/AllVitaminsTableVC.m"
-            timestampString = "564526137.785956"
+            timestampString = "564530582.145447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VitaminReminder/Controllers/AllVitaminsTableVC.m"
-            timestampString = "564526137.786162"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "-tableView:numberOfRowsInSection:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VitaminReminder/Controllers/AllVitaminsTableVC.m"
-            timestampString = "564526137.786368"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "-tableView:numberOfRowsInSection:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VitaminReminder/Controllers/AllVitaminsTableVC.m"
-            timestampString = "564526137.786571"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "-controllerWillChangeContent:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2094,11 +2078,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/AllVitaminsTableVC.m"
-            timestampString = "564526137.786777"
+            timestampString = "564530582.145492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2110,12 +2094,156 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VitaminReminder/Controllers/AllVitaminsTableVC.m"
-            timestampString = "564526137.786983"
+            timestampString = "564530582.145537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "-controller:didChangeSection:atIndex:forChangeType:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VitaminReminder/Models/VitaminDataModel.m"
+            timestampString = "564530582.145584"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "-dosagesFrom:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VitaminReminder/Models/VitaminDataModel.m"
+            timestampString = "564530582.145811"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-dosagesFrom:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VitaminReminder/Models/VitaminDataModel.m"
+            timestampString = "564530582.145858"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-dosagesFrom:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VitaminReminder/Models/VitaminDataModel.m"
+            timestampString = "564530582.145902"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "-dosagesFrom:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VitaminReminder/Controllers/AllVitaminsTableVC.m"
+            timestampString = "564530582.145977"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VitaminReminder/Models/VitaminDataModel.m"
+            timestampString = "564530582.146015"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "-dosagesFrom:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VitaminReminder/Models/DosageDataModel.m"
+            timestampString = "564530582.146057"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "-initWithDosage:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VitaminReminder/Modules/VitaminProperties/VitaminSchedulerViewModel.m"
+            timestampString = "564530582.146268"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "-initWithVitaminDataModel:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VitaminReminder/Modules/VitaminProperties/VitaminSchedulerViewModel.m"
+            timestampString = "564530582.1463161"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-initWithVitaminDataModel:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

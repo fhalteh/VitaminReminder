@@ -79,7 +79,7 @@
 //
 
     // TODO: pass the real dosages
-    self.dosagesCellViewModel = [[DosagesCellViewModel alloc] initWithDosages:@[]];
+    self.dosagesCellViewModel = [[DosagesCellViewModel alloc] initWithDosages:vitaminDataModel.dosages];
     self.dosagesCellViewModel.title = @"Dosages";
     
 //    self.buttonCellViewModel = [[ButtonCellViewModel alloc] init];

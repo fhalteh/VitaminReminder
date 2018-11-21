@@ -22,6 +22,7 @@
 // Do we need thhis to be public?
 
 - (instancetype)initWithDelegate:(id <VitaminPropertiesViewControllerDelegate>)delegate;
+- (instancetype)initWithDelegate:(id <VitaminPropertiesViewControllerDelegate>)delegate vitaminDataModel:(VitaminDataModel *)vitaminDataModel;
 //- (BOOL)validate;
 //- (NSString *)vitaminName;
 

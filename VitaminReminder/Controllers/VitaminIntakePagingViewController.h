@@ -19,7 +19,6 @@
 @class StorageManager;
 // TODO: create a protocol so the creator of this paging view controller can can be accessed
 
-
 @interface VitaminIntakePagingViewController : UIPageViewController <UIPageViewControllerDelegate, UIPageViewControllerDataSource, VitaminIntakeTableVCDelegate>
 
 @property (nonatomic, strong) StorageManager *storageManager;

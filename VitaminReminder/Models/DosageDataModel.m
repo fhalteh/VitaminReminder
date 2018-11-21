@@ -7,8 +7,18 @@
 //
 
 #import "DosageDataModel.h"
+#import "Dosage.h"
 
 @implementation DosageDataModel
+
+- (instancetype)initWithDosage:(Dosage *)dosage {
+    self = [super init];
+    if (self) {
+        self.time = dosage.time;
+        self.numberOfPills = dosage.numberOfPills;
+    }
+    return self;
+}
 
 + (DosageDataModel *)dataModelWithNumberOfPills:(int)numberOfPills time:(NSDate *)time {
     DosageDataModel *dataModel = [DosageDataModel new];

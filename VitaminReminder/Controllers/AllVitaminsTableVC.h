@@ -10,11 +10,11 @@
 #import <CoreData/CoreData.h>
 #import "EmptyDataView.h"
 
-@class Vitamin, StorageManager;
+@class VitaminDataModel, StorageManager;
 
 @protocol AllVitaminsTableViewControllerDelegate
 
-- (void)didSelectVitamin:(Vitamin *)vitamin;
+- (void)didSelectVitamin:(VitaminDataModel *)vitaminDataModel;
 - (void)onAddVitaminButtonClicked;
 
 @end

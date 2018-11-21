@@ -38,8 +38,9 @@
     NSMutableArray <VitaminIntakeCellModel *> *vitaminIntakeCellModels = [NSMutableArray new];
     for (Dosage *dosage in dosages) {
         VitaminIntakeCellModel *model = [VitaminIntakeCellModel new];
-        model.vitamin = dosage.vitamin;
-        model.timeAsText = dosage.time.inHoursAndMinutes;
+        model.vitaminName = dosage.vitamin.name;
+        model.time = dosage.time.inHoursAndMinutes;
+        model.dosageObjectID = dosage.objectID;
         model.taken = [self vitaminIntakes:intakes containsDosage:dosage];
         [vitaminIntakeCellModels addObject:model];
     }

@@ -15,6 +15,7 @@
 @synthesize navController, storageManager, rootViewController;
 
 - (UIViewController *)rootViewController {
+    
     MainViewController *viewController = [[MainViewController alloc] init];
     viewController.storageManager = storageManager;
     return [[UINavigationController alloc] initWithRootViewController:viewController];

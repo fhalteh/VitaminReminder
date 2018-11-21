@@ -109,6 +109,7 @@
     } else {
         // TODO: Remove the current vitamin intake instance
     }
+    // update the vitamin in the database, add a 
     model.taken = !model.taken;
     [self.tableView reloadData];
 }

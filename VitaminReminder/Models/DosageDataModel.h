@@ -9,11 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "ObjectDataModel.h"
 
+@class Dosage;
+
 @interface DosageDataModel : ObjectDataModel
 
 @property (nonatomic) int numberOfPills;
 @property (nonatomic) NSDate *time;
 
+- (instancetype)initWithDosage:(Dosage *)dosage;
 + (DosageDataModel *)dataModelWithNumberOfPills:(int)numberOfPills time:(NSDate *)time;
 
 @end

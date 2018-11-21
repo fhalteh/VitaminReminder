@@ -7,8 +7,14 @@
 //
 
 #import "AddOrEditVitaminCoordinator.h"
+#import "VitaminDataModel.h"
 
 //#import "VitaminPropertiesContentViewController.h"
+//
+//@interface AddOrEditVitaminCoordinator()
+//
+//
+//@end
 
 @implementation AddOrEditVitaminCoordinator
 
@@ -26,9 +32,26 @@
     return self;
 }
 
+//- (instancetype)initWithNavigationController:(UINavigationController *)navigationController
+//                              storageManager:(StorageManager *)storageManager vitaminDataModel:(VitaminDataModel *)vitaminDataModel {
+//    self = [super init];
+//    if (self) {
+//        self.navController = navigationController;
+//        self.storageManager = storageManager;
+//        self.vitaminDataModel = vitaminDataModel;
+//    }
+//    return self;
+//}
+
 - (void)start {
     // start the vitamin properties view controller
-    VitaminPropertiesViewController *viewController = [[VitaminPropertiesViewController alloc] initWithDelegate:self];
+    // Start it with the vitamin data
+    VitaminPropertiesViewController *viewController;
+    if (self.vitaminDataModel) {
+        viewController = [[VitaminPropertiesViewController alloc] initWithDelegate:self vitaminDataModel:self.vitaminDataModel];
+    } else {
+        viewController = [[VitaminPropertiesViewController alloc] initWithDelegate:self];
+    }
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     
     // TODO: should add delegate -> self

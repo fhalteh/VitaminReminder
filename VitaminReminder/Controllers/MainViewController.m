@@ -13,7 +13,7 @@
 #import "NSDate+Utils.h"
 #import "UIImage+Utils.h"
 
-// TODO: change name t ohome?
+// TODO: change name t ohome? HomeViewController
 @interface MainViewController()
 
 @property (strong, nonatomic) NSDate *currentDate;
