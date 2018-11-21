@@ -17,7 +17,8 @@
 - (UIViewController *)rootViewController {
     MainViewController *viewController = [[MainViewController alloc] init];
     viewController.storageManager = storageManager;
-    return viewController;
+    return [[UINavigationController alloc] initWithRootViewController:viewController];
+//    return viewController;
 }
 
 - (instancetype)initWithNavigationController:(UINavigationController *)navigationController storageManager:(StorageManager *)storageManager{

@@ -11,14 +11,14 @@
 #import "UIView+Utils.h"
 #import "VitaminsViewController.h"
 #import "NSDate+Utils.h"
+#import "UIImage+Utils.h"
 
 // TODO: change name t ohome?
-@interface MainViewController ()
+@interface MainViewController()
 
 @property (strong, nonatomic) NSDate *currentDate;
 @property (weak, nonatomic) IBOutlet UIView *tableViewContainer;
 @property (nonatomic, strong) VitaminIntakePagingViewController *pagingViewController;
-@property (weak, nonatomic) IBOutlet CustomNavigationBar *headerView;
 
 @end
 
@@ -26,16 +26,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.headerView.delegate = self;
     self.currentDate = [NSDate date];
-    [self updateTitle];
     [self addVitaminIntakeTableVC];
     [self setupNavigationBar];
 }
 
 - (void)setupNavigationBar {
-    [self.headerView setRightBarButtonType:NavigationButtonTypeRightArrow];
-    [self.headerView setLeftBarButtonType:NavigationButtonTypeLeftArrow];
+    self.navigationController.navigationBar.translucent = NO;
+    [self.navigationController.navigationBar addShadow];
+    UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:UIImage.backImage style:UIBarButtonItemStylePlain target:self action:@selector(onLeftBarButtonClicked)];
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:UIImage.nextImage style:UIBarButtonItemStylePlain target:self action:@selector(onRightBarButtonClicked)];
+    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    [self updateTitle];
 }
 
 - (void)addVitaminIntakeTableVC {
@@ -46,15 +49,13 @@
 }
 
 - (void)updateTitle {
-    [self.headerView updateTitle:self.currentDate.dateString];
+    self.title = self.currentDate.dateString;
 }
 
 - (void)updateCurrentDateAndTitleWithDate:(NSDate *)date {
     self.currentDate = date;
     [self updateTitle];
 }
-
-#pragma mark - CustomNavigationBarDelegate
 
 - (void)onLeftBarButtonClicked {
     [self updateCurrentDateAndTitleWithDate:self.currentDate.dateByRemovingOneDay];

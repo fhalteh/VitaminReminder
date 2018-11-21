@@ -8,14 +8,15 @@
 
 #import "TabBarCoordinator.h"
 #import "HomeCoordinator.h"
-#import "MyVitaminsCoordinator.h"
 #import "UIColor+Utils.h"
+#import "AddOrEditVitaminCoordinator.h"
 
 @interface TabBarCoordinator()
 
 @property (nonatomic, strong) HomeCoordinator *homeCoordinator;
 @property (nonatomic, strong) MyVitaminsCoordinator *myVitaminsCoordinator;
 @property (nonatomic, strong) UITabBarController *tabBarController;
+@property (nonatomic, strong) AddOrEditVitaminCoordinator *addOrEditVitaminCoordinator;
 
 @end
 
@@ -36,7 +37,7 @@
 - (void)start {
     self.tabBarController = [UITabBarController new];
     self.homeCoordinator = [[HomeCoordinator alloc] initWithNavigationController:self.navController storageManager:self.storageManager];
-    self.myVitaminsCoordinator = [[MyVitaminsCoordinator alloc] initWithNavigationController:self.navController storageManager:self.storageManager];
+    self.myVitaminsCoordinator = [[MyVitaminsCoordinator alloc] initWithDelegate:self navigationController:navController storageManager:storageManager];
     
     UIViewController *homeViewController = self.homeCoordinator.rootViewController;
     homeViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Home" image:[UIImage imageNamed:@"homeToolbarIcon"] tag:0];
@@ -71,9 +72,17 @@
 
 #pragma mark - TabBarControllerDelegate
 
+// TODO: should be removed if not needed?
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     NSLog(@"View controller selected");
 }
 
+#pragma mark - MyVitaminsCoordinatorDelegate
+
+- (void)onAddVitaminButtonClicked {
+    // nope?
+    self.addOrEditVitaminCoordinator = [[AddOrEditVitaminCoordinator alloc] initWithNavigationController:self.tabBarController storageManager:self.storageManager];
+    [self.addOrEditVitaminCoordinator start];
+}
 
 @end

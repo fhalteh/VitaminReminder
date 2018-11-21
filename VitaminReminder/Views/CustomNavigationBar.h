@@ -21,6 +21,7 @@ typedef enum : NSUInteger {
 
 @end
 
+// TODO: delete file
 @interface CustomNavigationBar : UIView
 // TODO: should they be public?
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -34,6 +35,9 @@ typedef enum : NSUInteger {
 - (void)setRightBarButtonHidden:(BOOL)hidden;
 - (void)setLeftBarButtonHidden:(BOOL)hidden;
 - (void)setRightBarButtonType:(NavigationButtonType)type;
+- (void)setRightBarTextButtonTitle:(NSString *)title;
 - (void)setLeftBarButtonType:(NavigationButtonType)type;
+- (void)setLeftBarTextButtonTitle:(NSString *)title;
+
 
 @end

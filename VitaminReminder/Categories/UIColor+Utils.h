@@ -12,5 +12,6 @@
 
 + (UIColor *)textGrayColor;
 + (UIColor *)purpleThemeColor;
++ (UIColor *)turquoiseThemeColor;
 
 @end

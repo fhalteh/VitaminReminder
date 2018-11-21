@@ -13,6 +13,7 @@
 #import "DosageCollectionViewCell.h"
 #import "Dosage.h"
 
+// TODO: remove this class
 @interface AddOrEditVitaminViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *vitaminNameTextField;

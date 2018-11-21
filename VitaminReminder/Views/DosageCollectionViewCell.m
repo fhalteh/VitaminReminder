@@ -10,6 +10,8 @@
 #import "NSDate+Utils.h"
 #import "Dosage.h"
 #import "UIView+Utils.h"
+#import "DosageDataModel.h"
+#import "DosagesCellViewModel.h"
 
 @interface DosageCollectionViewCell()
 
@@ -27,11 +29,20 @@
     [self.dosageBackgroundView addCornerRadiusAndShadow];
 }
 
-- (void)configureCellWithDosage:(Dosage *)dosage {
-    self.numberOfPillsLabel.text = [NSString stringWithFormat:@"%@", dosage.numberOfPills];
-    // TODO:
-//    self.timeLabel.text = dosage.reminderTime.inHoursAndMinutes;
+- (void)configureWithViewModel:(DosageViewModel *)viewModel {
+    NSLog(@"configure with view model called: %@", viewModel.pillsText);
+
+    self.numberOfPillsLabel.text = viewModel.pillsText;
+    self.timeLabel.text = viewModel.timeText;
     self.addIcon.hidden = YES;
+}
+
+// TODO: remove
+- (void)configureCellWithDosage:(Dosage *)dosage {
+//    self.numberOfPillsLabel.text = [NSString stringWithFormat:@"%@", dosage.numberOfPills];
+//    // TODO:
+////    self.timeLabel.text = dosage.reminderTime.inHoursAndMinutes;
+//    self.addIcon.hidden = YES;
 }
 
 - (void)configureCellWithAddIcon {

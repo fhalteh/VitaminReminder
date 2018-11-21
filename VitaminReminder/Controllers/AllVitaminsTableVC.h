@@ -12,19 +12,22 @@
 
 @class Vitamin, StorageManager;
 
-@protocol AllVitaminsTableVCDelegate
+@protocol AllVitaminsTableViewControllerDelegate
 
 - (void)didSelectVitamin:(Vitamin *)vitamin;
+- (void)onAddVitaminButtonClicked;
 
 @end
 
 // TODO: remkove one of the delegate - empty view
+
+// Rename  to my vitamins
 @interface AllVitaminsTableVC : UITableViewController <NSFetchedResultsControllerDelegate, EmptyDataViewDelegate>
 
 //- (instancetype)initWithDelegate:(id<AllVitaminsTableVCDelegate>)delegate
 //                        context:(NSManagedObjectContext *)context;
 
-- (instancetype)initWithDelegate:(id<AllVitaminsTableVCDelegate>)delegate
+- (instancetype)initWithDelegate:(id<AllVitaminsTableViewControllerDelegate>)delegate
                   storageManager:(StorageManager *)storageManager;
 
 @end

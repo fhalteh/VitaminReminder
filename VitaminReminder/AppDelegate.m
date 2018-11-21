@@ -10,6 +10,7 @@
 #import "CoreDataStack.h"
 #import "MainViewController.h"
 #import "AppCoordinator.h"
+#import "UIColor+Utils.h"
 
 @interface AppDelegate ()
 
@@ -32,7 +33,31 @@
 //        viewController.managedObjectContext = container.viewContext;
 //        self.window.rootViewController = viewController;
     }];
+    [self setupNavigationBarAppearance];
     return YES;
+}
+
+- (void)setupNavigationBarAppearance {
+    [[UINavigationBar appearance] setTintColor:UIColor.whiteColor];
+    [[UINavigationBar appearance] setBarTintColor:UIColor.turquoiseThemeColor];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                          [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                          [UIFont fontWithName:@"proximanova-light" size:18.0], NSFontAttributeName,nil] forState:UIControlStateNormal];
+    // TODO:
+    // TODO set the text size?
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor whiteColor], NSForegroundColorAttributeName,
+      [UIFont fontWithName:@"proximanova-bold" size:22.0], NSFontAttributeName,nil]];
+
+//    [[UINavigationBar appearance] setColor]
+//    navigationBarAppearace.titleTextAttributes =[NSForegroundColorAttributeName:UIColor.whiteColor()]
+;
+//    appearance
+//    var navigationBarAppearace = UINavigationBar.appearance()
+//    navigationBarAppearace.tintColor = uicolorFromHex(0xffffff)
+//    navigationBarAppearace.barTintColor = uicolorFromHex(0x034517)
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

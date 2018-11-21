@@ -11,10 +11,12 @@
 #import "VitaminTableViewCell.h"
 #import "Dosage.h"
 #import "StorageManager.h"
+#import "UIView+Utils.h"
 
+// TODO: rename to MyVitaminsTableViewController
 @interface AllVitaminsTableVC ()
 
-@property (weak) id<AllVitaminsTableVCDelegate> delegate;
+@property (weak) id<AllVitaminsTableViewControllerDelegate> delegate;
 //@property NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) StorageManager *storageManager;
 @property (strong) NSFetchedResultsController *resultsController;
@@ -22,18 +24,8 @@
 @end
 
 @implementation AllVitaminsTableVC
-//
-//- (instancetype)initWithDelegate:(id<AllVitaminsTableVCDelegate>)delegate
-//                         context:(NSManagedObjectContext *)context {
-//    self = [super init];
-//    if (self) {
-//        self.delegate = delegate;
-//        self.managedObjectContext = context;
-//    }
-//    return self;
-//}
 
-- (instancetype)initWithDelegate:(id<AllVitaminsTableVCDelegate>)delegate
+- (instancetype)initWithDelegate:(id<AllVitaminsTableViewControllerDelegate>)delegate
                   storageManager:(StorageManager *)storageManager {
     self = [super init];
     if (self) {
@@ -48,6 +40,15 @@
     [self registerNib];
     [self loadResultsController];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    [self setupNavigationBar];
+}
+
+- (void)setupNavigationBar {
+    self.navigationController.navigationBar.translucent = NO;
+    [self.navigationController.navigationBar addShadow];
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(onRightBarButtonClicked)];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    self.title = @"My vitamins";
 }
 
 - (void)registerNib {
@@ -59,14 +60,6 @@
 
 - (void)loadResultsController {
     self.resultsController = [self.storageManager loadVitaminsFetchedResultsController:self];
-//    self.resultsController.delegate = self;
-//    self.resultsController = [Vitamin fetchedResultsControllerWithDelegate:self
-//                                                                   context:self.managedObjectContext];
-//    NSError *error = nil;
-//    [self.resultsController performFetch:&error];
-//    if (error) {
-//        NSLog(@"Could not load the vitamins using the fetched results controller.");
-//    }
 }
 
 #pragma mark - Table view data source
@@ -83,12 +76,10 @@
     } else {
         self.tableView.backgroundView = nil;
     }
-
     return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     NSString *reuseIdentifier = VitaminTableViewCell.reuseIdentifier;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
     if (cell && [cell isKindOfClass:[VitaminTableViewCell class]]) {
@@ -118,13 +109,13 @@
     [self.delegate didSelectVitamin:vitamin];
 }
 
+// TODO: move this code away from here?
 
 #pragma mark - Fetched results controller delegate
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView beginUpdates];
 }
-
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
            atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
@@ -142,7 +133,6 @@
             break;
     }
 }
-
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
@@ -182,15 +172,16 @@
     [self.tableView endUpdates];
 }
 
+#pragma mark - Navigation bar actions
+
+- (void)onRightBarButtonClicked {
+    // TODO: add
+}
+
 #pragma mark - EmptyDataViewDelegate
 
 - (void)onEmptyDataViewButtonClicked {
-    NSLog(@"Add vitamins clicked");
+    [self.delegate onAddVitaminButtonClicked];
 }
-//
-//- (void)onAddVitaminsButtonClicked {
-//    NSLog(@"add vitamins clicked");
-//    // TODO: show the add vitamins procedure?
-//}
 
 @end

@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class Dosage;
+@class Dosage, DosageViewModel;
 
 @interface DosageCollectionViewCell : UICollectionViewCell
 
-- (void)configureCellWithDosage:(Dosage *)dosage;
+//- (void)configureCellWithDosage:(Dosage *)dosage;
 - (void)configureCellWithAddIcon;
+- (void)configureWithViewModel:(DosageViewModel *)viewModel;
 
 + (NSString *)reuseIdentifier;
 + (NSString *)nibName;

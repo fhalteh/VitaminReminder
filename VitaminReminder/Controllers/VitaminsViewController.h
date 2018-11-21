@@ -9,13 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "AllVitaminsTableVC.h"
 
+@protocol MyVitaminsViewControllerDelegate
+
+- (void)onAddVitaminButtonClicked;
+
+@end
+
 @class StorageManager;
+// TODO: delete file not needed anymore
+// rename to my vitamins view controller
+@interface VitaminsViewController : UIViewController <MyVitaminsViewControllerDelegate>
 
-@interface VitaminsViewController : UIViewController <AllVitaminsTableVCDelegate>
-
-// init with store instead!
-//- (instancetype)initWithContext:(NSManagedObjectContext *)context;
-
-- (instancetype)initWithStorageManager:(StorageManager *)storageManager;
+- (instancetype)initWithDelegate:(id <MyVitaminsViewControllerDelegate>)delegate
+                  storageManager:(StorageManager *)storageManager;
 
 @end

@@ -8,11 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import "Coordinator.h"
+#import "VitaminsViewController.h"
+#import "AllVitaminsTableVC.h"
 
-@interface MyVitaminsCoordinator : NSObject <Coordinator>
+@protocol MyVitaminsCoordinatorDelegate
+
+- (void)onAddVitaminButtonClicked;
+
+@end
+
+@interface MyVitaminsCoordinator : NSObject <Coordinator, MyVitaminsViewControllerDelegate>
 
 // TODO: should rethink this through, maybe it should be moved to the coordinator protocol
-- (instancetype)initWithNavigationController:(UINavigationController *)navController
-                              storageManager:(StorageManager *)storageManager;
+- (instancetype)initWithDelegate:(id <MyVitaminsCoordinatorDelegate>)delegate
+            navigationController:(UINavigationController *)navigationController
+                  storageManager:(StorageManager *)storageManager;
 
 @end

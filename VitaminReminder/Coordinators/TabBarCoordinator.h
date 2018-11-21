@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "Coordinator.h"
+#import "MyVitaminsCoordinator.h"
 
-@interface TabBarCoordinator : NSObject <Coordinator, UITabBarControllerDelegate>
+@interface TabBarCoordinator : NSObject <Coordinator, UITabBarControllerDelegate, MyVitaminsCoordinatorDelegate>
 
 - (instancetype)initWithNavigationController:(UINavigationController *)navController
                               storageManager:(StorageManager *)storageManager;

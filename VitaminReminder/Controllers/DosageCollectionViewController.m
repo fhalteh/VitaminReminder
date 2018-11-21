@@ -71,10 +71,10 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DosageCollectionViewCell.reuseIdentifier forIndexPath:indexPath];
     DosageCollectionViewCell *dosageCell = (DosageCollectionViewCell *)cell;
     if (indexPath.row == self.dosages.count) {
-        [dosageCell configureCellWithAddIcon];
+//        [dosageCell configureCellWithAddIcon];
     } else {
         Dosage *dosage = self.dosages[indexPath.row];
-        [dosageCell configureCellWithDosage:dosage];
+//        [dosageCell configureCellWithDosage:dosage];
     }
     return dosageCell;
 }
@@ -87,7 +87,7 @@
     DosageCollectionViewCell *cell = [[NSBundle mainBundle] loadNibNamed:DosageCollectionViewCell.nibName owner:self options:nil].firstObject;
     if (indexPath.row < self.dosages.count) {
         Dosage *dosage = self.dosages[indexPath.row];
-        [cell configureCellWithDosage:dosage];
+//        [cell configureCellWithDosage:dosage];
     } else {
         [cell configureCellWithAddIcon];
     }

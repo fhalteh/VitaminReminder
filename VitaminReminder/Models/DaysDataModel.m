@@ -22,6 +22,57 @@
     return dataModal;
 }
 
+- (BOOL)isEverydaySelected {
+    if (!self.sunday) {
+        return false;
+    }
+    if (!self.monday) {
+        return false;
+    }
+    if (!self.tuesday) {
+        return false;
+    }
+    if (!self.wednesday) {
+        return false;
+    }
+    if (!self.thursday) {
+        return false;
+    }
+    if (!self.friday) {
+        return false;
+    }
+    if (!self.saturday) {
+        return false;
+    }
+    return true;
+}
+
+- (NSString *)daysString {
+    NSString *daysString = @"";
+    if (self.sunday) {
+        daysString = [daysString stringByAppendingString:@"Su"];
+    }
+    if (self.monday) {
+        daysString = [daysString stringByAppendingString:@"Mo"];
+    }
+    if (self.tuesday) {
+        daysString = [daysString stringByAppendingString:@"Tu"];
+    }
+    if (self.wednesday) {
+        daysString = [daysString stringByAppendingString:@"We"];
+    }
+    if (self.thursday) {
+        daysString = [daysString stringByAppendingString:@"Th"];
+    }
+    if (self.friday) {
+        daysString = [daysString stringByAppendingString:@"Fr"];
+    }
+    if (self.saturday) {
+        daysString = [daysString stringByAppendingString:@"Sa"];
+    }
+    return daysString;
+}
+
 - (ObjectDataModelType)getType {
     return ObjectDataModelTypeDays;
 }

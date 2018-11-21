@@ -13,8 +13,12 @@
 #import "StorageManager.h"
 #import "CustomNavigationBar.h"
 
+// TODO: Delete file
+// TODO: rename to my vitamins view controller
 @interface VitaminsViewController ()
 
+
+@property (nonatomic, weak) id <MyVitaminsViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIView *vitaminListContainerView;
 @property (weak, nonatomic) IBOutlet CustomNavigationBar *headerView;
 //@property (strong) NSManagedObjectContext *managedObjectContext;
@@ -25,9 +29,11 @@
 
 @implementation VitaminsViewController
 
-- (instancetype)initWithStorageManager:(StorageManager *)storageManager {
+- (instancetype)initWithDelegate:(id <MyVitaminsViewControllerDelegate>)delegate
+                  storageManager:(StorageManager *)storageManager {
     self = [super init];
     if (self) {
+        self.delegate = delegate;
         self.storageManager = storageManager;
     }
     return self;
@@ -44,7 +50,9 @@
     [self.navigationController.navigationBar setHidden:YES];
     [self.headerView.titleLabel setText:@"My vitamins"];
     [self.headerView setLeftBarButtonHidden:YES];
-    [self.headerView setRightBarButtonType:NavigationButtonTypeAdd];
+    [self.headerView setRightBarTextButtonTitle:@"Add"];
+//    [self.headerView setRightBarButtonType:NavigationButtonTypeAdd];
+    [self.headerView addShadow];// todo
 }
 
 - (void)addAllVitaminsTableVC {
@@ -54,7 +62,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.headerView addShadow];
+//    [self.headerView addShadow];// todo
 }
 
 #pragma mark - Action buttons
@@ -73,6 +81,11 @@
 - (void)didSelectVitamin:(Vitamin *)vitamin {
     AddOrEditVitaminViewController *viewController = [[AddOrEditVitaminViewController alloc] initWithVitamin:vitamin];
     [self presentViewController:viewController animated:true completion:nil];
+}
+
+- (void)onAddVitaminButtonClicked {
+    [self.delegate onAddVitaminButtonClicked];
+    // TODO: inform the delegate that the add vitamin has been clicked?
 }
 
 @end

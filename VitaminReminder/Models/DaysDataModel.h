@@ -29,6 +29,8 @@ typedef enum : NSUInteger {
 @property (nonatomic) BOOL saturday;
 @property (nonatomic) BOOL sunday;
 
+- (BOOL)isEverydaySelected;
+- (NSString *)daysString;
 + (DaysDataModel *)daysDataModelWithDays:(NSArray *)days;
 
 @end
