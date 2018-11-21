@@ -9,13 +9,20 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@class VitaminDataModel;
+
 @interface VitaminPropertiesViewModel : NSObject
+
+- (instancetype)initWithVitaminDataModel:(VitaminDataModel *)vitaminDataModel;
 
 - (void)registerNibForTableView:(UITableView *)tableView;
 - (NSInteger)numberOfSections;
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
-- (UITableViewCell *)dequeueAndConfigureCellInTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath;
+- (UITableViewCell *)dequeueAndConfigureCellInTableView:(UITableView *)tableView
+                                            atIndexPath:(NSIndexPath *)indexPath
+                                               delegate:(id <UITextFieldDelegate>)delegate;
 - (NSString *)vitaminName;
 - (BOOL)validateVitaminProperties;
+- (VitaminDataModel *)updatedVitaminDataModel;
 
 @end

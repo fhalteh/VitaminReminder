@@ -10,6 +10,7 @@
 #import "UIView+Utils.h"
 #import "VitaminSchedulerViewModel.h"
 #import "UIAlertController+Utils.h"
+#import "VitaminFrequencyViewModel.h"
 
 @interface VitaminSchedulerViewController ()
 
@@ -23,13 +24,13 @@
 
 // TODO: should be initialized with a view model instead
 - (instancetype)initWithDelegate:(id <VitaminSchedulerViewControllerDelegate>)delegate
-                     vitaminName:(NSString *)vitaminName {
+                vitaminDataModel:(VitaminDataModel *)vitaminDataModel {
     self = [super init];
     if (self) {
         self.delegate = delegate;
         // TODO: should be initiated with vitamin data model?
-        VitaminDataModel *vitaminDataModel = [VitaminDataModel new];
-        vitaminDataModel.name = vitaminName;
+//        VitaminDataModel *vitaminDataModel = [VitaminDataModel new];
+//        vitaminDataModel.name = vitaminName;
         self.viewModel = [[VitaminSchedulerViewModel alloc] initWithVitaminDataModel:vitaminDataModel];
     }
     return self;
@@ -60,7 +61,7 @@
     [self.viewModel registerNibForTableView:self.tableView];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 140;
-    self.tableView.separatorColor = self.tableView.backgroundColor;
+//    self.tableView.separatorColor = self.tableView.backgroundColor;
 }
 
 - (UIView *)inputAccessoryView {
@@ -84,7 +85,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [self.viewModel dequeueAndConfigureCellInTableView:tableView
-                                                  atIndexPath:indexPath];;
+                                                  atIndexPath:indexPath
+                                                     delegate:self];;
 }
 
 /*
@@ -129,10 +131,16 @@
     // if the index path -> is the first one
     // Check the frequency clicked -> days data model
     // TODO:
-    DaysDataModel *daysDataModel = self.viewModel.vitaminDataModel.days;
+    
+    // TODO: tell the delegate
+    DaysDataModel *daysDataModel = self.viewModel.daysDataModel;
     // TODO: inform the delegate
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0 && indexPath.row == 0) {
         // TODO: should open a new view controller
+        // Create vitamin frequency view model
+        VitaminFrequencyViewModel *vitaminFrequencyViewModel = [[VitaminFrequencyViewModel alloc] initWithDaysDataModel:daysDataModel];
+        FrequencyTableViewController *viewController = [[FrequencyTableViewController alloc] initWithDelegate:self viewModel:vitaminFrequencyViewModel];
+        [self.navigationController pushViewController:viewController animated:YES];        
     }
     // Navigation logic may go here, for example:
     // Create the next view controller.
@@ -146,9 +154,9 @@
 
 
 - (BOOL)validate {
-    // TODO
-    return YES;
+    return [self.viewModel validate];
 }
+
 
 #pragma mark - Actions
 
@@ -157,6 +165,12 @@
     if (!isValid) {
         [self showAlert];
     } else {
+        VitaminDataModel *updatedVitaminDataModel = [self.viewModel updatedVitaminDataModel];
+        [self.delegate onVitaminSchedulerNextClickedWithVitaminDataModel:updatedVitaminDataModel];
+        // Call the delegate
+        // get the updated vitamin data model from the view model?
+        
+        
         // TODO: call the delegate with the vitamin
 //        NSString *vitaminName = self.vitaminName;
 //        [self.delegate onVitaminPropertiesNextClickedWithVitaminName:vitaminName];
@@ -164,10 +178,23 @@
 }
 
 - (void)showAlert {
+    VitaminSchedulerViewControllerError error = [self.viewModel errorType];
+    NSString *message = [self getMessageForError:error];
     [UIAlertController showAlertInViewController:self
                                            title:@"Error"
-                                         message:@"Please enter a vitamin name"
+                                         message:message
                                           button:@"OK"];
+}
+
+- (NSString *)getMessageForError:(VitaminSchedulerViewControllerError)error {
+    switch (error) {
+        case VitaminSchedulerViewControllerErrorFrequencyUndefined:
+            return @"Please select at least one day.";
+        case VitaminSchedulerViewControllerErrorDosagesUndefined:
+            return @"Please add at least one dosage.";
+        default:
+            return @"Please try again.";
+    }
 }
 
 /*
@@ -179,5 +206,58 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - FrequencyTableViewControllerDelegate
+
+- (void)onFrequencyUpdatedWithDaysDataModel:(DaysDataModel *)daysDataModel {
+    [self.viewModel updateDaysDataModel:daysDataModel];
+    [self.tableView reloadData];
+}
+
+#pragma mark - DosagesTableViewCellDelegate
+
+- (void)onAddDosageClicked {
+    NSLog(@"on add dosage clicked");
+    
+    DosageViewController *dosageViewController = [[DosageViewController alloc] initWithDelegate:self];
+    dosageViewController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    dosageViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:dosageViewController animated:YES completion:nil];
+    // TODO: show the view controller implement
+    
+    // Show the view controller
+    // Inform the view controller
+}
+
+- (void)onRemoveDosageClickedWithIndex:(NSInteger)index {
+    NSLog(@"on remove dosage clicked with index: %@", @(index));
+    
+    // TODO: should tell the view model that we've removed one of the dosages, should probably reload the data
+    [self.viewModel removeDosageAtIndex:index];
+    // Reload the table view?
+    [self.tableView reloadData];
+    
+    // TODO: it still creates a new dosage
+    [self.tableView layoutIfNeeded];
+    
+}
+
+#pragma mark - DosageViewControllerDelegate
+
+- (void)onAddDosageClickedWithDosageDataModel:(DosageDataModel *)dosageDataModel {
+    NSLog(@"dosage will be added: %@", dosageDataModel);
+    
+    // Add dosage and reload the table view?
+    // We cannot
+    // We have to add it here!
+    [self.viewModel addDosageDataModel:dosageDataModel];
+    [self.tableView reloadData];
+    
+    // TODO: it still creates a new dosage
+    
+}
+
+// TODO: change method
+//- (void)onAddDosageClickedWithDosage:(Dosage *)dosage
 
 @end

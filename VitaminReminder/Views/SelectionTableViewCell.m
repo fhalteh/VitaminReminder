@@ -20,6 +20,7 @@
 
 - (void)configureWithViewModel:(SelectionCellViewModel *)viewModel {
     self.valueLabel.text = viewModel.title;
+    NSLog(@"View model title: %@", viewModel.title);
     self.checkmarkImage.hidden = !viewModel.selected;
 }
 

@@ -13,7 +13,6 @@
 #import "StorageManager.h"
 #import "CustomNavigationBar.h"
 
-// TODO: Delete file
 // TODO: rename to my vitamins view controller
 @interface VitaminsViewController ()
 
@@ -68,6 +67,7 @@
 #pragma mark - Action buttons
 
 - (IBAction)onAddButtonClicked:(id)sender {
+    [self.delegate onAddVitaminButtonClicked];
 //    AddOrEditVitaminViewController *viewController = [[AddOrEditVitaminViewController alloc] initWithContext:self.managedObjectContext];
 //    [self presentViewController:viewController animated:true completion:nil];
 }

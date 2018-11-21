@@ -26,11 +26,13 @@
     // Configure the view for the selected state
 }
 
-- (void)configureWithViewModel:(TextEntryCellViewModel *)viewModel {
+- (void)configureWithViewModel:(TextEntryCellViewModel *)viewModel delegate:(id <UITextFieldDelegate>)delegate {
     self.titleLabel.text = viewModel.title;
     self.valueTextField.text = viewModel.value;
     self.valueTextField.placeholder = viewModel.placeholder;
     [self.valueTextField addTarget:viewModel action:@selector(textFieldEditingDidChange:) forControlEvents:UIControlEventEditingChanged];
+    self.valueTextField.returnKeyType = UIReturnKeyNext;
+    self.valueTextField.delegate = delegate;
 }
 
 + (NSString *)reuseIdentifier {

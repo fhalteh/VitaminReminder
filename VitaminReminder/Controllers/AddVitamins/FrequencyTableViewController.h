@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class VitaminFrequencyViewModel;
+@class VitaminFrequencyViewModel, DaysDataModel;
 
 @protocol FrequencyTableViewControllerDelegate <NSObject>
 
-// TODO: add methods when taken back?
+- (void)onFrequencyUpdatedWithDaysDataModel:(DaysDataModel *)daysDataModel;
 
 @end
 

@@ -8,16 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "VitaminPropertiesViewModel.h"
-
+#import "VitaminDataModel.h"
 
 @protocol VitaminPropertiesViewControllerDelegate
 
 - (void)onVitaminPropertiesCancelClicked;
-- (void)onVitaminPropertiesNextClickedWithVitaminName:(NSString *)vitaminName;
+- (void)onVitaminPropertiesNextClickedWithVitaminDataModel:(VitaminDataModel *)vitaminDataModel;
 
 @end
 
-@interface VitaminPropertiesViewController : UITableViewController
+@interface VitaminPropertiesViewController : UITableViewController <UITextFieldDelegate>
 
 // Do we need thhis to be public?
 

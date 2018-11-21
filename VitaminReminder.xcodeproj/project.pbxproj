@@ -36,6 +36,11 @@
 		19C6F34E21A4D42B00111094 /* SelectionCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C6F34D21A4D42B00111094 /* SelectionCellViewModel.m */; };
 		19C6F35221A4D5CB00111094 /* SelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C6F35021A4D5CB00111094 /* SelectionTableViewCell.m */; };
 		19C6F35321A4D5CB00111094 /* SelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C6F35121A4D5CB00111094 /* SelectionTableViewCell.xib */; };
+		19C6F35721A5B14100111094 /* ButtonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C6F35521A5B14100111094 /* ButtonTableViewCell.m */; };
+		19C6F35821A5B14100111094 /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C6F35621A5B14100111094 /* ButtonTableViewCell.xib */; };
+		19C6F35B21A5B28800111094 /* ButtonCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C6F35A21A5B28800111094 /* ButtonCellViewModel.m */; };
+		19C6F35F21A5EC5F00111094 /* VitaminSaverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C6F35D21A5EC5F00111094 /* VitaminSaverViewController.m */; };
+		19C6F36021A5EC5F00111094 /* VitaminSaverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C6F35E21A5EC5F00111094 /* VitaminSaverViewController.xib */; };
 		19C98B2D2192043400E8A36F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C98B2C2192043400E8A36F /* AppDelegate.m */; };
 		19C98B302192043400E8A36F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C98B2F2192043400E8A36F /* MainViewController.m */; };
 		19C98B332192043400E8A36F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C98B312192043400E8A36F /* Main.storyboard */; };
@@ -189,6 +194,14 @@
 		19C6F34F21A4D5CB00111094 /* SelectionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionTableViewCell.h; sourceTree = "<group>"; };
 		19C6F35021A4D5CB00111094 /* SelectionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionTableViewCell.m; sourceTree = "<group>"; };
 		19C6F35121A4D5CB00111094 /* SelectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionTableViewCell.xib; sourceTree = "<group>"; };
+		19C6F35421A5B14100111094 /* ButtonTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonTableViewCell.h; sourceTree = "<group>"; };
+		19C6F35521A5B14100111094 /* ButtonTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonTableViewCell.m; sourceTree = "<group>"; };
+		19C6F35621A5B14100111094 /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
+		19C6F35921A5B28800111094 /* ButtonCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonCellViewModel.h; sourceTree = "<group>"; };
+		19C6F35A21A5B28800111094 /* ButtonCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonCellViewModel.m; sourceTree = "<group>"; };
+		19C6F35C21A5EC5F00111094 /* VitaminSaverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VitaminSaverViewController.h; sourceTree = "<group>"; };
+		19C6F35D21A5EC5F00111094 /* VitaminSaverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VitaminSaverViewController.m; sourceTree = "<group>"; };
+		19C6F35E21A5EC5F00111094 /* VitaminSaverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VitaminSaverViewController.xib; sourceTree = "<group>"; };
 		19C98B282192043400E8A36F /* VitaminReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VitaminReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C98B2B2192043400E8A36F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		19C98B2C2192043400E8A36F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -406,6 +419,8 @@
 				19C6F33821A4B35D00111094 /* DosagesCellViewModel.m */,
 				19C6F34C21A4D42B00111094 /* SelectionCellViewModel.h */,
 				19C6F34D21A4D42B00111094 /* SelectionCellViewModel.m */,
+				19C6F35921A5B28800111094 /* ButtonCellViewModel.h */,
+				19C6F35A21A5B28800111094 /* ButtonCellViewModel.m */,
 			);
 			path = CellViewModels;
 			sourceTree = "<group>";
@@ -512,6 +527,9 @@
 				19C6F34F21A4D5CB00111094 /* SelectionTableViewCell.h */,
 				19C6F35021A4D5CB00111094 /* SelectionTableViewCell.m */,
 				19C6F35121A4D5CB00111094 /* SelectionTableViewCell.xib */,
+				19C6F35421A5B14100111094 /* ButtonTableViewCell.h */,
+				19C6F35521A5B14100111094 /* ButtonTableViewCell.m */,
+				19C6F35621A5B14100111094 /* ButtonTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -551,6 +569,9 @@
 				1966E63C21A21E4400B862E6 /* VitaminIntakePagingViewController.h */,
 				1966E63D21A21E4400B862E6 /* VitaminIntakePagingViewController.m */,
 				1966E63E21A21E4400B862E6 /* VitaminIntakePagingViewController.xib */,
+				19C6F35C21A5EC5F00111094 /* VitaminSaverViewController.h */,
+				19C6F35D21A5EC5F00111094 /* VitaminSaverViewController.m */,
+				19C6F35E21A5EC5F00111094 /* VitaminSaverViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -838,6 +859,7 @@
 				19C98B65219206D700E8A36F /* proximanova-bold.otf in Resources */,
 				19C98BCF219414AF00E8A36F /* DosageViewController.xib in Resources */,
 				19F7366021A347E700E48937 /* TextEntryTableViewCell.xib in Resources */,
+				19C6F35821A5B14100111094 /* ButtonTableViewCell.xib in Resources */,
 				19C98BB521925A2000E8A36F /* VitaminTableViewCell.xib in Resources */,
 				19C6F33E21A4B3D100111094 /* DosagesTableViewCell.xib in Resources */,
 				19C98B6E219214C400E8A36F /* proximanova-light.otf in Resources */,
@@ -858,6 +880,7 @@
 				19C98BBA219379A000E8A36F /* AddOrEditVitaminViewController.xib in Resources */,
 				19C6F33221A4B07100111094 /* OptionTableViewCell.xib in Resources */,
 				19C98B6A2192088200E8A36F /* VitaminIntakeTableViewCell.xib in Resources */,
+				19C6F36021A5EC5F00111094 /* VitaminSaverViewController.xib in Resources */,
 				19F3691621A1741E0008FF3E /* HomeViewController.xib in Resources */,
 				1966E64021A21E4400B862E6 /* VitaminIntakePagingViewController.xib in Resources */,
 			);
@@ -903,6 +926,7 @@
 				19C98BC42193890B00E8A36F /* DosageCollectionViewCell.m in Sources */,
 				19F3690D21A16AB60008FF3E /* MyVitaminsCoordinator.m in Sources */,
 				19C98B95219232A600E8A36F /* UIViewController+Utils.m in Sources */,
+				19C6F35721A5B14100111094 /* ButtonTableViewCell.m in Sources */,
 				19C6F33521A4B1FE00111094 /* OptionCellViewModel.m in Sources */,
 				19C98B362192043400E8A36F /* VitaminReminder.xcdatamodeld in Sources */,
 				19F368F321A0C3D90008FF3E /* DaysDataModel.m in Sources */,
@@ -927,6 +951,7 @@
 				194ECA7321A47FFC00D7316D /* ColorSelectorCellViewModel.m in Sources */,
 				19F3692A21A1B7370008FF3E /* EmptyDataView.m in Sources */,
 				19F3691121A16BD40008FF3E /* StorageManager.m in Sources */,
+				19C6F35B21A5B28800111094 /* ButtonCellViewModel.m in Sources */,
 				19F368C121A09EE70008FF3E /* Days.m in Sources */,
 				194ECA7A21A48CC900D7316D /* BaseViewController.m in Sources */,
 				19F368D821A0A7F10008FF3E /* DosageDataSource.m in Sources */,
@@ -951,6 +976,7 @@
 				19C98BC02193887700E8A36F /* DosageCollectionViewController.m in Sources */,
 				19C98B8B219228C600E8A36F /* NSManagedObject+Extensions.m in Sources */,
 				19C98BCE219414AF00E8A36F /* DosageViewController.m in Sources */,
+				19C6F35F21A5EC5F00111094 /* VitaminSaverViewController.m in Sources */,
 				19C98B9221922F2300E8A36F /* NSLayoutConstraint+Utils.m in Sources */,
 				19C98B7C2192277A00E8A36F /* VitaminIntake.m in Sources */,
 				19F3691E21A19A510008FF3E /* NSUserDefaults+Utils.m in Sources */,

@@ -43,6 +43,11 @@
     [self setupNavigationBar];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (void)setupNavigationBar {
     self.navigationController.navigationBar.translucent = NO;
     [self.navigationController.navigationBar addShadow];
@@ -97,8 +102,9 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        Vitamin *vitamin = [self.resultsController objectAtIndexPath:indexPath];
+        [self.storageManager remove:vitamin.objectID];
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
@@ -175,7 +181,8 @@
 #pragma mark - Navigation bar actions
 
 - (void)onRightBarButtonClicked {
-    // TODO: add
+
+    [self.delegate onAddVitaminButtonClicked];
 }
 
 #pragma mark - EmptyDataViewDelegate

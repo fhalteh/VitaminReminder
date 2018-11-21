@@ -12,9 +12,11 @@
 
 @interface DosageCollectionViewCell : UICollectionViewCell
 
-//- (void)configureCellWithDosage:(Dosage *)dosage;
 - (void)configureCellWithAddIcon;
-- (void)configureWithViewModel:(DosageViewModel *)viewModel;
+- (void)configureWithViewModel:(DosageViewModel *)viewModel
+                        target:(id)target
+                     indexPath:(NSIndexPath *)indexPath;
+
 
 + (NSString *)reuseIdentifier;
 + (NSString *)nibName;

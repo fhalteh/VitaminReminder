@@ -9,9 +9,14 @@
 #import "CellViewModel.h"
 #import "VitaminSchedulerViewModel.h"
 
+// TODO: rename to daysoptions
 @interface OptionCellViewModel : CellViewModel
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *value;
+
+@property (nonatomic, strong) DaysDataModel *daysDataModel;
+
+// TODO: should store Frequency datam odel?
 
 @end

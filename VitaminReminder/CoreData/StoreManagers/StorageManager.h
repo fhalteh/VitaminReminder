@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "DaysDataModel.h"
 
-@class Dosage, UserVitaminIntake;
+@class Dosage, UserVitaminIntake, VitaminDataModel;
 
 @interface StorageManager : NSObject
 
@@ -20,6 +20,8 @@
 - (NSFetchedResultsController *)loadVitaminsFetchedResultsController:(id <NSFetchedResultsControllerDelegate>)delegate;
 
 // TODO: should bve used
+- (void)addVitaminDataModel:(VitaminDataModel *)vitaminDataModel;
+- (void)addVitaminDataModel:(VitaminDataModel *)vitaminDataModel;
 - (NSArray <Dosage *> *)getDosagesForDay:(Weekday)weekday;
 - (NSArray <UserVitaminIntake *> *)getIntakesForDate:(NSDate *)date;
 //- (NSFetchedResultsController *)loadDosageFetchedResultsController:(id <NSFetchedResultsControllerDelegate>)delegate

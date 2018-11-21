@@ -23,11 +23,22 @@
 // TODO: maybe change the view modfel here instead?
 @implementation VitaminPropertiesViewController
 
+// TODO: USE this method when we want to initalize a new view vitamin
 - (instancetype)initWithDelegate:(id <VitaminPropertiesViewControllerDelegate>)delegate {
     self = [super init];
     if (self) {
         self.delegate = delegate;
         self.viewModel = [[VitaminPropertiesViewModel alloc] init];
+    }
+    return self;
+}
+
+// TODO: use this method when we want to edit a previous vitamin
+- (instancetype)initWithDelegate:(id <VitaminPropertiesViewControllerDelegate>)delegate vitaminDataModel:(VitaminDataModel *)vitaminDataModel {
+    self = [super init];
+    if (self) {
+        self.delegate = delegate;
+        self.viewModel = [[VitaminPropertiesViewModel alloc] initWithVitaminDataModel:vitaminDataModel];
     }
     return self;
 }
@@ -73,13 +84,13 @@
 //    [self.tableView registerNib:nib forCellReuseIdentifier:reuseIdentifier];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 140;
-    self.tableView.separatorColor = self.tableView.backgroundColor;
+//    self.tableView.separatorColor = self.tableView.backgroundColor;
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.viewModel.numberOfSections;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -95,7 +106,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // the cell should be dequeued based on the reusd
-    return [self.viewModel dequeueAndConfigureCellInTableView:tableView atIndexPath:indexPath];
+    return [self.viewModel dequeueAndConfigureCellInTableView:tableView atIndexPath:indexPath delegate:self];
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -191,7 +202,8 @@
         [self showAlert];
     } else {
         NSString *vitaminName = self.vitaminName;
-        [self.delegate onVitaminPropertiesNextClickedWithVitaminName:vitaminName];
+        VitaminDataModel *vitaminDataModel = [self.viewModel updatedVitaminDataModel];
+        [self.delegate onVitaminPropertiesNextClickedWithVitaminDataModel:vitaminDataModel];
     }
 }
 
@@ -202,6 +214,16 @@
                                           button:@"OK"];
 }
 
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    //
+    // Call the next
+
+    [self onNextClicked:textField];
+    return YES;
+}
 
 // TODO: remove
 //- (void)dismissKeyboard {

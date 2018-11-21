@@ -7,18 +7,37 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FrequencyTableViewController.h"
+#import "DosagesTableViewCell.h"
+#import "DosageViewController.h"
+
+typedef enum : NSUInteger {
+    VitaminSchedulerViewControllerErrorFrequencyUndefined,
+    VitaminSchedulerViewControllerErrorDosagesUndefined,
+    VitaminSchedulerViewControllerErrorDefault,
+} VitaminSchedulerViewControllerError;
+
+@class VitaminDataModel;
+//#import "DosageViewController.h"
 
 @protocol VitaminSchedulerViewControllerDelegate
 
 - (void)onVitaminSchedulerCancelClicked;
 // TODO: change the vitamin name to details
-- (void)onFrequencyClicked;
-- (void)onVitaminSchedulerNextClickedWithVitaminName:(NSString *)vitaminName;
+//- (void)onFrequencyClicked;// TODO: is this being called?
+
+- (void)onVitaminSchedulerNextClickedWithVitaminDataModel:(VitaminDataModel *)vitaminDataModel;
+// TODO: change this
+//- (void)onVitaminSchedulerNextClickedWithVitaminName:(NSString *)vitaminName;
+
+//- (void)onAddDosageClicked; // TO
 
 @end
 
-@interface VitaminSchedulerViewController : UITableViewController
+// TODO: the delegate to frequency can be moved to the coordinator
+@interface VitaminSchedulerViewController : UITableViewController <FrequencyTableViewControllerDelegate, DosagesTableViewCellDelegate, DosageViewControllerDelegate>
 
-- (instancetype)initWithDelegate:(id <VitaminSchedulerViewControllerDelegate>)delegate                     vitaminName:(NSString *)vitaminName;
+- (instancetype)initWithDelegate:(id <VitaminSchedulerViewControllerDelegate>)delegate
+                vitaminDataModel:(VitaminDataModel *)vitaminDataModel;
 
 @end

@@ -28,7 +28,10 @@
     NSFetchRequest *request = [Vitamin fetchRequest];
     // TODO: change name to -> sort descriptro default
     request.sortDescriptors = @[Vitamin.defaultSortDescriptor];
-    NSFetchedResultsController *resultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+    NSFetchedResultsController *resultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                                        managedObjectContext:context
+                                                                                          sectionNameKeyPath:nil
+                                                                                                   cacheName:nil];
     resultsController.delegate = delegate;
     NSError *error = nil;
     [resultsController performFetch:&error];

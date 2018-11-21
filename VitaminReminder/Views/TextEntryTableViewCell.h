@@ -14,7 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextField *valueTextField;
 
-- (void)configureWithViewModel:(TextEntryCellViewModel *)viewModel;
+//- (void)configureWithViewModel:(TextEntryCellViewModel *)viewModel;
+- (void)configureWithViewModel:(TextEntryCellViewModel *)viewModel delegate:(id <UITextFieldDelegate>)delegate;
 
 // TODO: should remove if not used?
 + (NSString *)reuseIdentifier;

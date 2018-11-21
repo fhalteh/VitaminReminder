@@ -10,8 +10,9 @@
 #import "Coordinator.h"
 #import "VitaminPropertiesViewController.h"
 #import "VitaminSchedulerViewController.h"
+#import "VitaminSaverViewController.h"
 
-@interface AddOrEditVitaminCoordinator : NSObject <Coordinator, VitaminPropertiesViewControllerDelegate, VitaminSchedulerViewControllerDelegate>
+@interface AddOrEditVitaminCoordinator : NSObject <Coordinator, VitaminPropertiesViewControllerDelegate, VitaminSchedulerViewControllerDelegate, VitaminSaverViewControllerDelegate>
 
 - (instancetype)initWithNavigationController:(UINavigationController *)navigationController
                               storageManager:(StorageManager *)storageManager;

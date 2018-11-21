@@ -20,10 +20,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DosageViewController">
             <connections>
                 <outlet property="addButton" destination="Uoj-XM-03G" id="zcc-Bo-0OU"/>
+                <outlet property="darkBackgroundView" destination="B1q-F2-KU7" id="q8X-SF-jKx"/>
+                <outlet property="doneInputAccessoryView" destination="cfL-a3-kMc" id="xLE-Sv-lLD"/>
                 <outlet property="dosageBackgroundView" destination="Uaw-09-o2y" id="RuN-Xl-LUW"/>
-                <outlet property="hoursTextField" destination="WsQ-c5-AKJ" id="kwf-yx-nXe"/>
-                <outlet property="minutesTextField" destination="RXp-qf-HOI" id="fgs-d2-8WY"/>
+                <outlet property="numberOfPillsPickerView" destination="zO8-Hq-tex" id="gMM-yN-SLX"/>
                 <outlet property="numberOfPillsTextField" destination="44n-TD-xiF" id="Umd-Ol-UjN"/>
+                <outlet property="timePickerView" destination="cDj-3Q-qaZ" id="8lK-7m-aVu"/>
+                <outlet property="timeTextField" destination="WsQ-c5-AKJ" id="kwf-yx-nXe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -32,10 +35,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eH3-W6-F1Q">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1q-F2-KU7">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
+                <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDC-au-MeY">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <action selector="onClickOutside:" destination="-1" eventType="touchUpInside" id="A6E-OS-VAc"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uaw-09-o2y">
                     <rect key="frame" x="67.5" y="193.5" width="240" height="240"/>
                     <subviews>
@@ -48,12 +58,8 @@
                                     <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="44n-TD-xiF">
-                                    <rect key="frame" x="0.0" y="23" width="50" height="28"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="50" id="53Q-11-DSC"/>
-                                        <constraint firstAttribute="height" constant="28" id="jNe-4c-Lca"/>
-                                    </constraints>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" placeholder="0" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="44n-TD-xiF">
+                                    <rect key="frame" x="0.0" y="23" width="21.5" height="28"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="28"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -64,42 +70,12 @@
                                     <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="vcL-sc-ipX">
-                                    <rect key="frame" x="0.0" y="82" width="97" height="28"/>
-                                    <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WsQ-c5-AKJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="40" height="28"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="1Yp-Jj-cUx"/>
-                                            </constraints>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="28"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=":" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qu4-bz-DyX">
-                                            <rect key="frame" x="43" y="0.0" width="11" height="28"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="28" id="Avb-Bv-dUZ"/>
-                                                <constraint firstAttribute="width" constant="11" id="tRn-W6-szJ"/>
-                                            </constraints>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="28"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RXp-qf-HOI">
-                                            <rect key="frame" x="57" y="0.0" width="40" height="28"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="18H-gl-nxZ"/>
-                                            </constraints>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="28"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="28" id="jJ5-KP-gjN"/>
-                                    </constraints>
-                                </stackView>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00:00" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WsQ-c5-AKJ">
+                                    <rect key="frame" x="0.0" y="82" width="78.5" height="28"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="28"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
                             </subviews>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uoj-XM-03G">
@@ -110,7 +86,8 @@
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="EbX-O5-lI5"/>
                                 <constraint firstAttribute="width" constant="102" id="P0g-WW-2qh"/>
                             </constraints>
-                            <state key="normal" title="ADD">
+                            <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="18"/>
+                            <state key="normal" title="Add">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -131,15 +108,62 @@
                 </view>
             </subviews>
             <constraints>
-                <constraint firstItem="eH3-W6-F1Q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4BZ-J8-ciP"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="eH3-W6-F1Q" secondAttribute="trailing" id="Kdg-fC-ckI"/>
-                <constraint firstItem="eH3-W6-F1Q" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="TPK-qX-4hY"/>
+                <constraint firstAttribute="bottom" secondItem="CDC-au-MeY" secondAttribute="bottom" id="RM1-eK-udu"/>
+                <constraint firstItem="CDC-au-MeY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aD7-hZ-Psu"/>
+                <constraint firstItem="B1q-F2-KU7" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="bEu-mL-PLv"/>
+                <constraint firstItem="CDC-au-MeY" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="c3n-mk-wf9"/>
                 <constraint firstItem="Uaw-09-o2y" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-20" id="d5t-La-opY"/>
-                <constraint firstItem="eH3-W6-F1Q" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="npz-rp-Axs"/>
+                <constraint firstItem="B1q-F2-KU7" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="diy-Yi-clJ"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="CDC-au-MeY" secondAttribute="trailing" id="hS3-9R-mdv"/>
+                <constraint firstItem="B1q-F2-KU7" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="ib7-tz-Uj7"/>
+                <constraint firstItem="B1q-F2-KU7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="t3s-5Y-wJh"/>
                 <constraint firstItem="Uaw-09-o2y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zil-RQ-EsR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="138.40000000000001" y="125.4872563718141"/>
         </view>
+        <view contentMode="scaleToFill" id="cfL-a3-kMc">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBt-q3-Nwf">
+                    <rect key="frame" x="315" y="-0.5" width="44" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Lmf-I8-fZS"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="uaU-fm-qf4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
+                    <state key="normal" title="Done">
+                        <color key="titleColor" red="0.40000000000000002" green="0.17254901959999999" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onDoneClicked:" destination="-1" eventType="touchUpInside" id="Gfu-fE-Bnk"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Q5e-sU-6qs" firstAttribute="trailing" secondItem="tBt-q3-Nwf" secondAttribute="trailing" constant="16" id="bk0-wP-7kM"/>
+                <constraint firstItem="tBt-q3-Nwf" firstAttribute="centerY" secondItem="cfL-a3-kMc" secondAttribute="centerY" id="gyQ-cw-7HU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Q5e-sU-6qs"/>
+            <point key="canvasLocation" x="1005.6" y="449.32533733133437"/>
+        </view>
+        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" id="cDj-3Q-qaZ">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <date key="date" timeIntervalSinceReferenceDate="564512027.34179795">
+                <!--2018-11-21 16:53:47 +0000-->
+            </date>
+            <point key="canvasLocation" x="997.60000000000002" y="230.28485757121442"/>
+        </datePicker>
+        <pickerView contentMode="scaleToFill" id="zO8-Hq-tex">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <point key="canvasLocation" x="1824.8" y="212.29385307346328"/>
+        </pickerView>
     </objects>
 </document>

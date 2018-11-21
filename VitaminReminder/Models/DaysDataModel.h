@@ -21,16 +21,22 @@ typedef enum : NSUInteger {
 
 @interface DaysDataModel : ObjectDataModel
 
-@property (nonatomic) BOOL monday;
-@property (nonatomic) BOOL tuesday;
-@property (nonatomic) BOOL wednesday;
-@property (nonatomic) BOOL thursday;
-@property (nonatomic) BOOL friday;
-@property (nonatomic) BOOL saturday;
-@property (nonatomic) BOOL sunday;
+@property (nonatomic, strong) NSMutableArray <NSNumber *> *selectedDays;
 
+@property (nonatomic, readonly) BOOL monday;
+@property (nonatomic, readonly) BOOL tuesday;
+@property (nonatomic, readonly) BOOL wednesday;
+@property (nonatomic, readonly) BOOL thursday;
+@property (nonatomic, readonly) BOOL friday;
+@property (nonatomic, readonly) BOOL saturday;
+@property (nonatomic, readonly) BOOL sunday;
+
+- (BOOL)noneSelected;
 - (BOOL)isEverydaySelected;
 - (NSString *)daysString;
+- (BOOL)isWeekdaySelected:(Weekday)weekday;
++ (NSString *)getTitle:(Weekday)weekday;
+- (void)updateWeekday:(Weekday)weekday selected:(BOOL)selected;
 + (DaysDataModel *)daysDataModelWithDays:(NSArray *)days;
 
 @end

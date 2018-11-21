@@ -18,6 +18,6 @@
 @property (nonatomic, strong) NSString *notes;
 @property (nonatomic) AppearanceColor color;
 @property (nonatomic, strong) DaysDataModel *days;
-@property (nonatomic, strong) NSArray <DosageDataModel *> *dosages;
+@property (nonatomic, strong) NSMutableArray <DosageDataModel *> *dosages;
 
 @end

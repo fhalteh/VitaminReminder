@@ -15,6 +15,7 @@ typedef enum : NSUInteger {
     CellViewModelTypeOption,
     CellViewModelTypeDosages,
     CellViewModelTypeSelection,
+//    CellViewModelTypeButton,// remove
     // TODO: add more
 } CellViewModelType;
 

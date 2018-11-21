@@ -63,22 +63,48 @@
 // TODO: check if called
 - (void)addVitaminDataModel:(VitaminDataModel *)vitaminDataModel {
     // TODO:
-    [self.vitaminStorageManager addDataModel:vitaminDataModel
-                                   inContext:self.backgroundContext];
-    
-    
+//    [self.vitaminStorageManager addDataModel:vitaminDataModel
+//                                   inContext:self.backgroundContext];
+//    [self save];
+//
+    [self.backgroundContext performBlock:^{
+        [self.vitaminStorageManager addDataModel:vitaminDataModel
+                                       inContext:self.backgroundContext];
+        [self saveAllContexts];
+    }];
 }
+
+//- (void)deleteVitaminWithName:(NSString *)vitaminName {
+//    // Get vitamin with nmae -> delete that vitamin!
+//
+//}
 
 - (NSManagedObjectContext *)backgroundContext {
     if (!_backgroundContext) {
+        _persistentContainer.viewContext.automaticallyMergesChangesFromParent = YES;
         _backgroundContext = [self.persistentContainer newBackgroundContext];
     }
     return _backgroundContext;
 }
 
 - (void)remove:(NSManagedObjectID *)objectID {
-    NSManagedObject *object = [self.backgroundContext objectWithID:objectID];
-    [self.backgroundContext deleteObject:object];
+    [self.backgroundContext performBlock:^{
+        NSManagedObject *object = [self.backgroundContext objectWithID:objectID];
+        [self.backgroundContext deleteObject:object];
+        [self saveAllContexts];
+    }];
+}
+
+- (void)saveAllContexts {
+    [self save];
+    [self.persistentContainer.viewContext performBlockAndWait:^{
+        NSError *error;
+        [self.persistentContainer.viewContext save:&error];
+        if (error) {
+            NSLog(@"An error occurred while saving. %@", error);
+        }
+    }];
+    
 }
 
 - (void)save {

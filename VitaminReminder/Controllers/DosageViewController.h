@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@class Dosage;
+@class DosageDataModel;
 
 @protocol DosageViewControllerDelegate <NSObject>
 
-- (void)onAddDosageClickedWithDosage:(Dosage *)dosage;
+- (void)onAddDosageClickedWithDosageDataModel:(DosageDataModel *)dosageDataModel;
 
 @end
 
-@interface DosageViewController : UIViewController
+@interface DosageViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
 - (instancetype)initWithDelegate:(id <DosageViewControllerDelegate>)delegate;
 @end

@@ -7,8 +7,18 @@
 //
 
 #import "VitaminDataModel.h"
+#import "DaysDataModel.h"
 
 @implementation VitaminDataModel
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.days = [DaysDataModel alloc];
+        self.dosages = [NSMutableArray new];
+    }
+    return self;
+}
 
 - (ObjectDataModelType)getType {
     return ObjectDataModelTypeVitamin;

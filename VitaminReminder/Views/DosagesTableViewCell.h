@@ -10,8 +10,15 @@
 #import "DosagesTableViewCell.h"
 #import "DosagesCellViewModel.h"
 
+@protocol DosagesTableViewCellDelegate
+
+- (void)onAddDosageClicked;
+- (void)onRemoveDosageClickedWithIndex:(NSInteger)index;
+
+@end
+
 @interface DosagesTableViewCell : UITableViewCell <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-- (void)configureWithViewModel:(DosagesCellViewModel *)viewModel;
+- (void)configureWithViewModel:(DosagesCellViewModel *)viewModel delegate:(id <DosagesTableViewCellDelegate>)delegate;
 
 @end

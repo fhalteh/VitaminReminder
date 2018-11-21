@@ -7,10 +7,15 @@
 //
 
 #import "CellViewModel.h"
+#import "DaysDataModel.h"
 
+// TODO: rename to WeekdaySelectionCellViewModel
 @interface SelectionCellViewModel : CellViewModel
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, assign) BOOL selected;
+@property (nonatomic, assign) Weekday weekday;
+
+// TODO: store day?
 
 @end

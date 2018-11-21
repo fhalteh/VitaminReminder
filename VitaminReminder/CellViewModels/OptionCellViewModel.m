@@ -10,6 +10,17 @@
 
 @implementation OptionCellViewModel
 
+- (NSString *)value {
+    if (self.daysDataModel) {
+        if (self.daysDataModel.isEverydaySelected) {
+            return @"Everyday";
+        } else {
+            return self.daysDataModel.daysString;
+        }
+    }
+    return @"None";
+}
+
 - (CellViewModelType)type {
     return CellViewModelTypeOption;
 }

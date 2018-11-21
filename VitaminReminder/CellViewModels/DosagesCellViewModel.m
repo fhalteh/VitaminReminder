@@ -9,35 +9,41 @@
 #import "DosagesCellViewModel.h"
 #import "DosageCollectionViewCell.h"
 #import "NSDate+Utils.h"
+#import "DosageDataModel.h"
 
 @implementation DosagesCellViewModel
 
 - (instancetype)initWithDosages:(NSArray <DosageDataModel *> *)dosages {
     self = [super init];
     if (self) {
-        self.dosages = dosages;
-        [self createViewModels];
+        [self createViewModelsWithDosages:dosages];
     }
     return self;
 }
 
-- (void)createViewModels {
+- (void)createViewModelsWithDosages:(NSArray <DosageDataModel *> *)dosages {
     NSMutableArray *cellViewModels = [NSMutableArray new];
-    for (DosageDataModel *dosage in self.dosages) {
-        DosageViewModel *viewModel = [DosageViewModel new];
-        viewModel.timeText = dosage.time.inHoursAndMinutes;
-        NSString *pillsText = @"pill";
-        if (dosage.numberOfPills > 1) {
-            pillsText = [pillsText stringByAppendingString:@"s"];
-        }
-        viewModel.pillsText = [NSString stringWithFormat:@"%d %@", dosage.numberOfPills, pillsText];
+    for (DosageDataModel *dosage in dosages) {
+        DosageViewModel *viewModel = [self createDosageViewModel:dosage];
         [cellViewModels addObject:viewModel];
     }
     self.cellViewModels = cellViewModels;
 }
 
+- (DosageViewModel *)createDosageViewModel:(DosageDataModel *)dosageDataModel {
+    DosageViewModel *viewModel = [DosageViewModel new];
+    viewModel.dosageDataModel = dosageDataModel;
+    viewModel.timeText = dosageDataModel.time.inHoursAndMinutes;
+    NSString *pillsText = @"pill";
+    if (dosageDataModel.numberOfPills > 1) {
+        pillsText = [pillsText stringByAppendingString:@"s"];
+    }
+    viewModel.pillsText = [NSString stringWithFormat:@"%d %@", dosageDataModel.numberOfPills, pillsText];
+    return viewModel;
+}
+
 - (NSInteger)numberOfCells {
-    return self.dosages.count + 1;
+    return self.cellViewModels.count + 1;
 }
 
 // TODO: delete
@@ -57,15 +63,21 @@
 //}
 
 // TODO:
-- (UICollectionViewCell *)dequeueAndConfigureCellInCollectionView:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath {
+- (UICollectionViewCell *)dequeueAndConfigureCellInCollectionView:(UICollectionView *)collectionView
+                                                      atIndexPath:(NSIndexPath *)indexPath
+                                                           target:(id)target {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DosageCollectionViewCell.reuseIdentifier forIndexPath:indexPath];
     DosageCollectionViewCell *dosageCell = (DosageCollectionViewCell *)cell;
-    if (indexPath.row == self.dosages.count) {
+    if (indexPath.row == self.cellViewModels.count) {
         [dosageCell configureCellWithAddIcon];
     } else {
         // TODO: empty array?
         DosageViewModel *viewModel = self.cellViewModels[indexPath.item];
-        [dosageCell configureWithViewModel:viewModel];
+        // TODO: add the index path here, should be the target and implement the
+        [dosageCell configureWithViewModel:viewModel
+                                    target:target
+                                 indexPath:indexPath];
+//        [dosageCell configureWithViewModel:viewModel];
     }
     return dosageCell;
 }
@@ -82,8 +94,31 @@
 //    [cell setNeedsLayout];
 //    [cell layoutIfNeeded];
 //    CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    return CGSizeMake(80, 95);
+    return CGSizeMake(85, 95);
 }
+
+// TODO: Remove
+- (void)removeDosageCellViewModelAtIndex:(NSInteger)index {
+    // TODO: test addi
+//    DosageViewModel *model = [[DosageViewModel alloc] init];
+//    model.timeText = @"hi";
+//    model.pillsText = @"2 pills";
+//
+//    [self.cellViewModels addObject:model];
+    if (index >= 0 && index < self.cellViewModels.count) {
+        [self.cellViewModels removeObjectAtIndex:index];
+    }
+}
+
+// TODO: is this being used
+- (void)addDosageCellViewModelWithDataModel:(DosageDataModel *)dosageDataModel {
+    DosageViewModel *dosageViewModel = [self createDosageViewModel:dosageDataModel];
+    [self.cellViewModels addObject:dosageViewModel];
+}
+
+// TODO: Add a method to return updated dosages
+
+// TODO: get the view model at this point?
 
 - (CellViewModelType)type {
     return CellViewModelTypeDosages;

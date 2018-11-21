@@ -37,16 +37,16 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qwV-PH-f2V">
-                                <rect key="frame" x="34" y="20" width="34.5" height="40"/>
+                                <rect key="frame" x="33" y="19" width="36" height="42"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 pill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mjw-qJ-nRB">
-                                        <rect key="frame" x="1" y="0.0" width="32.5" height="17"/>
-                                        <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="36" height="19"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHN-65-oc3">
-                                        <rect key="frame" x="0.0" y="25" width="34.5" height="15"/>
+                                        <rect key="frame" x="1" y="27" width="34.5" height="15"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -62,9 +62,19 @@
                             <constraint firstItem="qwV-PH-f2V" firstAttribute="centerY" secondItem="PdM-Kt-Nws" secondAttribute="centerY" id="eKC-VW-GY0"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2a5-Mo-xGw">
+                        <rect key="frame" x="82" y="5" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="3n0-Ei-IVB"/>
+                            <constraint firstAttribute="width" constant="20" id="cfn-Uz-HRU"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="delete"/>
+                    </button>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="2a5-Mo-xGw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="45p-iE-1z0"/>
+                <constraint firstAttribute="trailing" secondItem="2a5-Mo-xGw" secondAttribute="trailing" id="GoF-rb-5GK"/>
                 <constraint firstItem="PdM-Kt-Nws" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="MQE-8e-0QX"/>
                 <constraint firstItem="PdM-Kt-Nws" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Mby-bf-r3h"/>
                 <constraint firstAttribute="bottom" secondItem="PdM-Kt-Nws" secondAttribute="bottom" constant="10" id="N8Z-bI-RyJ"/>
@@ -75,6 +85,7 @@
             <size key="customSize" width="102" height="100"/>
             <connections>
                 <outlet property="addIcon" destination="BKA-q3-iXb" id="5w2-gq-2p2"/>
+                <outlet property="deleteButton" destination="2a5-Mo-xGw" id="7Kf-Fo-U4D"/>
                 <outlet property="dosageBackgroundView" destination="PdM-Kt-Nws" id="Uaf-Fw-MTl"/>
                 <outlet property="numberOfPillsLabel" destination="Mjw-qJ-nRB" id="TaH-NG-nGL"/>
                 <outlet property="timeLabel" destination="SHN-65-oc3" id="mne-yW-WCt"/>
@@ -83,6 +94,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="delete" width="22.5" height="22.5"/>
         <image name="plus" width="49.5" height="49.5"/>
     </resources>
 </document>
