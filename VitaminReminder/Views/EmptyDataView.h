@@ -16,7 +16,6 @@
 
 @interface EmptyDataView : UIView
 
-// TODO: are both being used?
 - (instancetype)initWithFrame:(CGRect)frame
                         title:(NSString *)title
                          text:(NSString *)text;

@@ -7,16 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "MainTabBarController.h"
 #import "Coordinator.h"
 #import <CoreData/CoreData.h>
 #import "WelcomeViewController.h"
 
 @interface AppCoordinator : NSObject <Coordinator, WelcomeViewControllerDelegate>
 
-- (instancetype)initWithNavigationController:(UINavigationController *)navigationController
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController
                                    container:(NSPersistentContainer *)container;
-//- (instancetype)initWithNavigationController:(UINavigationController *)navigationController;
-//- (void)start;
 
 @end

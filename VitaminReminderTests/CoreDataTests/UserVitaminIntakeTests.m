@@ -83,11 +83,6 @@
     
     userVitaminIntake = [self.userVitaminIntakeStorageManager getIntakeWithUserVitaminIntakeDataModel:dataModel dosageObjectID:dosage.objectID inContext:self.storageManager.backgroundContext];
     XCTAssertNotNil(userVitaminIntake);
-
-    //    UserVitaminIntakeDataModel *dataModel = [UserVitaminIntakeDataModel new];
-//    dataModel.intakeDate = date;
-//    [self.storageManager save];
-//    self.storageManager removeUserVitaminIntake:dataModel dosageObjectID:<#(NSManagedObjectID *)#>
 }
 
 - (Dosage *)insertDosageWithNumberOfPills:(int)numberOfPills time:(NSDate *)time {

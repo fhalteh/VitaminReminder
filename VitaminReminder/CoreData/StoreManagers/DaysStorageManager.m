@@ -18,7 +18,7 @@
 //    return Days.fetchRequest;
 //}
 
-- (NSManagedObject *)addDataModel:(ObjectDataModel *)dataModel
+- (NSManagedObject *)addDataModel:(id <ObjectDataModel>)dataModel
                         inContext:(NSManagedObjectContext *)context {
     ObjectDataModelType type = [dataModel getType];
     if (type != ObjectDataModelTypeDays) {
@@ -39,7 +39,7 @@
     return days;
 }
 
-- (NSArray<ObjectDataModel *> *)fetchAllInContext:(NSManagedObjectContext *)context { 
+- (NSArray<id <ObjectDataModel>> *)fetchAllInContext:(NSManagedObjectContext *)context { 
     NSFetchRequest *fetchRequest = Days.fetchRequest;
     NSError *error;
     NSArray *results = [context executeFetchRequest:fetchRequest error:&error];

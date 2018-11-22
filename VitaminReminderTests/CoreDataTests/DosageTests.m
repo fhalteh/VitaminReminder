@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import <CoreData/CoreData.h>
-#import "CoreDataStack.h"
+#import "PersistentContainerFactory.h"
 #import "Dosage.h"
 #import "MockPersistentContainer.h"
 #import "DosageDataModel.h"

@@ -14,6 +14,12 @@
     return CellViewModelTypeDefault;
 }
 
-// TODO:
+- (NSString *)reuseIdentifier {
+    return @"";
+}
+
+- (NSString *)nibName {
+    return @"";
+}
 
 @end

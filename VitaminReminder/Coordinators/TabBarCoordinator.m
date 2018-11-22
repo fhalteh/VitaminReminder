@@ -22,13 +22,13 @@
 
 @implementation TabBarCoordinator
 
-@synthesize navController, storageManager;
+@synthesize storageManager, rootViewController;
 
-- (instancetype)initWithNavigationController:(UINavigationController *)navController
-                              storageManager:(StorageManager *)storageManager {
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController
+                            storageManager:(StorageManager *)storageManager {
     self = [super init];
     if (self) {
-        self.navController = navController;
+        self.rootViewController = rootViewController;
         self.storageManager = storageManager;
     }
     return self;
@@ -36,8 +36,8 @@
 
 - (void)start {
     self.tabBarController = [UITabBarController new];
-    self.homeCoordinator = [[HomeCoordinator alloc] initWithNavigationController:self.navController storageManager:self.storageManager];
-    self.myVitaminsCoordinator = [[MyVitaminsCoordinator alloc] initWithDelegate:self navigationController:navController storageManager:storageManager];
+    self.homeCoordinator = [[HomeCoordinator alloc] initWithRootViewController:self.rootViewController storageManager:self.storageManager];
+    self.myVitaminsCoordinator = [[MyVitaminsCoordinator alloc] initWithDelegate:self rootViewController:rootViewController storageManager:storageManager];
     
     UIViewController *homeViewController = self.homeCoordinator.rootViewController;
     homeViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Home" image:[UIImage imageNamed:@"homeToolbarIcon"] tag:0];
@@ -48,45 +48,22 @@
     self.tabBarController.tabBar.tintColor = UIColor.purpleThemeColor;
     self.tabBarController.tabBar.translucent = NO;
     self.tabBarController.viewControllers = @[homeViewController, myVitaminsController];
-    [self.navController showViewController:self.tabBarController sender:self];
-
-    // Create random view controllers
-    //    MainViewController *vc1 = [[MainViewController alloc] initWithNibName:MainViewController.identifier bundle:nil];
-//    UIStoryboard *storyBoard = self.navController.storyboard;
-//    MainViewController *vc1 = [storyBoard instantiateViewControllerWithIdentifier:MainViewController.identifier];
-//
-//    // TODO: create the proper Veiw controllers
-//    //    UIViewController *vc1 = [UIViewController new];
-//    vc1.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemRecents tag:0];
-//
-//    UIViewController *vc2 = [UIViewController new];
-//    vc2.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemSearch tag:1];
-//    MainTabBarController *controller = [[MainTabBarController alloc] initWithViewControllers:@[vc1, vc2] delegate:self];
-//    [controller setTabViewControllers:@[vc1, vc2]];
-//    [self.navController showViewController:controller sender:self];
+    [self.rootViewController showViewController:self.tabBarController sender:self];
 }
 
 - (NSArray *)coordinators {
     return @[self.homeCoordinator, self.myVitaminsCoordinator];
 }
 
-#pragma mark - TabBarControllerDelegate
-
-// TODO: should be removed if not needed?
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-    NSLog(@"View controller selected");
-}
-
 #pragma mark - MyVitaminsCoordinatorDelegate
 
 - (void)onAddVitaminButtonClicked {
-    // nope?
-    self.addOrEditVitaminCoordinator = [[AddOrEditVitaminCoordinator alloc] initWithNavigationController:self.tabBarController storageManager:self.storageManager];
+    self.addOrEditVitaminCoordinator = [[AddOrEditVitaminCoordinator alloc] initWithRootViewController:self.tabBarController storageManager:self.storageManager];
     [self.addOrEditVitaminCoordinator start];
 }
 
 - (void)didSelectVitamin:(VitaminDataModel *)vitaminDataModel {
-    self.addOrEditVitaminCoordinator = [[AddOrEditVitaminCoordinator alloc] initWithNavigationController:self.tabBarController storageManager:self.storageManager];
+    self.addOrEditVitaminCoordinator = [[AddOrEditVitaminCoordinator alloc] initWithRootViewController:self.tabBarController storageManager:self.storageManager];
     self.addOrEditVitaminCoordinator.vitaminDataModel = vitaminDataModel;
     [self.addOrEditVitaminCoordinator start];
 }

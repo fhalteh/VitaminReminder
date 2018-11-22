@@ -45,6 +45,7 @@
     return @"Days";
 }
 
+
 @dynamic monday;
 @dynamic tuesday;
 @dynamic wednesday;

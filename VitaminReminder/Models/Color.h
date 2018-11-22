@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-// TODO: remove from database and everywhere
+// TODO: implement
 typedef enum : NSUInteger {
     AppearanceColorBlue,
     AppearanceColorOrange,

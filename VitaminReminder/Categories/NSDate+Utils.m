@@ -11,7 +11,6 @@
 static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekOfMonth |  NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitWeekday | NSCalendarUnitWeekdayOrdinal);
 
 
-// TODO: check if all methods are required?
 @implementation NSDate (Utils)
 
 - (NSDate *)dateByAddingOneDay {
@@ -135,9 +134,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
         return @"Yesterday";
     } else if (self.isTomorrow) {
         return @"Tomorrow";
-    }
-    // TODO: return the day?
-    
+    }    
     return nil;
 }
 

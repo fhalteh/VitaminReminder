@@ -11,7 +11,7 @@
 
 @interface HomeCoordinator : NSObject <Coordinator>
 
-- (instancetype)initWithNavigationController:(UINavigationController *)navController
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController
                               storageManager:(StorageManager *)storageManager;
 
 @end

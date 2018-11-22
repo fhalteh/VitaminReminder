@@ -9,7 +9,6 @@
 
 #import <CoreData/CoreData.h>
 #import "Managed.h"
-#import "ManagedObject.h"
 
 @class UserVitaminIntake, Vitamin;
 
@@ -17,7 +16,6 @@
 
 + (NSFetchRequest<Dosage *> *)fetchRequest;
 
-//@property (nonatomic) int numberOfPills;
 @property (nonatomic) int numberOfPills;
 @property (nullable, nonatomic, copy) NSDate *time;
 @property (nullable, nonatomic, retain) NSSet<UserVitaminIntake *> *intakes;

@@ -9,43 +9,27 @@
 #import "AddOrEditVitaminCoordinator.h"
 #import "VitaminDataModel.h"
 
-//#import "VitaminPropertiesContentViewController.h"
-//
-//@interface AddOrEditVitaminCoordinator()
-//
-//
-//@end
+@interface AddOrEditVitaminCoordinator()
+
+@property (nonatomic, strong) UINavigationController *navController;
+
+@end
 
 @implementation AddOrEditVitaminCoordinator
 
-// TODO: root view controller?
-@synthesize navController, storageManager, rootViewController;
+@synthesize storageManager, rootViewController;
 
-// Should be able to initialize it with the vitamin details
-- (instancetype)initWithNavigationController:(UINavigationController *)navigationController
-                              storageManager:(StorageManager *)storageManager {
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController
+                            storageManager:(StorageManager *)storageManager {
     self = [super init];
     if (self) {
-        self.navController = navigationController;
+        self.rootViewController = rootViewController;
         self.storageManager = storageManager;
     }
     return self;
 }
 
-//- (instancetype)initWithNavigationController:(UINavigationController *)navigationController
-//                              storageManager:(StorageManager *)storageManager vitaminDataModel:(VitaminDataModel *)vitaminDataModel {
-//    self = [super init];
-//    if (self) {
-//        self.navController = navigationController;
-//        self.storageManager = storageManager;
-//        self.vitaminDataModel = vitaminDataModel;
-//    }
-//    return self;
-//}
-
 - (void)start {
-    // start the vitamin properties view controller
-    // Start it with the vitamin data
     VitaminPropertiesViewController *viewController;
     if (self.vitaminDataModel) {
         viewController = [[VitaminPropertiesViewController alloc] initWithDelegate:self vitaminDataModel:self.vitaminDataModel];
@@ -53,12 +37,8 @@
         viewController = [[VitaminPropertiesViewController alloc] initWithDelegate:self];
     }
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    
-    // TODO: should add delegate -> self
-    [self.navController presentViewController:navigationController animated:YES completion:nil];
+    [self.rootViewController presentViewController:navigationController animated:YES completion:nil];
     self.navController = navigationController;
-//    [self.navController showViewController:viewController sender:self];
-    
 }
 
 #pragma mark - VitaminPropertiesViewControllerDelegate
@@ -68,17 +48,7 @@
     [self.navController pushViewController:scheduler animated:YES];
 }
 
-// TODO: instead, use the vitamin properties
-//- (void)onVitaminPropertiesNextClickedWithVitaminName:(NSString *)vitaminName {
-//    NSLog(@"Vitamin name");
-//    // Maybe we should have an instance of the view controller
-//    VitaminSchedulerViewController *scheduler = [[VitaminSchedulerViewController alloc] initWithDelegate:self
-//                                                                                             vitaminName:vitaminName];
-//    [self.navController pushViewController:scheduler animated:YES];
-//}
-
 - (void)onVitaminPropertiesCancelClicked {
-    NSLog(@"cancel");
     [self.navController dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -89,36 +59,17 @@
 }
 
 - (void)onVitaminSchedulerNextClickedWithVitaminDataModel:(VitaminDataModel *)vitaminDataModel {
-    NSLog(@"completed the vitamin scheduler now add to the database");
-    NSLog(@"Vitamin data model should be updated: %@", vitaminDataModel);
-    // Push the view controller adding to the database?
-    
     VitaminSaverViewController *viewController = [[VitaminSaverViewController alloc] initWithVitaminDelegate:self
                                                                                                    dataModel:vitaminDataModel
                                                                                               storageManager:self.storageManager];
     [self.navController pushViewController:viewController animated:YES];
 }
 
+#pragma mark - VitaminSaverViewControllerDelegate
+
 - (void)onVitaminSaverCompleted {
     [self.navController dismissViewControllerAnimated:YES completion:nil];
 }
-
-
-//- (void)onVitaminSchedulerNextClickedWithVitaminName:(NSString *)vitaminName {
-//    // TODO: it's not oging to be with vitamin name
-//}
-//
-// on frequency clikced with days data model?
-//- (void)onFrequencyClicked {
-//    // TODO: push the view controller
-//
-//    // Present the view controller with frequency
-//}
-
-//- (void)onAddDosageClicked {
-//    // TODO: show the view controller -> add dosage?
-//}
-
 
 
 @end

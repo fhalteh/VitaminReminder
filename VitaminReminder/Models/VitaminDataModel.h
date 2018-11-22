@@ -10,10 +10,11 @@
 #import "Color.h"
 #import "ObjectDataModel.h"
 #import <CoreData/CoreData.h>
+#import "DosageDataModel.h"
 
-@class DaysDataModel, DosageDataModel, Vitamin;
+@class DaysDataModel, Vitamin;
 
-@interface VitaminDataModel : ObjectDataModel
+@interface VitaminDataModel : NSObject <ObjectDataModel>
 
 // To keep track of the current vitamin object in the database (for editing purposes)
 @property (nonatomic, strong) NSManagedObjectID *managedObjectId;
@@ -24,7 +25,6 @@
 @property (nonatomic, strong) DaysDataModel *days;
 @property (nonatomic, strong) NSMutableArray <DosageDataModel *> *dosages;
 
-// TODO: use for editing vitamins
 - (instancetype)initWithVitamin:(Vitamin *)vitamin;
 
 @end

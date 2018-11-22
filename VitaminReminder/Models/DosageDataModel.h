@@ -11,7 +11,7 @@
 
 @class Dosage;
 
-@interface DosageDataModel : ObjectDataModel
+@interface DosageDataModel : NSObject <ObjectDataModel>
 
 @property (nonatomic) int numberOfPills;
 @property (nonatomic) NSDate *time;

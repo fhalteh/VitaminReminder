@@ -16,7 +16,7 @@
 
 @property (nonatomic, strong) VitaminDataModel *vitaminDataModel;
 
-- (instancetype)initWithNavigationController:(UINavigationController *)navigationController
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController
                               storageManager:(StorageManager *)storageManager;
 
 @end

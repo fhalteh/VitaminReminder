@@ -12,9 +12,6 @@
 #define TOTAL_NUMBER_OF_DAYS    7
 
 @implementation DaysDataModel
-// TODO: maybe the days data model should be converted to a list of days instead?
-
-// List of enums basically and that's it?
 
 - (instancetype)init {
     self = [super init];
@@ -62,35 +59,11 @@
     
     DaysDataModel *dataModal = [[DaysDataModel alloc] init];
     dataModal.selectedDays = [NSMutableArray arrayWithArray:days];
-//    dataModal.monday = [days containsObject:@(WeekdayMonday)];
-//    dataModal.tuesday = [days containsObject:@(WeekdayTuesday)];
-//    dataModal.wednesday = [days containsObject:@(WeekdayWednesday)];
-//    dataModal.thursday = [days containsObject:@(WeekdayThursday)];
-//    dataModal.friday = [days containsObject:@(WeekdayFriday)];
-//    dataModal.saturday = [days containsObject:@(WeekdaySaturday)];
-//    dataModal.sunday = [days containsObject:@(WeekdaySunday)];
     return dataModal;
 }
 
 - (BOOL)isWeekdaySelected:(Weekday)weekday {
     return [self.selectedDays containsObject:@(weekday)];
-//    switch (weekday) {
-//        case WeekdaySunday:
-//            return self.sunday;
-//        case WeekdayMonday:
-//            return self.monday;
-//        case WeekdayTuesday:
-//            return self.tuesday;
-//        case WeekdayWednesday:
-//            return self.wednesday;
-//        case WeekdayThursday:
-//            return self.thursday;
-//        case WeekdayFriday:
-//            return self.friday;
-//        case WeekdaySaturday:
-//            return self.saturday;
-//    }
-//    return NO;
 }
 
 - (void)updateWeekday:(Weekday)weekday selected:(BOOL)selected {
@@ -102,30 +75,6 @@
     } else {
         [self.selectedDays removeObject:@(weekday)];
     }
-//
-//    switch (weekday) {
-//        case WeekdaySunday:
-//            self.sunday = selected;
-//            break;
-//        case WeekdayMonday:
-//            self.monday = selected;
-//            break;
-//        case WeekdayTuesday:
-//            self.tuesday = selected;
-//            break;
-//        case WeekdayWednesday:
-//            self.wednesday = selected;
-//            break;
-//        case WeekdayThursday:
-//            self.thursday = selected;
-//            break;
-//        case WeekdayFriday:
-//            self.friday = selected;
-//            break;
-//        case WeekdaySaturday:
-//            self.saturday = selected;
-//            break;
-//    }
 }
 
 + (NSString *)getTitle:(Weekday)weekday {
@@ -150,28 +99,6 @@
 
 - (BOOL)isEverydaySelected {
     return self.selectedDays.count == TOTAL_NUMBER_OF_DAYS;
-//    if (!self.sunday) {
-//        return false;
-//    }
-//    if (!self.monday) {
-//        return false;
-//    }
-//    if (!self.tuesday) {
-//        return false;
-//    }
-//    if (!self.wednesday) {
-//        return false;
-//    }
-//    if (!self.thursday) {
-//        return false;
-//    }
-//    if (!self.friday) {
-//        return false;
-//    }
-//    if (!self.saturday) {
-//        return false;
-//    }
-//    return true;
 }
 
 - (BOOL)noneSelected {
@@ -182,45 +109,14 @@
     if (self.selectedDays.count == 0) {
         return @"None";
     }
-        NSString *daysString = @"";
-        for (NSNumber *day in self.selectedDays) {
-            NSString *title = [DaysDataModel getTitle:day.intValue];
-            title = [title substringToIndex:2];
-            daysString = [daysString stringByAppendingString:title];
-            daysString = [daysString stringByAppendingString:@" "];
-        }
+    NSString *daysString = @"";
+    for (NSNumber *day in self.selectedDays) {
+        NSString *title = [DaysDataModel getTitle:day.intValue];
+        title = [title substringToIndex:2];
+        daysString = [daysString stringByAppendingString:title];
+        daysString = [daysString stringByAppendingString:@" "];
+    }
     return daysString;
-    
-    
-//    if (self.sunday) {
-//        daysString = [daysString stringByAppendingString:@"Su"];
-//        daysString = [daysString stringByAppendingString:@" "];
-//    }
-//    if (self.monday) {
-//        daysString = [daysString stringByAppendingString:@"Mo"];
-//        daysString = [daysString stringByAppendingString:@" "];
-//    }
-//    if (self.tuesday) {
-//        daysString = [daysString stringByAppendingString:@"Tu"];
-//        daysString = [daysString stringByAppendingString:@" "];
-//    }
-//    if (self.wednesday) {
-//        daysString = [daysString stringByAppendingString:@"We"];
-//        daysString = [daysString stringByAppendingString:@" "];
-//    }
-//    if (self.thursday) {
-//        daysString = [daysString stringByAppendingString:@"Th"];
-//        daysString = [daysString stringByAppendingString:@" "];
-//    }
-//    if (self.friday) {
-//        daysString = [daysString stringByAppendingString:@"Fr"];
-//        daysString = [daysString stringByAppendingString:@" "];
-//    }
-//    if (self.saturday) {
-//        daysString = [daysString stringByAppendingString:@"Sa"];
-//        daysString = [daysString stringByAppendingString:@" "];
-//    }
-//    return daysString;
 }
 
 - (BOOL)monday {
@@ -250,7 +146,6 @@
 - (BOOL)sunday {
     return [self.selectedDays containsObject:@(WeekdaySunday)];
 }
-
 
 - (ObjectDataModelType)getType {
     return ObjectDataModelTypeDays;

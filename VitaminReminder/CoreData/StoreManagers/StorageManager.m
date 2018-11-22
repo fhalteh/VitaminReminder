@@ -15,6 +15,7 @@
 #import "VitaminDataModel.h"
 #import "UserVitaminIntakeDataModel.h"
 #import "Dosage.h"
+#import "UserVitaminIntake.h"
 
 @interface StorageManager()
 
@@ -32,7 +33,6 @@
     self = [super init];
     if (self) {
         self.persistentContainer = container;
-//        self.dosageStorageManager = [[DosageStorageManager alloc] initWithContainer:container];
     }
     return self;
 }
@@ -53,16 +53,6 @@
                                                          inContext:self.persistentContainer.viewContext];
 }
 
-
-//- (NSFetchedResultsController *)loadDosageFetchedResultsController:(id <NSFetchedResultsControllerDelegate>)delegate
-//                                                     forDay:(Weekday)weekday {
-//    NSManagedObjectContext *context = self.persistentContainer.viewContext;
-//    return [self.dosageStorageManager loadDosageFetchedResultsController:delegate
-//                                                           forDay:weekday
-//                                                        inContext:context];
-//}
-
-// TODO: check if called
 - (void)addVitaminDataModel:(VitaminDataModel *)vitaminDataModel {
     [self.backgroundContext performBlock:^{
         // Remove previous vitamin if it exists
@@ -88,20 +78,12 @@
     }];
 }
 
-// TODO: should be utilized
 - (void)removeUserVitaminIntake:(UserVitaminIntakeDataModel *)userVitaminIntakeDataModel dosageObjectID:(NSManagedObjectID *)dosageObjectID {
     [self.backgroundContext performBlock:^{
-        
         UserVitaminIntake *userVitaminIntake = [self.userVitaminIntakeStorageManager getIntakeWithUserVitaminIntakeDataModel:userVitaminIntakeDataModel dosageObjectID:dosageObjectID inContext:self.backgroundContext];
-        // get
         if (userVitaminIntake) {
-            [self.backgroundContext deleteObject:userVitaminIntake];
+            [self.backgroundContext deleteObject:(NSManagedObject *)userVitaminIntake];
         }
-        // Remove previous vitamin if it exists
-//        Dosage *dosage = [self.backgroundContext objectWithID:dosageObjectID];
-//        // Add a new user vitamin intake
-//        UserVitaminIntake *userVitaminIntake = (UserVitaminIntake *)[self.userVitaminIntakeStorageManager addDataModel:userVitaminIntakeDataModel inContext:self.backgroundContext];
-//        [dosage addIntakesObject:userVitaminIntake];
         [self save];
     }];
 }
@@ -121,18 +103,6 @@
         [self save];
     }];
 }
-
-//- (void)saveAllContexts {
-//    [self save];
-//    [self.persistentContainer.viewContext performBlockAndWait:^{
-//        NSError *error;
-//        [self.persistentContainer.viewContext save:&error];
-//        if (error) {
-//            NSLog(@"An error occurred while saving. %@", error);
-//        }
-//    }];
-//
-//}
 
 - (void)save {
     if ([self.backgroundContext hasChanges]) {

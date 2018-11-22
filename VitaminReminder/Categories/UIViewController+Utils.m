@@ -11,8 +11,16 @@
 
 @implementation UIViewController (Utils)
 
-// TODO: change method name to something better
 // Container view must be defined and added to the view
+
+
+/**
+ Adds a view controller to a container view as a child view controller.
+ Note that the container view must be defined and added to the view
+
+ @param viewController view controller that will be added
+ @param containerView container view
+ */
 - (void)addChildViewController:(UIViewController *)viewController
                toContainerView:(UIView *)containerView {
     [self addChildViewController:viewController];

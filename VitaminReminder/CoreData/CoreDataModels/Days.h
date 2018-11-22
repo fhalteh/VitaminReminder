@@ -9,7 +9,6 @@
 
 #import <CoreData/CoreData.h>
 #import "Managed.h"
-#import "ManagedObject.h"
 #import "DaysDataModel.h"
 
 @class Vitamin;

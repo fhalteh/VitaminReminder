@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ObjectDataModel.h"
 
-@interface UserVitaminIntakeDataModel : ObjectDataModel
+@interface UserVitaminIntakeDataModel : NSObject <ObjectDataModel>
 
 @property (nonatomic) NSDate *intakeDate;
 

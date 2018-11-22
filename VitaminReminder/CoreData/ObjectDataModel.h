@@ -11,19 +11,12 @@
 typedef enum : NSUInteger {
     ObjectDataModelTypeVitamin,
     ObjectDataModelTypeDosage,
-    ObjectDataModelTypeUserVitaminIntake, // TODO:
+    ObjectDataModelTypeUserVitaminIntake,
     ObjectDataModelTypeDays,
     ObjectDataModelTypeUndefined,
 } ObjectDataModelType;
-// TODO: should add more?
 
-//@protocol ObjectDataModel <NSObject>
-//
-//- (ObjectDataModelType)getType;
-//
-//@end
-
-@interface ObjectDataModel : NSObject
+@protocol ObjectDataModel
 
 - (ObjectDataModelType)getType;
 

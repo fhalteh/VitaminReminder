@@ -11,12 +11,9 @@
 typedef enum : NSUInteger {
     CellViewModelTypeDefault,
     CellViewModelTypeTextEntry,
-    CellViewModelTypeColorSelection,
     CellViewModelTypeOption,
     CellViewModelTypeDosages,
     CellViewModelTypeSelection,
-//    CellViewModelTypeButton,// remove
-    // TODO: add more
 } CellViewModelType;
 
 @interface CellViewModel : NSObject

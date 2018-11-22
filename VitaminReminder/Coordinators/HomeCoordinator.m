@@ -12,28 +12,22 @@
 
 @implementation HomeCoordinator
 
-@synthesize navController, storageManager, rootViewController;
+@synthesize storageManager, rootViewController;
 
 - (UIViewController *)rootViewController {
-    
     MainViewController *viewController = [[MainViewController alloc] init];
     viewController.storageManager = storageManager;
     return [[UINavigationController alloc] initWithRootViewController:viewController];
-//    return viewController;
 }
 
-- (instancetype)initWithNavigationController:(UINavigationController *)navigationController storageManager:(StorageManager *)storageManager{
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController storageManager:(StorageManager *)storageManager {
     self = [super init];
     if (self) {
-        self.navController = navigationController;
+        self.rootViewController = rootViewController;
         self.storageManager = storageManager;
     }
     return self;
 }
 
-// TODO: remove start
-- (void)start {
-    
-}
 
 @end

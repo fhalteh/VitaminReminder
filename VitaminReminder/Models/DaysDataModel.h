@@ -22,7 +22,7 @@ typedef enum : NSUInteger {
 
 @class Days;
 
-@interface DaysDataModel : ObjectDataModel
+@interface DaysDataModel : NSObject <ObjectDataModel>
 
 @property (nonatomic, strong) NSMutableArray <NSNumber *> *selectedDays;
 
@@ -39,8 +39,8 @@ typedef enum : NSUInteger {
 - (BOOL)isEverydaySelected;
 - (NSString *)daysString;
 - (BOOL)isWeekdaySelected:(Weekday)weekday;
-+ (NSString *)getTitle:(Weekday)weekday;
 - (void)updateWeekday:(Weekday)weekday selected:(BOOL)selected;
 + (DaysDataModel *)daysDataModelWithDays:(NSArray *)days;
++ (NSString *)getTitle:(Weekday)weekday;
 
 @end

@@ -29,6 +29,6 @@
 
 - (ObjectDataModelType)getType {
     return ObjectDataModelTypeDosage;
-}
+}\
 
 @end

@@ -14,7 +14,6 @@
 
 @implementation UserVitaminIntakeStorageManager
 
-// TODO: should be utilized
 - (NSArray <UserVitaminIntake *> *)getIntakesForDate:(NSDate *)date
 
                                            inContext:(NSManagedObjectContext *)context {
@@ -44,7 +43,7 @@
 }
 
 
-- (NSArray<ObjectDataModel *> *)fetchAllInContext:(NSManagedObjectContext *)context {
+- (NSArray<id <ObjectDataModel>> *)fetchAllInContext:(NSManagedObjectContext *)context {
     NSFetchRequest *fetchRequest = UserVitaminIntake.fetchRequest;
     NSError *error;
     NSArray *results = [context executeFetchRequest:fetchRequest error:&error];
@@ -54,7 +53,7 @@
     return results ? results : @[];
 }
 
-- (NSManagedObject *)addDataModel:(ObjectDataModel *)dataModel
+- (NSManagedObject *)addDataModel:(id <ObjectDataModel>)dataModel
                         inContext:(NSManagedObjectContext *)context {
     ObjectDataModelType type = [dataModel getType];
     if (type != ObjectDataModelTypeUserVitaminIntake) {

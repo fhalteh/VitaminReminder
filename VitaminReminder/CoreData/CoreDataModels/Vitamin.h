@@ -9,17 +9,12 @@
 
 #import <CoreData/CoreData.h>
 #import "Managed.h"
-#import "ManagedObject.h"
 
 @class Days, Dosage;
 
 @interface Vitamin: NSManagedObject <Managed>
 
-+ (Vitamin *)addVitaminInContext:(NSManagedObjectContext *)context;
-+ (NSFetchedResultsController *)fetchedResultsControllerWithDelegate:(id <NSFetchedResultsControllerDelegate>)delegate
-                                                             context:(NSManagedObjectContext *)context;
 + (NSArray <Vitamin *> *)fetchVitaminsInManagedObjectContext:(NSManagedObjectContext *)context;
-
 + (NSFetchRequest<Vitamin *> *)fetchRequest;
 
 @property (nullable, nonatomic, copy) NSString *name;

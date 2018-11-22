@@ -40,7 +40,6 @@
                         title:(NSString *)title
                          text:(NSString *)text
                   buttonTitle:(NSString *)buttonTitle {
-    NSLog(@"EmptyDataView init called");
     self = [super initWithFrame:frame];
     if (self) {
         self.title = title;

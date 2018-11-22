@@ -12,8 +12,8 @@
 
 @protocol StorageManagerDataSource <NSObject>
 
-- (NSManagedObject *)addDataModel:(ObjectDataModel *)dataModel
+- (NSManagedObject *)addDataModel:(id <ObjectDataModel>)dataModel
                         inContext:(NSManagedObjectContext *)context;
-- (NSArray <ObjectDataModel *> *)fetchAllInContext:(NSManagedObjectContext *)context;
+- (NSArray <id <ObjectDataModel>> *)fetchAllInContext:(NSManagedObjectContext *)context;
 
 @end

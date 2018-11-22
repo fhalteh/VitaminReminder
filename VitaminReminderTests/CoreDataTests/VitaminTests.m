@@ -113,7 +113,6 @@
                         dosages:dosages];
     [self.storageManager save];
     NSArray *allObjects = [self.storageManager getDosagesForDay:WeekdaySaturday];
-//    NSFetchedResultsController *resultsController = [self.storageManager loadDosageFetchedResultsController:nil forDay:WeekdaySaturday];
     XCTAssertEqual(allObjects.count, numberOfDosages);
 }
 
@@ -187,7 +186,7 @@
     dataModel.notes = notes;
     dataModel.color = color;
     dataModel.days = days;
-    dataModel.dosages = dosages;
+    dataModel.dosages = [NSMutableArray arrayWithArray:dosages];
     return (Vitamin *)[self.vitaminStorageManager addDataModel:dataModel
                       
                                                    inContext:self.storageManager.backgroundContext];

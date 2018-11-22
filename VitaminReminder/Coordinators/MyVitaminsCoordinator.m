@@ -7,63 +7,44 @@
 //
 
 #import "MyVitaminsCoordinator.h"
-#import "AllVitaminsTableVC.h"
-//#import "AddOrEditVitaminCoordinator.h"
+#import "MyVitaminsTableViewController.h"
 
 @interface MyVitaminsCoordinator()
 
-// TODO: add as property or not?
-//@property (nonatomic, strong) AddOrEditVitaminCoordinator *addOrEditVitaminCoordinator;
 @property (nonatomic, weak) id <MyVitaminsCoordinatorDelegate> delegate;
 
 @end
 
 @implementation MyVitaminsCoordinator
 
-@synthesize navController, storageManager, rootViewController;
+@synthesize storageManager, rootViewController;
 
 - (instancetype)initWithDelegate:(id <MyVitaminsCoordinatorDelegate>)delegate
-            navigationController:(UINavigationController *)navigationController
+              rootViewController:(UIViewController *)rootViewController
                   storageManager:(StorageManager *)storageManager {
     self = [super init];
     if (self) {
         self.delegate = delegate;
-        self.navController = navigationController;
+        self.rootViewController = rootViewController;
         self.storageManager = storageManager;
     }
     return self;
 }
 
 - (UIViewController *)rootViewController {
-    // init with the storage manager
-    // TODO: change from context to store manager
-    AllVitaminsTableVC *viewController = [[AllVitaminsTableVC alloc] initWithDelegate:self storageManager:self.storageManager];
-    
-//    VitaminsViewController *viewController = [[VitaminsViewController alloc] initWithDelegate:self
-//                                                                               storageManager:self.storageManager];
+    MyVitaminsTableViewController *viewController = [[MyVitaminsTableViewController alloc] initWithDelegate:self storageManager:self.storageManager];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    // TODO: should be the delegate of vitamins view ocntroller
     return navigationController;
-//    return [[VitaminsViewController alloc] init];
 }
 
 #pragma mark - MyVitaminsViewControllerDelegate
 
 - (void)didSelectVitamin:(VitaminDataModel *)vitaminDataModel {
-    // Did select the vitamin model, start the coordinator
     [self.delegate didSelectVitamin:vitaminDataModel];
 }
 
 - (void)onAddVitaminButtonClicked {
-    BOOL isFirstResponder = self.navController.isFirstResponder;
     [self.delegate onAddVitaminButtonClicked];
-    NSLog(@"is first responder: %@", isFirstResponder ? @"YES" : @"NO");
-    // TODO: not opening the view controller? WHY?
-//    self.addOrEditVitaminCoordinator = [[AddOrEditVitaminCoordinator alloc] initWithNavigationController:self.rootViewController storageManager:self.storageManager];
-//    [self.addOrEditVitaminCoordinator start];
-    // TODO: should use the vitamins coordinator to show it?
-//    self.addOrEditVitaminCoordinator = [AddOrEditVitaminCoordinator alloc] init
-    
 }
 
 @end
