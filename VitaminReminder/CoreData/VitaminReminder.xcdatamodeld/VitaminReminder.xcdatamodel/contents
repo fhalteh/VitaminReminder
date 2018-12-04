@@ -28,8 +28,8 @@
         <relationship name="dosages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Dosage" inverseName="vitamin" inverseEntity="Dosage" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Days" positionX="-397.21875" positionY="137.89453125" width="128" height="163"/>
-        <element name="Dosage" positionX="-177.98828125" positionY="156.6484375" width="128" height="105"/>
+        <element name="Days" positionX="-393.32421875" positionY="159.20703125" width="128" height="163"/>
+        <element name="Dosage" positionX="-72.60546875" positionY="171.5859375" width="128" height="105"/>
         <element name="UserVitaminIntake" positionX="-48.921875" positionY="-27.05859375" width="128" height="73"/>
         <element name="Vitamin" positionX="-399.8828125" positionY="-55.21875" width="128" height="120"/>
     </elements>

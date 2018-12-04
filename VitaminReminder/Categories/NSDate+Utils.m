@@ -49,7 +49,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     return [self isEqualToDateIgnoringTime:[NSDate dateTomorrow]];
 }
 
-- (BOOL) isEqualToDateIgnoringTime: (NSDate *)date {
+- (BOOL)isEqualToDateIgnoringTime:(NSDate *)date {
     NSDateComponents *components1 = [NSCalendar.currentCalendar components:componentFlags fromDate:self];
     NSDateComponents *components2 = [NSCalendar.currentCalendar components:componentFlags fromDate:date];
     return ((components1.year == components2.year) &&
@@ -94,6 +94,38 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     return [calendar dateFromComponents:dateComponents];
 }
 
+// TODO: rename method
+
+- (NSDate *)dateWithDayFromDate:(NSDate *)date {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    calendar.timeZone = NSTimeZone.localTimeZone;
+    NSDateComponents *dateComponents = [date getDateComponentsFromCalendar:calendar];
+    NSInteger day = dateComponents.day;
+    NSInteger month = dateComponents.month;
+    NSInteger year = dateComponents.year;
+    
+    dateComponents = [self getDateComponentsFromCalendar:calendar];
+    [dateComponents setDay:day];
+    [dateComponents setMonth:month];
+    [dateComponents setYear:year];
+    return [calendar dateFromComponents:dateComponents];
+}
+
++ (NSDate *)dateWithDate:(NSDate *)date timestampFromDate:(NSDate *)currentDate {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    calendar.timeZone = NSTimeZone.localTimeZone;
+    NSDateComponents *dateComponents = [currentDate getDateComponentsFromCalendar:calendar];
+    NSInteger hour = dateComponents.hour;
+    NSInteger minute = dateComponents.minute;
+    NSInteger second = dateComponents.second;
+    
+    dateComponents = [date getDateComponentsFromCalendar:calendar];
+    [dateComponents setHour:hour];
+    [dateComponents setMinute:minute];
+    [dateComponents setSecond:second];
+    return [calendar dateFromComponents:dateComponents];
+}
+
 - (NSDateComponents *)getDateComponentsFromCalendar:(NSCalendar *)calendar {
     return [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:self];
 }
@@ -110,7 +142,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     return [dateFormatter stringFromDate:self];
 }
 
-- (NSString *)stringWithDateStyle: (NSDateFormatterStyle) dateStyle timeStyle: (NSDateFormatterStyle) timeStyle {
+- (NSString *)stringWithDateStyle:(NSDateFormatterStyle) dateStyle timeStyle: (NSDateFormatterStyle) timeStyle {
     NSDateFormatter *formatter = [NSDateFormatter new];
     formatter.dateStyle = dateStyle;
     formatter.timeStyle = timeStyle;
@@ -122,8 +154,6 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     if (prefix) {
         return [NSString stringWithFormat:@"%@, %@", prefix, self.shortDateString];
     }
-    // Return the day and then
-    
     return [self shortDateStringWithDay];
 }
 

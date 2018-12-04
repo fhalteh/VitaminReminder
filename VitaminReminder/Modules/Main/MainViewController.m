@@ -55,6 +55,8 @@
     [self updateTitle];
 }
 
+#pragma mark - Actions
+
 - (void)onLeftBarButtonClicked {
     [self updateCurrentDateAndTitleWithDate:self.currentDate.dateByRemovingOneDay];
     [self.pagingViewController updateViewControllerWithDayChange:DayChangePrevious];

@@ -14,6 +14,7 @@
 #import "VitaminIntake.h"
 #import "StorageManager.h"
 #import "UserVitaminIntakeDataModel.h"
+#import "NSDate+Utils.h"
 
 @interface DailyVitaminTableViewController ()
 
@@ -94,8 +95,9 @@
     VitaminIntakeCellModel *model = [self.vitaminIntakes objectAtIndex:indexPath.row];
     if (!model.taken) {
         UserVitaminIntakeDataModel *dataModel = [UserVitaminIntakeDataModel new];
-        dataModel.intakeDate = NSDate.date;
-        model.intakeDate = NSDate.date;
+        NSDate *intakeDate = [NSDate.date dateWithDayFromDate:self.currentDate];
+        dataModel.intakeDate = intakeDate;
+        model.intakeDate = intakeDate;
         [self.storageManager addUserVitaminIntake:dataModel
                                    dosageObjectID:model.dosageObjectID];
     } else {

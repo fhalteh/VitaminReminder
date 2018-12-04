@@ -28,5 +28,6 @@ typedef enum : NSUInteger {
 - (NSString *)dateString;
 - (NSInteger)weekdayNumber;
 - (NSDate *)dateAfterDayChange:(DayChange)dayChange;
+- (NSDate *)dateWithDayFromDate:(NSDate *)date;
 
 @end
